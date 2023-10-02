@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2023-09-27T22:34:48.158694484Z</date>
+  <millis>1695854088158</millis>
+  <nanos>694484</nanos>
+  <sequence>0</sequence>
+  <logger>co.edu.uniquindio.alquiler.model.AlquilaFacil</logger>
+  <level>INFO</level>
+  <class>co.edu.uniquindio.alquiler.model.AlquilaFacil</class>
+  <method>&lt;init&gt;</method>
+  <thread>17</thread>
+  <message>Se crea una nueva instancia de AlquilaFacil</message>
+</record>
+<record>
+  <date>2023-09-27T22:36:43.060605575Z</date>
+  <millis>1695854203060</millis>
+  <nanos>605575</nanos>
+  <sequence>1</sequence>
+  <logger>co.edu.uniquindio.alquiler.model.AlquilaFacil</logger>
+  <level>WARNING</level>
+  <class>co.edu.uniquindio.alquiler.model.AlquilaFacil</class>
+  <method>registrarCliente</method>
+  <thread>17</thread>
+  <message>La cédula es obligatoria para el registro</message>
+</record>
+<record>
+  <date>2023-09-27T22:37:10.551652236Z</date>
+  <millis>1695854230551</millis>
+  <nanos>652236</nanos>
+  <sequence>2</sequence>
+  <logger>co.edu.uniquindio.alquiler.model.AlquilaFacil</logger>
+  <level>INFO</level>
+  <class>co.edu.uniquindio.alquiler.model.AlquilaFacil</class>
+  <method>registrarCliente</method>
+  <thread>17</thread>
+  <message>Se ha registrado un nuevo cliente con la cédula: 73783</message>
+</record>
+</log>
