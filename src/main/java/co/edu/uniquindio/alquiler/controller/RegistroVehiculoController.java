@@ -1,5 +1,6 @@
 package co.edu.uniquindio.alquiler.controller;
 
+import co.edu.uniquindio.alquiler.enums.Marca;
 import co.edu.uniquindio.alquiler.exceptions.AtributoNegativoException;
 import co.edu.uniquindio.alquiler.model.AlquilaFacil;
 import co.edu.uniquindio.alquiler.model.Vehiculo;
@@ -57,7 +58,7 @@ public class RegistroVehiculoController implements Initializable {
             alquilaFacil.registrarVehiculo(
                     txtPlaca.getText(),
                     txtReferencia.getText(),
-                    txtMarca.getText(),
+                    Marca.CHEVROLET,
                     Integer.parseInt(txtModelo.getText()),
                     txtUrFoto.getText(),
                     Integer.parseInt(txtKm.getText()),

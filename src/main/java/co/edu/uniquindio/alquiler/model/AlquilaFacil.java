@@ -1,5 +1,6 @@
 package co.edu.uniquindio.alquiler.model;
 
+import co.edu.uniquindio.alquiler.enums.Marca;
 import co.edu.uniquindio.alquiler.exceptions.*;
 import lombok.Getter;
 import lombok.extern.java.Log;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -80,7 +82,7 @@ public class AlquilaFacil {
         return cliente;
     }
 
-    public Vehiculo registrarVehiculo(String placa,String referencia,String marca,int modelo,String foto,int kilometraje,float precioDia,boolean esAutomatico,int numPuertas) throws AtributoNegativoException{
+    public Vehiculo registrarVehiculo(String placa, String referencia, Marca marca, int modelo, String foto, int kilometraje, float precioDia, boolean esAutomatico, int numPuertas) throws AtributoNegativoException{
 
         //Validar atributos
 
@@ -171,5 +173,22 @@ public class AlquilaFacil {
                 .findFirst()
                 .isEmpty();
     }
+
+    public float calcularTotalGanado(LocalDate fechaInicio, LocalDate fechaFin){
+        return (float) alquileres.stream()
+                .filter(a -> a.getFechaInicio().isAfter(fechaInicio) && a.getFechaInicio().isBefore(fechaFin))
+                .mapToDouble( a -> a.getValorTotal() )
+                .sum();
+    }
+
+    public List<Vehiculo> listarVehiculosAlquilados(LocalDate fecha){
+        return alquileres.stream()
+                .filter(a -> a.getFechaInicio().equals(fecha))
+                .map(a -> a.getVehiculo())
+                .distinct()
+                .toList();
+    }
+
+
 
 }

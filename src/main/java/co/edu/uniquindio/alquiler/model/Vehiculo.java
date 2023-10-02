@@ -1,5 +1,6 @@
 package co.edu.uniquindio.alquiler.model;
 
+import co.edu.uniquindio.alquiler.enums.Marca;
 import lombok.*;
 
 @Getter
@@ -14,7 +15,7 @@ public class Vehiculo {
     private String placa;
 
     private String referencia;
-    private String marca;
+    private Marca marca;
     private int modelo;
     private String foto;
     private int kilometraje;
