@@ -12,7 +12,7 @@
         <TextField fx:id="txtReferencia" layoutX="108.0" layoutY="96.0" />
 
         <Label layoutY="144.0" prefHeight="18.0" text="Marca:" />
-        <TextField fx:id="txtMarca" layoutX="108.0" layoutY="140.0" />
+        <ComboBox fx:id="opcionesMarca" layoutX="108.0" layoutY="140.0" prefWidth="162.0" />
 
         <Label layoutY="188.0" prefHeight="18.0" text="Modelo:" />
         <TextField fx:id="txtModelo" layoutX="108.0" layoutY="184.0" />

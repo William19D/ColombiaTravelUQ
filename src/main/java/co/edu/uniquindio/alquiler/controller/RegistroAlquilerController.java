@@ -53,7 +53,6 @@ public class RegistroAlquilerController  implements Initializable {
         colPrecio.setCellValueFactory(new PropertyValueFactory<>("precioDia"));
 
         listaVehiculos.setItems(FXCollections.observableArrayList( alquilaFacil.getVehiculos() ));
-
     }
 
     public void registrarAlquiler(){

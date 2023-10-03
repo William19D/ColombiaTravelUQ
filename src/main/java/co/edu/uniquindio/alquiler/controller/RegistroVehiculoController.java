@@ -25,7 +25,7 @@ public class RegistroVehiculoController implements Initializable {
     private TextField txtReferencia;
 
     @FXML
-    private TextField txtMarca;
+    private ComboBox<Marca> opcionesMarca;
 
     @FXML
     private TextField txtModelo;
@@ -50,41 +50,46 @@ public class RegistroVehiculoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         opcionesCaja.setItems( FXCollections.observableArrayList( List.of("Automática", "Manual") ) );
+        opcionesMarca.setItems( FXCollections.observableArrayList( List.of( Marca.values() ) ) );
     }
 
     public void registrarVehiculo(ActionEvent actionEvent){
 
-        try {
-            alquilaFacil.registrarVehiculo(
-                    txtPlaca.getText(),
-                    txtReferencia.getText(),
-                    Marca.CHEVROLET,
-                    Integer.parseInt(txtModelo.getText()),
-                    txtUrFoto.getText(),
-                    Integer.parseInt(txtKm.getText()),
-                    Float.parseFloat(txtPrecioDia.getText()),
-                    opcionesCaja.getValue().equals("Automática"),
-                    Integer.parseInt(txtNumPuertas.getText())
-            );
+        if( opcionesMarca!= null && opcionesCaja!=null ) {
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("El vehículo se ha registrado correctamente");
-            alert.setHeaderText(null);
-            alert.show();
+            try {
+                alquilaFacil.registrarVehiculo(
+                        txtPlaca.getText(),
+                        txtReferencia.getText(),
+                        opcionesMarca.getValue(),
+                        Integer.parseInt(txtModelo.getText()),
+                        txtUrFoto.getText(),
+                        Integer.parseInt(txtKm.getText()),
+                        Float.parseFloat(txtPrecioDia.getText()),
+                        opcionesCaja.getValue().equals("Automática"),
+                        Integer.parseInt(txtNumPuertas.getText())
+                );
 
-        } catch (AtributoNegativoException e) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText("El vehículo se ha registrado correctamente");
+                alert.setHeaderText(null);
+                alert.show();
 
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(e.getMessage());
-            alert.setHeaderText(null);
-            alert.show();
+            } catch (AtributoNegativoException e) {
 
-        } catch (NumberFormatException e1){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText(e.getMessage());
+                alert.setHeaderText(null);
+                alert.show();
 
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("Tenga en cuenta que el número de puertas, modelo, precio por día y kilometraje deben ser números enteros");
-            alert.setHeaderText(null);
-            alert.show();
+            } catch (NumberFormatException e1) {
+
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Tenga en cuenta que el número de puertas, modelo, precio por día y kilometraje deben ser números enteros");
+                alert.setHeaderText(null);
+                alert.show();
+            }
+
         }
 
     }

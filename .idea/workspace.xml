@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b9349f1-df99-499f-9d8a-b72532adf634" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/alquiler/enums/Marca.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/alquiler/controller/RegistroAlquilerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/alquiler/controller/RegistroAlquilerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/alquiler/controller/RegistroVehiculoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/alquiler/controller/RegistroVehiculoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/alquiler/model/AlquilaFacil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/alquiler/model/AlquilaFacil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/alquiler/model/Vehiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/alquiler/model/Vehiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/registroVehiculo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/registroVehiculo.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +52,20 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AlquilaFacil">
+    <configuration name="AlquilaFacil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="co.edu.uniquindio.alquiler.model.AlquilaFacil" />
+      <module name="alquiler" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.edu.uniquindio.alquiler.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Prueba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="co.edu.uniquindio.alquiler.app.Prueba" />
       <module name="alquiler" />
@@ -67,6 +81,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AlquilaFacil" />
         <item itemvalue="Application.Prueba" />
       </list>
     </recent_temporary>
@@ -87,7 +102,8 @@
       <workItem from="1695848952810" duration="5352000" />
       <workItem from="1695856301732" duration="3000" />
       <workItem from="1695956258143" duration="275000" />
-      <workItem from="1696272048584" duration="6280000" />
+      <workItem from="1696272048584" duration="6298000" />
+      <workItem from="1696340410359" duration="4512000" />
     </task>
     <servers />
   </component>

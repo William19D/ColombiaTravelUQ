@@ -10,6 +10,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -183,12 +185,28 @@ public class AlquilaFacil {
 
     public List<Vehiculo> listarVehiculosAlquilados(LocalDate fecha){
         return alquileres.stream()
-                .filter(a -> a.getFechaInicio().equals(fecha))
+                .filter(a -> !fecha.isBefore(a.getFechaInicio()) && !fecha.isAfter(a.getFechaFin()) )
                 .map(a -> a.getVehiculo())
                 .distinct()
                 .toList();
     }
 
+    public Marca obtenerMarcaMasAlquilada() throws Exception{
 
+        if(!alquileres.isEmpty()) {
+
+            int[] acumulados = new int[Marca.values().length];
+
+            for (Alquiler a : alquileres) {
+                Vehiculo v = a.getVehiculo();
+                acumulados[v.getMarca().ordinal()] += 1;
+            }
+
+            List<Integer> lista = Arrays.stream(acumulados).boxed().toList();
+            return Marca.values()[lista.indexOf(Collections.max(lista))];
+        }
+
+        throw new Exception("Aún no hay alquileres registrados");
+    }
 
 }

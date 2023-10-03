@@ -20,3 +20,139 @@ oct. 02, 2023 4:43:36 P. M. co.edu.uniquindio.alquiler.model.AlquilaFacil regis
 INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 123, y la placa: ABC123
 oct. 02, 2023 4:43:51 P. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
 INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 123, y la placa: ABC123
+oct. 03, 2023 8:58:26 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil <init>
+INFORMACIÓN: Se crea una nueva instancia de AlquilaFacil
+oct. 03, 2023 8:58:45 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: ABC123
+oct. 03, 2023 8:58:55 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarCliente
+INFORMACIÓN: Se ha registrado un nuevo cliente con la cédula: 12345
+oct. 03, 2023 9:02:19 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil <init>
+INFORMACIÓN: Se crea una nueva instancia de AlquilaFacil
+oct. 03, 2023 9:03:06 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil <init>
+INFORMACIÓN: Se crea una nueva instancia de AlquilaFacil
+oct. 03, 2023 9:03:32 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: aaaa
+oct. 03, 2023 9:03:39 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarCliente
+INFORMACIÓN: Se ha registrado un nuevo cliente con la cédula: 12345
+oct. 03, 2023 9:04:00 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: 5555
+oct. 03, 2023 9:04:18 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: 8888
+oct. 03, 2023 9:04:33 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: aaaa
+oct. 03, 2023 9:04:43 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: 5555
+oct. 03, 2023 9:04:53 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: 5555
+oct. 03, 2023 10:00:39 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil <init>
+INFORMACIÓN: Se crea una nueva instancia de AlquilaFacil
+oct. 03, 2023 10:00:39 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: ABC
+oct. 03, 2023 10:00:39 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: AED
+oct. 03, 2023 10:00:39 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: CDF
+oct. 03, 2023 10:00:39 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarCliente
+INFORMACIÓN: Se ha registrado un nuevo cliente con la cédula: 12345
+oct. 03, 2023 10:00:39 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: CDF
+oct. 03, 2023 10:00:39 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: AED
+oct. 03, 2023 10:00:39 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: ABC
+oct. 03, 2023 10:01:11 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil <init>
+INFORMACIÓN: Se crea una nueva instancia de AlquilaFacil
+oct. 03, 2023 10:01:11 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: ABC
+oct. 03, 2023 10:01:11 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: AED
+oct. 03, 2023 10:01:11 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: CDF
+oct. 03, 2023 10:01:11 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarCliente
+INFORMACIÓN: Se ha registrado un nuevo cliente con la cédula: 12345
+oct. 03, 2023 10:01:11 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: CDF
+oct. 03, 2023 10:01:11 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: AED
+oct. 03, 2023 10:01:11 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: ABC
+oct. 03, 2023 10:03:13 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil <init>
+INFORMACIÓN: Se crea una nueva instancia de AlquilaFacil
+oct. 03, 2023 10:03:13 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: ABC
+oct. 03, 2023 10:03:13 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: AED
+oct. 03, 2023 10:03:13 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: CDF
+oct. 03, 2023 10:03:13 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarCliente
+INFORMACIÓN: Se ha registrado un nuevo cliente con la cédula: 12345
+oct. 03, 2023 10:03:13 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: CDF
+oct. 03, 2023 10:03:13 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: AED
+oct. 03, 2023 10:03:13 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: ABC
+oct. 03, 2023 10:03:53 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil <init>
+INFORMACIÓN: Se crea una nueva instancia de AlquilaFacil
+oct. 03, 2023 10:03:53 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: ABC
+oct. 03, 2023 10:03:53 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: AED
+oct. 03, 2023 10:03:53 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: CDF
+oct. 03, 2023 10:03:53 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarCliente
+INFORMACIÓN: Se ha registrado un nuevo cliente con la cédula: 12345
+oct. 03, 2023 10:03:53 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: CDF
+oct. 03, 2023 10:03:53 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: AED
+oct. 03, 2023 10:03:53 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: ABC
+oct. 03, 2023 10:04:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil <init>
+INFORMACIÓN: Se crea una nueva instancia de AlquilaFacil
+oct. 03, 2023 10:04:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: ABC
+oct. 03, 2023 10:04:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: AED
+oct. 03, 2023 10:04:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: CDF
+oct. 03, 2023 10:04:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarCliente
+INFORMACIÓN: Se ha registrado un nuevo cliente con la cédula: 12345
+oct. 03, 2023 10:04:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: CDF
+oct. 03, 2023 10:04:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: AED
+oct. 03, 2023 10:04:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: ABC
+oct. 03, 2023 10:06:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil <init>
+INFORMACIÓN: Se crea una nueva instancia de AlquilaFacil
+oct. 03, 2023 10:06:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: ABC
+oct. 03, 2023 10:06:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: AED
+oct. 03, 2023 10:06:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: CDF
+oct. 03, 2023 10:06:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarCliente
+INFORMACIÓN: Se ha registrado un nuevo cliente con la cédula: 12345
+oct. 03, 2023 10:06:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: CDF
+oct. 03, 2023 10:06:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: AED
+oct. 03, 2023 10:06:05 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: ABC
+oct. 03, 2023 10:06:19 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil <init>
+INFORMACIÓN: Se crea una nueva instancia de AlquilaFacil
+oct. 03, 2023 10:06:19 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: ABC
+oct. 03, 2023 10:06:19 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: AED
+oct. 03, 2023 10:06:19 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarVehiculo
+INFORMACIÓN: Se ha registrado un nuevo vehículo con la placa: CDF
+oct. 03, 2023 10:06:19 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarCliente
+INFORMACIÓN: Se ha registrado un nuevo cliente con la cédula: 12345
+oct. 03, 2023 10:06:19 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: CDF
+oct. 03, 2023 10:06:19 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: AED
+oct. 03, 2023 10:06:19 A. M. co.edu.uniquindio.alquiler.model.AlquilaFacil registrarAlquiler
+INFORMACIÓN: Se ha registrado un nuevo préstamo al cliente con la cédula: 12345, y la placa: ABC
