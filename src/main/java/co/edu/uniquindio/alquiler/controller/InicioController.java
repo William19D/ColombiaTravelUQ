@@ -23,6 +23,8 @@ public class InicioController implements Initializable {
     private Button btnInicioRegAlq;
     @FXML
     private Button btnCambiarIdioma;
+    @FXML
+    public Button btnClientes;
     private final Idiomas idiomas = Idiomas.getInstance();
 
     @Override
@@ -69,6 +71,15 @@ public class InicioController implements Initializable {
 
     }
 
+    public void mostrarClientes(){
+        try {
+            Node node = FXMLLoader.load(getClass().getResource("/ventanas/clientes.fxml"));
+            panelFormulario.getChildren().setAll(node);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public void cargarTextos(){
         String txtBtn1 = idiomas.getResourceBundle().getString("btnFormRegistroCliente");
         btnInicioRegCli.setText(txtBtn1);
@@ -79,8 +90,11 @@ public class InicioController implements Initializable {
         String txtBtn3 = idiomas.getResourceBundle().getString("btnFormRegistroAlquiler");
         btnInicioRegAlq.setText(txtBtn3);
 
-        String txtBtn4 = idiomas.getResourceBundle().getString("btnCambiarIdioma");
-        btnCambiarIdioma.setText(txtBtn4);
+        String txtBtn4 = idiomas.getResourceBundle().getString("btnClientes");
+        btnClientes.setText(txtBtn4);
+
+        String txtBtn5 = idiomas.getResourceBundle().getString("btnCambiarIdioma");
+        btnCambiarIdioma.setText(txtBtn5);
     }
 
 }
