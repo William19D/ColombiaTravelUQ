@@ -70,28 +70,23 @@ public class RegistroVehiculoController implements Initializable {
                         Integer.parseInt(txtNumPuertas.getText())
                 );
 
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setContentText("El vehículo se ha registrado correctamente");
-                alert.setHeaderText(null);
-                alert.show();
+                mostrarMensaje(Alert.AlertType.INFORMATION, "El vehículo se ha registrado correctamente");
 
             } catch (AtributoNegativoException e) {
-
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText(e.getMessage());
-                alert.setHeaderText(null);
-                alert.show();
-
+                mostrarMensaje(Alert.AlertType.ERROR, e.getMessage());
             } catch (NumberFormatException e1) {
-
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("Tenga en cuenta que el número de puertas, modelo, precio por día y kilometraje deben ser números enteros");
-                alert.setHeaderText(null);
-                alert.show();
+                mostrarMensaje(Alert.AlertType.ERROR, "Tenga en cuenta que el número de puertas, modelo, precio por día y kilometraje deben ser números enteros");
             }
 
         }
 
+    }
+
+    public void mostrarMensaje(Alert.AlertType tipo, String mensaje){
+        Alert alert = new Alert(tipo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.show();
     }
 
 

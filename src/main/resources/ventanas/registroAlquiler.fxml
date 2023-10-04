@@ -24,6 +24,6 @@
             </columns>
         </TableView>
 
-        <Button fx:id="btnRegistrar" layoutY="429.0" mnemonicParsing="false" onAction="#registrarAlquiler" text="Registrar Cliente" />
+        <Button fx:id="btnRegistrar" layoutY="429.0" mnemonicParsing="false" onAction="#registrarAlquiler" text="Registrar alquiler" />
     </children>
 </AnchorPane>

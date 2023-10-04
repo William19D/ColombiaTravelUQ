@@ -2,6 +2,7 @@ package co.edu.uniquindio.alquiler.model;
 
 import co.edu.uniquindio.alquiler.enums.Marca;
 import co.edu.uniquindio.alquiler.exceptions.*;
+import co.edu.uniquindio.alquiler.utils.ArchivoUtils;
 import lombok.Getter;
 import lombok.extern.java.Log;
 
@@ -31,19 +32,22 @@ public class AlquilaFacil {
     private static AlquilaFacil alquilaFacil;
 
     private AlquilaFacil(){
+        inicializarLogger();
+        log.info("Se crea una nueva instancia de AlquilaFacil" );
 
+        this.vehiculos = new ArrayList<>();
+        this.clientes = new ArrayList<>();
+        this.alquileres = new ArrayList<>();
+    }
+
+    private void inicializarLogger(){
         try {
             FileHandler fh = new FileHandler("logs.log", true);
             fh.setFormatter( new SimpleFormatter());
             log.addHandler(fh);
         }catch (IOException e){
-            log.log( Level.SEVERE, e.getMessage() );
+            log.severe(e.getMessage() );
         }
-
-        log.log( Level.INFO, "Se crea una nueva instancia de AlquilaFacil" );
-        this.vehiculos = new ArrayList<>();
-        this.clientes = new ArrayList<>();
-        this.alquileres = new ArrayList<>();
     }
 
     public static AlquilaFacil getInstance(){
@@ -54,15 +58,15 @@ public class AlquilaFacil {
         return alquilaFacil;
     }
 
-    public Cliente registrarCliente(String cedula, String nombreCompleto,String email,String direccion,String ciudad,String telefono) throws AtributoVacioException, InformacionRepetidaException{
+    public Cliente registrarCliente(String cedula, String nombreCompleto,String email,String direccion,String ciudad,String telefono) throws AtributoVacioException, InformacionRepetidaException {
 
         if(cedula == null || cedula.isBlank()){
-            log.log( Level.WARNING, "La cédula es obligatoria para el registro" );
+            log.warning("La cédula es obligatoria para el registro" );
             throw new AtributoVacioException("La cédula es obligatoria");
         }
 
         if( obtenerCliente(cedula) != null ){
-            log.log( Level.SEVERE, "La cédula "+cedula+" es obligatoria para el registro del cliente" );
+            log.severe("La cédula "+cedula+" ya está registrada" );
             throw new InformacionRepetidaException("La cédula "+cedula+" ya está registrada");
         }
 
@@ -78,8 +82,7 @@ public class AlquilaFacil {
                 .build();
 
         clientes.add(cliente);
-
-        log.log(Level.INFO, "Se ha registrado un nuevo cliente con la cédula: "+cedula);
+        log.info("Se ha registrado un nuevo cliente con la cédula: "+cedula);
 
         return cliente;
     }
@@ -89,7 +92,7 @@ public class AlquilaFacil {
         //Validar atributos
 
         if(kilometraje < 0){
-            log.log( Level.SEVERE, "El kilometraje no puede ser negativo" );
+            log.severe("El kilometraje no puede ser negativo" );
             throw new AtributoNegativoException("El kilometraje no puede ser negativo");
         }
 
@@ -106,8 +109,7 @@ public class AlquilaFacil {
                 .build();
 
         vehiculos.add(vehiculo);
-
-        log.log(Level.INFO, "Se ha registrado un nuevo vehículo con la placa: "+placa);
+        log.info("Se ha registrado un nuevo vehículo con la placa: "+placa);
 
         return vehiculo;
 
@@ -118,24 +120,24 @@ public class AlquilaFacil {
         Vehiculo vehiculo = obtenerVehiculo(placaVehiculo);
 
         if(vehiculo == null){
-            log.log( Level.SEVERE, "No existe un vehículo con la placa "+placaVehiculo);
+            log.severe("No existe un vehículo con la placa "+placaVehiculo);
             throw new ElementoNoEncontradoException("No existe un vehículo con la placa "+placaVehiculo);
         }
 
         Cliente cliente = obtenerCliente(cedulaCliente);
 
         if(cliente == null){
-            log.log( Level.SEVERE, "No existe un cliente con la cédula "+cedulaCliente);
+            log.severe("No existe un cliente con la cédula "+cedulaCliente);
             throw new ElementoNoEncontradoException("No existe un cliente con la cédula "+cedulaCliente);
         }
 
         if(fechaInicio.isAfter(fechaFin)){
-            log.log( Level.SEVERE, "La fecha de inicio no puede ser después de la fecha final");
+            log.severe("La fecha de inicio no puede ser después de la fecha final");
             throw new FechaInvalidaException("La fecha de inicio no puede ser después de la fecha final");
         }
 
         if( !estaDisponible(vehiculo, fechaInicio, fechaFin) ){
-            log.log( Level.SEVERE, "El vehículo elegido ("+placaVehiculo+") no está disponible en las fechas seleccionadas");
+            log.severe("El vehículo elegido ("+placaVehiculo+") no está disponible en las fechas seleccionadas");
             throw new FechaInvalidaException("El vehículo elegidono ("+placaVehiculo+") está disponible en las fechas seleccionadas");
         }
 
@@ -152,8 +154,7 @@ public class AlquilaFacil {
                 .build();
 
         alquileres.add(alquiler);
-
-        log.log(Level.INFO, "Se ha registrado un nuevo préstamo al cliente con la cédula: "+cedulaCliente+", y la placa: "+placaVehiculo);
+        log.info("Se ha registrado un nuevo préstamo al cliente con la cédula: "+cedulaCliente+", y la placa: "+placaVehiculo);
 
         return alquiler;
     }
@@ -206,7 +207,9 @@ public class AlquilaFacil {
             return Marca.values()[lista.indexOf(Collections.max(lista))];
         }
 
+        log.severe("Aún no hay alquileres registrados");
         throw new Exception("Aún no hay alquileres registrados");
     }
+
 
 }

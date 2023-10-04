@@ -45,21 +45,19 @@ public class RegistroClienteController {
                     txtCiudad.getText(),
                     txtTelefono.getText());
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setContentText("Se ha registrado correctamente el cliente "+cliente.getNombreCompleto());
-            alert.show();
+            mostrarMensaje(Alert.AlertType.INFORMATION, "Se ha registrado correctamente el cliente: "+cliente.getNombreCompleto());
 
         } catch (AtributoVacioException | InformacionRepetidaException e) {
-
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(e.getMessage());
-            alert.setHeaderText(null);
-            alert.show();
-
+            mostrarMensaje(Alert.AlertType.ERROR, e.getMessage());
         }
 
     }
 
+    public void mostrarMensaje(Alert.AlertType tipo, String mensaje){
+        Alert alert = new Alert(tipo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.show();
+    }
 
 }

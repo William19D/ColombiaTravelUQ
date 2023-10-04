@@ -69,21 +69,21 @@ public class RegistroAlquilerController  implements Initializable {
                         txtFechaInicio.getValue(),
                         txtFechaFin.getValue());
 
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setHeaderText(null);
-                alert.setContentText("Se ha registrado correctamente el préstamo, el valor a pagar es "+alquiler.getValorTotal());
-                alert.show();
+                mostrarMensaje(Alert.AlertType.INFORMATION, "Se ha registrado correctamente el préstamo, el valor a pagar es "+alquiler.getValorTotal());
 
             }catch (Exception e){
-
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setHeaderText(null);
-                alert.setContentText(e.getMessage());
-                alert.show();
+                mostrarMensaje(Alert.AlertType.ERROR, e.getMessage());
             }
 
         }
 
+    }
+
+    public void mostrarMensaje(Alert.AlertType tipo, String mensaje){
+        Alert alert = new Alert(tipo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.show();
     }
 
 }
