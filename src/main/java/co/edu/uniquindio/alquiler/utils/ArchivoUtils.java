@@ -31,7 +31,7 @@ public class ArchivoUtils {
      * @return Lista de String por cada línea del archivo
      * @throws IOException
      */
-    public static ArrayList<String> leerArchivo(String ruta) throws IOException{
+    public static ArrayList<String> leerArchivoScanner(String ruta) throws IOException{
 
         ArrayList<String> lista = new ArrayList<>();
         Scanner sc = new Scanner(new File(ruta));
@@ -51,7 +51,7 @@ public class ArchivoUtils {
      * @return Lista de String por cada línea del archivo
      * @throws IOException
      */
-    public static ArrayList<String> leerArchivo2(String ruta) throws IOException{
+    public static ArrayList<String> leerArchivoBufferedReader(String ruta) throws IOException{
 
         ArrayList<String> lista = new ArrayList<>();
         FileReader fr = new FileReader(ruta);
@@ -71,14 +71,13 @@ public class ArchivoUtils {
     /**
      * Escribe datos en un archivo de texo
      * @param ruta Ruta donde se va a crear el archivo
-     * @param formato Formato del texto
      * @param lista Datos que se escriben en el archivo
      * @throws IOException
      */
-    public static void escribirArchivo(String ruta, String formato, List<String[]> lista) throws IOException{
+    public static void escribirArchivoFormatter(String ruta, List<String> lista) throws IOException{
         Formatter ft = new Formatter(ruta);
-        for(String[] s : lista){
-            ft.format(formato, s);
+        for(String s : lista){
+            ft.format(s+"%n");
         }
         ft.close();
     }
@@ -90,7 +89,7 @@ public class ArchivoUtils {
      * @param concat True si se concatena los nuevos datos sin sobreescibir todo el archivo
      * @throws IOException
      */
-    public static void escribirArchivo(String ruta, ArrayList<String> lista, boolean concat) throws IOException{
+    public static void escribirArchivoBufferedWriter(String ruta, List<String> lista, boolean concat) throws IOException{
 
         FileWriter fw = new FileWriter(ruta, concat);
         BufferedWriter bw = new BufferedWriter(fw);
@@ -110,8 +109,8 @@ public class ArchivoUtils {
      * @param objeto Objeto a serializar
      * @throws IOException
      */
-    public static void serializarObjeto(String ruta, Object objeto, boolean concat) throws IOException{
-        ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(ruta, concat));
+    public static void serializarObjeto(String ruta, Object objeto) throws IOException{
+        ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(ruta));
         os.writeObject(objeto);
         os.close();
     }

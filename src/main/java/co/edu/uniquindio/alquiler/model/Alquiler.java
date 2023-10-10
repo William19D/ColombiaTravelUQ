@@ -2,6 +2,8 @@ package co.edu.uniquindio.alquiler.model;
 
 import lombok.*;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -10,7 +12,11 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Alquiler {
+@ToString
+public class Alquiler implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 42L;
 
     private Cliente cliente;
     private Vehiculo vehiculo;

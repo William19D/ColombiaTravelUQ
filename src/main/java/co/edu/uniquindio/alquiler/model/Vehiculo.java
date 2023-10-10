@@ -3,13 +3,15 @@ package co.edu.uniquindio.alquiler.model;
 import co.edu.uniquindio.alquiler.enums.Marca;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Vehiculo {
+public class Vehiculo implements Serializable {
 
     @EqualsAndHashCode.Include
     private String placa;
