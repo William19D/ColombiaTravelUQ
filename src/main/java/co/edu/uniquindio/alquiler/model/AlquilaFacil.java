@@ -20,12 +20,9 @@ import java.util.logging.SimpleFormatter;
 @Log
 public class AlquilaFacil {
 
-    private ArrayList<Vehiculo> vehiculos;
-
-    private ArrayList<Cliente> clientes;
-
+    private final ArrayList<Vehiculo> vehiculos;
+    private final ArrayList<Cliente> clientes;
     private ArrayList<Alquiler> alquileres;
-
     private static AlquilaFacil alquilaFacil;
 
     private static final String RUTA_CLIENTES = "src/main/resources/persistencia/clientes.txt";
@@ -44,69 +41,6 @@ public class AlquilaFacil {
 
         this.alquileres = new ArrayList<>();
         leerAlquileres();
-    }
-
-    private void leerVehiculos() {
-        try{
-
-            ArrayList<String> lineas = ArchivoUtils.leerArchivoScanner(RUTA_VEHICULOS);
-
-            for(String linea : lineas){
-
-                String[] valores = linea.split(";");
-                this.vehiculos.add( Vehiculo.builder()
-                        .placa(valores[0])
-                        .referencia(valores[1])
-                        .marca(Marca.valueOf(valores[2]))
-                        .modelo(Integer.parseInt(valores[3]))
-                        .foto(valores[4])
-                        .kilometraje(Integer.parseInt(valores[5]))
-                        .precioDia(Float.parseFloat(valores[6]))
-                        .esAutomatico(Boolean.parseBoolean(valores[7]))
-                        .numPuertas(Integer.parseInt(valores[8])).build() );
-            }
-
-        }catch (IOException e){
-            log.severe(e.getMessage());
-        }
-    }
-
-    private void leerClientes() {
-
-        try{
-
-            ArrayList<String> lineas = ArchivoUtils.leerArchivoScanner(RUTA_CLIENTES);
-
-            for(String linea : lineas){
-
-                String[] valores = linea.split(";");
-                this.clientes.add( Cliente.builder()
-                        .cedula(valores[0])
-                        .nombreCompleto(valores[1])
-                        .email(valores[2])
-                        .telefono(valores[3])
-                        .ciudad(valores[4])
-                        .direccion(valores[5]).build() );
-            }
-
-        }catch (IOException e){
-            log.severe(e.getMessage());
-        }
-
-    }
-
-    private void leerAlquileres(){
-
-        try {
-            ArrayList<Alquiler> lista = (ArrayList<Alquiler>) ArchivoUtils.deserializarObjeto(RUTA_ALQUILERES);
-            if(lista != null){
-                this.alquileres = lista;
-            }
-            System.out.println(alquileres);
-        } catch (IOException | ClassNotFoundException e) {
-            log.severe(e.getMessage());
-        }
-
     }
 
     private void inicializarLogger(){
@@ -130,13 +64,19 @@ public class AlquilaFacil {
     public Cliente registrarCliente(String cedula, String nombreCompleto,String email,String direccion,String ciudad,String telefono) throws AtributoVacioException, InformacionRepetidaException {
 
         if(cedula == null || cedula.isBlank()){
-            log.warning("La cédula es obligatoria para el registro" );
             throw new AtributoVacioException("La cédula es obligatoria");
         }
 
         if( obtenerCliente(cedula) != null ){
-            log.severe("La cédula "+cedula+" ya está registrada" );
             throw new InformacionRepetidaException("La cédula "+cedula+" ya está registrada");
+        }
+
+        if(nombreCompleto == null || nombreCompleto.isBlank()){
+            throw new AtributoVacioException("El nombre es obligatorio");
+        }
+
+        if(email == null || email.isBlank()){
+            throw new AtributoVacioException("El email es obligatorio");
         }
 
         //Demás validaciones
@@ -151,26 +91,27 @@ public class AlquilaFacil {
                 .build();
 
         clientes.add(cliente);
-
-        try {
-            String linea = cliente.getCedula()+";"+cliente.getNombreCompleto()+";"+cliente.getEmail()+";"+cliente.getTelefono()+";"+cliente.getCiudad()+";"+cliente.getDireccion();
-            ArchivoUtils.escribirArchivoBufferedWriter(RUTA_CLIENTES, List.of(linea), true);
-        }catch (IOException e){
-            log.severe(e.getMessage());
-        }
+        escribirCliente(cliente);
 
         log.info("Se ha registrado un nuevo cliente con la cédula: "+cedula);
         return cliente;
     }
 
-    public Vehiculo registrarVehiculo(String placa, String referencia, Marca marca, int modelo, String foto, int kilometraje, float precioDia, boolean esAutomatico, int numPuertas) throws AtributoNegativoException{
+    public Vehiculo registrarVehiculo(String placa, String referencia, Marca marca, int modelo, String foto, int kilometraje, float precioDia, boolean esAutomatico, int numPuertas) throws AtributoNegativoException, AtributoVacioException{
 
-        //Validar atributos
+        if(placa == null || placa.isBlank()){
+            throw new AtributoVacioException("La placa del vehículo es obligatoria");
+        }
+
+        if(referencia == null || referencia.isBlank()){
+            throw new AtributoVacioException("La referencia del vehículo es obligatoria");
+        }
 
         if(kilometraje < 0){
-            log.severe("El kilometraje no puede ser negativo" );
             throw new AtributoNegativoException("El kilometraje no puede ser negativo");
         }
+
+        //Demás validaciones
 
         Vehiculo vehiculo = Vehiculo.builder()
                 .placa(placa)
@@ -185,13 +126,7 @@ public class AlquilaFacil {
                 .build();
 
         vehiculos.add(vehiculo);
-
-        try {
-            String linea = vehiculo.getPlaca()+";"+vehiculo.getReferencia()+";"+vehiculo.getMarca()+";"+vehiculo.getModelo()+";"+vehiculo.getFoto()+";"+vehiculo.getKilometraje()+";"+vehiculo.getPrecioDia()+";"+vehiculo.isEsAutomatico()+";"+vehiculo.getNumPuertas();
-            ArchivoUtils.escribirArchivoBufferedWriter(RUTA_VEHICULOS, List.of(linea), true);
-        }catch (IOException e){
-            log.severe(e.getMessage());
-        }
+        escribirVehiculo(vehiculo);
 
         log.info("Se ha registrado un nuevo vehículo con la placa: "+placa);
         return vehiculo;
@@ -199,6 +134,22 @@ public class AlquilaFacil {
     }
 
     public Alquiler registrarAlquiler(String cedulaCliente,String placaVehiculo,LocalDate fechaInicio,LocalDate fechaFin) throws Exception{
+
+        if(cedulaCliente == null || cedulaCliente.isBlank()){
+            throw new AtributoVacioException("La cédula del cliente es obligatoria");
+        }
+
+        if(placaVehiculo == null || placaVehiculo.isBlank()){
+            throw new AtributoVacioException("La placa del vehículo es obligatoria");
+        }
+
+        if(fechaInicio == null){
+            throw new AtributoVacioException("Debe elegir una fecha de inicio del alquiler");
+        }
+
+        if(fechaFin == null){
+            throw new AtributoVacioException("Debe elegir una fecha de fin del alquiler");
+        }
 
         Vehiculo vehiculo = obtenerVehiculo(placaVehiculo);
 
@@ -237,15 +188,9 @@ public class AlquilaFacil {
                 .build();
 
         alquileres.add(alquiler);
+        escribirAlquileres();
 
-        try{
-            ArchivoUtils.serializarObjeto(RUTA_ALQUILERES, alquileres);
-        }catch (Exception e){
-            log.severe(e.getMessage());
-        }
-
-        log.info("Se ha registrado un nuevo préstamo al cliente con la cédula: "+cedulaCliente+", y la placa: "+placaVehiculo);
-
+        log.info("Se ha registrado un nuevo alquiler al cliente con la cédula: "+cedulaCliente+", y la placa: "+placaVehiculo);
         return alquiler;
     }
 
@@ -301,5 +246,92 @@ public class AlquilaFacil {
         throw new Exception("Aún no hay alquileres registrados");
     }
 
+    private void escribirVehiculo(Vehiculo vehiculo){
+        try {
+            String linea = vehiculo.getPlaca()+";"+vehiculo.getReferencia()+";"+vehiculo.getMarca()+";"+vehiculo.getModelo()+";"+vehiculo.getFoto()+";"+vehiculo.getKilometraje()+";"+vehiculo.getPrecioDia()+";"+vehiculo.isEsAutomatico()+";"+vehiculo.getNumPuertas();
+            ArchivoUtils.escribirArchivoBufferedWriter(RUTA_VEHICULOS, List.of(linea), true);
+        }catch (IOException e){
+            log.severe(e.getMessage());
+        }
+    }
+
+    private void leerVehiculos() {
+        try{
+
+            ArrayList<String> lineas = ArchivoUtils.leerArchivoScanner(RUTA_VEHICULOS);
+
+            for(String linea : lineas){
+
+                String[] valores = linea.split(";");
+                this.vehiculos.add( Vehiculo.builder()
+                        .placa(valores[0])
+                        .referencia(valores[1])
+                        .marca(Marca.valueOf(valores[2]))
+                        .modelo(Integer.parseInt(valores[3]))
+                        .foto(valores[4])
+                        .kilometraje(Integer.parseInt(valores[5]))
+                        .precioDia(Float.parseFloat(valores[6]))
+                        .esAutomatico(Boolean.parseBoolean(valores[7]))
+                        .numPuertas(Integer.parseInt(valores[8])).build() );
+            }
+
+        }catch (IOException e){
+            log.severe(e.getMessage());
+        }
+    }
+
+    private void escribirCliente(Cliente cliente){
+        try {
+            String linea = cliente.getCedula()+";"+cliente.getNombreCompleto()+";"+cliente.getEmail()+";"+cliente.getTelefono()+";"+cliente.getCiudad()+";"+cliente.getDireccion();
+            ArchivoUtils.escribirArchivoBufferedWriter(RUTA_CLIENTES, List.of(linea), true);
+        }catch (IOException e){
+            log.severe(e.getMessage());
+        }
+    }
+
+    private void leerClientes() {
+
+        try{
+
+            ArrayList<String> lineas = ArchivoUtils.leerArchivoScanner(RUTA_CLIENTES);
+
+            for(String linea : lineas){
+
+                String[] valores = linea.split(";");
+                this.clientes.add( Cliente.builder()
+                        .cedula(valores[0])
+                        .nombreCompleto(valores[1])
+                        .email(valores[2])
+                        .telefono(valores[3])
+                        .ciudad(valores[4])
+                        .direccion(valores[5]).build() );
+            }
+
+        }catch (IOException e){
+            log.severe(e.getMessage());
+        }
+
+    }
+
+    private void escribirAlquileres(){
+        try{
+            ArchivoUtils.serializarObjeto(RUTA_ALQUILERES, alquileres);
+        }catch (Exception e){
+            log.severe(e.getMessage());
+        }
+    }
+
+    private void leerAlquileres(){
+
+        try {
+            ArrayList<Alquiler> lista = (ArrayList<Alquiler>) ArchivoUtils.deserializarObjeto(RUTA_ALQUILERES);
+            if(lista != null){
+                this.alquileres = lista;
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            log.severe(e.getMessage());
+        }
+
+    }
 
 }

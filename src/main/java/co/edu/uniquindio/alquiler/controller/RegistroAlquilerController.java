@@ -3,6 +3,8 @@ package co.edu.uniquindio.alquiler.controller;
 import co.edu.uniquindio.alquiler.model.AlquilaFacil;
 import co.edu.uniquindio.alquiler.model.Alquiler;
 import co.edu.uniquindio.alquiler.model.Vehiculo;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -27,10 +29,10 @@ public class RegistroAlquilerController  implements Initializable {
     private TableColumn<Vehiculo, String> colMarca;
 
     @FXML
-    private TableColumn<Vehiculo, Integer> colModelo;
+    private TableColumn<Vehiculo, String> colModelo;
 
     @FXML
-    private TableColumn<Vehiculo, Float> colPrecio;
+    private TableColumn<Vehiculo, String> colPrecio;
 
     @FXML
     private TextField txtCedula;
@@ -46,11 +48,11 @@ public class RegistroAlquilerController  implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        colPlaca.setCellValueFactory(new PropertyValueFactory<>("placa"));
-        colReferencia.setCellValueFactory(new PropertyValueFactory<>("referencia"));
-        colMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
-        colModelo.setCellValueFactory(new PropertyValueFactory<>("modelo"));
-        colPrecio.setCellValueFactory(new PropertyValueFactory<>("precioDia"));
+        colPlaca.setCellValueFactory( cellData -> new SimpleStringProperty( cellData.getValue().getPlaca()) );
+        colReferencia.setCellValueFactory( cellData -> new SimpleStringProperty( cellData.getValue().getReferencia()) );
+        colMarca.setCellValueFactory( cellData -> new SimpleStringProperty( String.valueOf(cellData.getValue().getMarca()) ) );
+        colModelo.setCellValueFactory( cellData -> new SimpleStringProperty( String.valueOf(cellData.getValue().getModelo()) ) );
+        colPrecio.setCellValueFactory( cellData -> new SimpleStringProperty( String.valueOf(cellData.getValue().getPrecioDia()) ) );
 
         listaVehiculos.setItems(FXCollections.observableArrayList( alquilaFacil.getVehiculos() ));
     }
@@ -75,6 +77,8 @@ public class RegistroAlquilerController  implements Initializable {
                 mostrarMensaje(Alert.AlertType.ERROR, e.getMessage());
             }
 
+        }else{
+            mostrarMensaje(Alert.AlertType.ERROR, "Debe seleccionar el vehículo de la tabla");
         }
 
     }

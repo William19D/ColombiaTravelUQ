@@ -2,6 +2,7 @@ package co.edu.uniquindio.alquiler.controller;
 
 import co.edu.uniquindio.alquiler.enums.Marca;
 import co.edu.uniquindio.alquiler.exceptions.AtributoNegativoException;
+import co.edu.uniquindio.alquiler.exceptions.AtributoVacioException;
 import co.edu.uniquindio.alquiler.model.AlquilaFacil;
 import co.edu.uniquindio.alquiler.model.Vehiculo;
 import javafx.collections.FXCollections;
@@ -58,7 +59,7 @@ public class RegistroVehiculoController implements Initializable {
         if( opcionesMarca!= null && opcionesCaja!=null ) {
 
             try {
-                alquilaFacil.registrarVehiculo(
+                Vehiculo vehiculo = alquilaFacil.registrarVehiculo(
                         txtPlaca.getText(),
                         txtReferencia.getText(),
                         opcionesMarca.getValue(),
@@ -70,9 +71,9 @@ public class RegistroVehiculoController implements Initializable {
                         Integer.parseInt(txtNumPuertas.getText())
                 );
 
-                mostrarMensaje(Alert.AlertType.INFORMATION, "El vehículo se ha registrado correctamente");
+                mostrarMensaje(Alert.AlertType.INFORMATION, "El vehículo con placa "+vehiculo.getPlaca()+" se ha registrado correctamente");
 
-            } catch (AtributoNegativoException e) {
+            } catch (AtributoNegativoException | AtributoVacioException e) {
                 mostrarMensaje(Alert.AlertType.ERROR, e.getMessage());
             } catch (NumberFormatException e1) {
                 mostrarMensaje(Alert.AlertType.ERROR, "Tenga en cuenta que el número de puertas, modelo, precio por día y kilometraje deben ser números enteros");

@@ -1,6 +1,8 @@
 package co.edu.uniquindio.alquiler.utils;
 
 import lombok.Getter;
+import lombok.extern.java.Log;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -8,6 +10,7 @@ import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
+@Log
 public class Idiomas {
 
     @Getter
@@ -40,7 +43,7 @@ public class Idiomas {
             return props.getProperty("idioma");
 
         }catch(IOException e){
-            e.printStackTrace();
+            log.severe(e.getMessage());
         }
 
         return null;
@@ -59,7 +62,7 @@ public class Idiomas {
             fos.close();
 
         }catch(IOException e){
-            e.printStackTrace();
+            log.severe(e.getMessage());
         }
     }
 

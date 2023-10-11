@@ -7,10 +7,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import lombok.extern.java.Log;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+@Log
 public class InicioController implements Initializable {
 
     @FXML
@@ -38,7 +40,7 @@ public class InicioController implements Initializable {
             Node node = FXMLLoader.load(getClass().getResource("/ventanas/registroCliente.fxml"));
             panelFormulario.getChildren().setAll(node);
         }catch (Exception e){
-            e.printStackTrace();
+            log.severe(e.getMessage());
         }
     }
 
@@ -47,7 +49,7 @@ public class InicioController implements Initializable {
             Node node = FXMLLoader.load(getClass().getResource("/ventanas/registroVehiculo.fxml"));
             panelFormulario.getChildren().setAll(node);
         }catch (Exception e){
-            e.printStackTrace();
+            log.severe(e.getMessage());
         }
     }
 
@@ -56,7 +58,16 @@ public class InicioController implements Initializable {
             Node node = FXMLLoader.load(getClass().getResource("/ventanas/registroAlquiler.fxml"));
             panelFormulario.getChildren().setAll(node);
         }catch (Exception e){
-            e.printStackTrace();
+            log.severe(e.getMessage());
+        }
+    }
+
+    public void mostrarClientes(){
+        try {
+            Node node = FXMLLoader.load(getClass().getResource("/ventanas/clientes.fxml"));
+            panelFormulario.getChildren().setAll(node);
+        }catch (Exception e){
+            log.severe(e.getMessage());
         }
     }
 
@@ -71,14 +82,6 @@ public class InicioController implements Initializable {
 
     }
 
-    public void mostrarClientes(){
-        try {
-            Node node = FXMLLoader.load(getClass().getResource("/ventanas/clientes.fxml"));
-            panelFormulario.getChildren().setAll(node);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
 
     public void cargarTextos(){
         String txtBtn1 = idiomas.getResourceBundle().getString("btnFormRegistroCliente");
