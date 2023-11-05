@@ -6,12 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AlquilaFacilApp extends Application {
+public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
 
-        FXMLLoader loader = new FXMLLoader(AlquilaFacilApp.class.getResource("/ventanas/inicio.fxml"));
+        FXMLLoader loader = new FXMLLoader(App.class.getResource("/ventanas/inicio.fxml"));
         Parent parent = loader.load();
 
         Scene scene = new Scene(parent);
@@ -23,7 +23,7 @@ public class AlquilaFacilApp extends Application {
     }
 
     public static void main(String[] args) {
-        launch(AlquilaFacilApp.class, args);
+        launch(App.class, args);
     }
 
 }
