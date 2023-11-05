@@ -11,7 +11,7 @@ import javafx.scene.shape.Rectangle;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MatrizController implements Initializable {
+public class ControllerInicio implements Initializable {
 
     @FXML
     private Pane panel;

@@ -16,7 +16,7 @@ public class App extends Application {
 
         Scene scene = new Scene(parent);
         stage.setScene(scene);
-        stage.setTitle("Alquiler App");
+        stage.setTitle("ColombiaTravel App");
         stage.show();
 
 

@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>co.edu.uniquindio</groupId>
-    <artifactId>alquiler</artifactId>
+    <artifactId>ColombiaTravel</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
