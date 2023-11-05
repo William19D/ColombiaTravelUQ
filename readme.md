@@ -1,6 +1,6 @@
-## AlquilaFácil
+## ColombiaTravel
 
-Software para una empresa de alquiler de vehículos donde se gestiona la información de sus clientes, vehículos y alquileres. Se pueden realizar consultas de los clientes, vehículos y alquileres registrados, así como también se pueden realizar alquileres.
+Software para una agencia de viajes que permite administrar la información sobre destinos, paquetes turísticos, clientes, reservas y guías turísticos. Código fuente del proyecto final del espacio académico Programación III.
 
 ### Tecnologías utilizadas
 - Java 17
