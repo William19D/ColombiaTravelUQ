@@ -4,22 +4,55 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.VentanaRegistroCliente">
    <children>
-      <Label layoutX="525.0" layoutY="139.0" text="Nombre:" />
-      <Label layoutX="525.0" layoutY="184.0" text="Cedula:" />
-      <Label layoutX="521.0" layoutY="235.0" text="Telefono:" />
-      <Label layoutX="526.0" layoutY="288.0" text="Correo:" />
-      <Label layoutX="522.0" layoutY="337.0" text="Direccion:" />
-      <TextField fx:id="txtNombre" layoutX="654.0" layoutY="135.0" promptText="Ingrese su nombre" />
-      <TextField fx:id="txtCedula" layoutX="654.0" layoutY="180.0" promptText="Ingrese su cedula" />
-      <TextField fx:id="txtTelefono" layoutX="654.0" layoutY="231.0" promptText="Ingrese su telefono" />
-      <TextField fx:id="txtDireccion" layoutX="654.0" layoutY="333.0" promptText="Ingrese su direccion" />
-      <TextField fx:id="txtCorreo" layoutX="654.0" layoutY="284.0" promptText="ingrese su correo" />
-      <Button fx:id="btnCancelar" layoutX="519.0" layoutY="434.0" mnemonicParsing="false" onAction="#cancelarEvent" text="Cancelar" />
-      <Button fx:id="btnRegistrarCliente" layoutX="680.0" layoutY="434.0" mnemonicParsing="false" onAction="#registrarClienteEvent" text="Registrar" />
-      <Label layoutX="598.0" layoutY="75.0" text="Registro cliente" />
+      <Label layoutX="516.0" layoutY="152.0" text="Nombre:">
+         <font>
+            <Font name="Nirmala UI" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="516.0" layoutY="210.0" text="Cedula:">
+         <font>
+            <Font name="Nirmala UI" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="513.0" layoutY="269.0" text="Telefono:">
+         <font>
+            <Font name="Nirmala UI" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="521.0" layoutY="333.0" text="Correo:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="512.0" layoutY="392.0" text="Direccion:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNombre" layoutX="639.0" layoutY="153.0" promptText="Ingrese su nombre" />
+      <TextField fx:id="txtCedula" layoutX="639.0" layoutY="211.0" promptText="Ingrese su cedula" />
+      <TextField fx:id="txtTelefono" layoutX="639.0" layoutY="270.0" promptText="Ingrese su telefono" />
+      <TextField fx:id="txtDireccion" layoutX="639.0" layoutY="393.0" promptText="Ingrese su direccion" />
+      <TextField fx:id="txtCorreo" layoutX="639.0" layoutY="334.0" promptText="ingrese su correo" />
+      <Button fx:id="btnCancelar" layoutX="508.0" layoutY="500.0" mnemonicParsing="false" onAction="#cancelarEvent" text="Cancelar">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnRegistrarCliente" layoutX="687.0" layoutY="500.0" mnemonicParsing="false" onAction="#registrarClienteEvent" text="Registrar">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="567.0" layoutY="65.0" text="Registro cliente">
+         <font>
+            <Font name="Nirmala UI Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
