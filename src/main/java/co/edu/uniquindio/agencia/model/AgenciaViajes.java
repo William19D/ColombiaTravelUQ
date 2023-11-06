@@ -237,10 +237,11 @@ public class AgenciaViajes {
             ArchivoUtils.serializarObjeto(RUTADESTINOS, destinos);
         }catch (Exception e){
             log.severe(e.getMessage());
+            throw new RutaInvalidaException("A ocurrido un error al momento de escribir los destinos");
         }
     }
-    // Metodo que lee los paquetes turisticos
-    private void leerDestinos(){
+
+    private void leerDestinos() throws RutaInvalidaException{
 
         try {
             ArrayList<Destino> lista = (ArrayList<Destino>) ArchivoUtils.deserializarObjeto(RUTADESTINOS);
@@ -319,6 +320,16 @@ public class AgenciaViajes {
         log.info("Se ha registrado un nuevo guia con la identificacion: "+identificacion);
         return guia;
     }
+    public void eliminarGuia(String identificacion) throws ElementoNoEncontradoException{
+        GuiaTuristico guiaAEliminar = null;
+        guiaAEliminar = obtenerGuia(identificacion);
+        if (guiaAEliminar != null) {
+            clientes.remove(guiaAEliminar);
+            log.info("se ha eliminado el guia con la identificacion  "+ identificacion);
+        } else {
+            throw new ElementoNoEncontradoException("No se encontró un guia con la identificacion proporcionada.");
+        }
+    }
 
     public GuiaTuristico obtenerGuia(String identificacion){
         return guias.stream().filter(c -> c.getIdentificacion().equals(identificacion)).findFirst().orElse(null);
@@ -326,17 +337,18 @@ public class AgenciaViajes {
 
     //Metodo que escribe los Guias Turisticos
 
-    private void escribirGuias(GuiasTuristicos guias){
+    private void escribirGuias(GuiaTuristico guias) throws RutaInvalidaException{
         try {
             String linea = guias.getNombre()+";"+guias.getIdentificacion()+";"+guias.getIdiomas()+";"+guias.getExp();
             ArchivoUtils.escribirArchivoBufferedWriter(RUTAGUIAS, List.of(linea), true);
         }catch (IOException e){
             log.severe(e.getMessage());
+            throw new RutaInvalidaException("A ocurrido un error al momento de escribir los destinos");
         }
     }
 
     //Metodo que lee los guias Turisticos
-    private void leerGuias() {
+    private void leerGuias() throws RutaInvalidaException{
 
         try{
 
@@ -356,6 +368,7 @@ public class AgenciaViajes {
 
         }catch (IOException e){
             log.severe(e.getMessage());
+            throw new RutaInvalidaException("A ocurrido un error al momento de leer las reservas");
         }
 
     }
@@ -406,6 +419,19 @@ public class AgenciaViajes {
         log.info("Se ha registrado un nuevo paquete con el nombre: "+nombre);
         return paquete;
     }
+
+    public void eliminarPaquete(String nombre) throws ElementoNoEncontradoException {
+        PaquetesTuristicos paqueteAEliminar = null;
+        paqueteAEliminar = obtenerPaquete(nombre);
+        if (paqueteAEliminar != null) {
+            paquetes.remove(paqueteAEliminar);
+            log.info("se ha eliminado el paquete con el nombre  "+ nombre);
+        } else {
+            throw new ElementoNoEncontradoException("No se encontró un paquete con el nombre proporcionada.");
+        }
+    }
+
+
     public PaquetesTuristicos obtenerPaquete(String nombre){
         return paquetes.stream().filter(c -> c.getNombre().equals(nombre)).findFirst().orElse(null);
     }
