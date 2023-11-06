@@ -1,4 +1,4 @@
-package co.edu.uniquindio.alquiler.app;
+package co.edu.uniquindio.agencia.app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

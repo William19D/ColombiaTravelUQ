@@ -1,4 +1,4 @@
-package co.edu.uniquindio.alquiler.exceptions;
+package co.edu.uniquindio.agencia.exceptions;
 
 public class AtributoNegativoException extends Exception{
 

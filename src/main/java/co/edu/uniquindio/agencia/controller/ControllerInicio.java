@@ -1,7 +1,7 @@
-package co.edu.uniquindio.alquiler.controller;
+package co.edu.uniquindio.agencia.controller;
 
-import co.edu.uniquindio.alquiler.model.MatrizHilo1;
-import co.edu.uniquindio.alquiler.model.MatrizHilo2;
+import co.edu.uniquindio.agencia.model.MatrizHilo1;
+import co.edu.uniquindio.agencia.model.MatrizHilo2;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.Pane;

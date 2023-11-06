@@ -1,4 +1,4 @@
-package co.edu.uniquindio.alquiler.model;
+package co.edu.uniquindio.agencia.model;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;

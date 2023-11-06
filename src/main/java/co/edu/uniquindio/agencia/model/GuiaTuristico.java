@@ -1,4 +1,4 @@
-package co.edu.uniquindio.alquiler.model;
+package co.edu.uniquindio.agencia.model;
 
 import lombok.*;
 
@@ -9,11 +9,12 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class GuiasTuristicos {
+public class GuiaTuristico {
 
     private String nombre;
     private String identificacion;
     private Idiomas idiomas;
     private String exp;
-
+    private double calificacion;
+    private String comentarios;
 }

@@ -1,4 +1,4 @@
-package co.edu.uniquindio.alquiler.model;
+package co.edu.uniquindio.agencia.model;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;

@@ -1,7 +1,6 @@
-package co.edu.uniquindio.alquiler.model;
+package co.edu.uniquindio.agencia.model;
 
 import lombok.*;
-import java.util.ArrayList;
 
 @Getter
 @Setter

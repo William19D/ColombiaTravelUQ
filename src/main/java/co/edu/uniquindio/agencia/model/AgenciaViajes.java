@@ -1,7 +1,9 @@
-package co.edu.uniquindio.alquiler.model;
+package co.edu.uniquindio.agencia.model;
 
-import co.edu.uniquindio.alquiler.exceptions.AtributoVacioException;
-import co.edu.uniquindio.alquiler.exceptions.InformacionRepetidaException;
+import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
+import co.edu.uniquindio.agencia.exceptions.ElementoNoEncontradoException;
+import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
+import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
 import javafx.stage.FileChooser;
 import lombok.*;
 import lombok.extern.java.Log;
@@ -24,13 +26,16 @@ public class AgenciaViajes {
     public static String RUTAGUIAS= null;
     public static String RUTADESTINOS= null;
     public static String RUTAPAQUETES= null;
+    public static String RUTARESERVAS= null;
 
-    private static ArrayList<GuiasTuristicos> guias;
+    private static ArrayList<GuiaTuristico> guias;
     private static ArrayList<PaquetesTuristicos> paquetes;
     private static ArrayList<Cliente> clientes;
     private static ArrayList<Destino> destinos;
+    private static ArrayList<Reserva> reservas;
+    private static ArrayList<Administrador> administradores;
 
-    private AgenciaViajes(){
+    private AgenciaViajes() throws RutaInvalidaException {
         inicializarLogger();
         log.info("Se crea una nueva instancia de Colombia Travel" );
         try {
@@ -41,9 +46,17 @@ public class AgenciaViajes {
             RUTAGUIAS = prop.getProperty("rutaGuias");
             RUTADESTINOS = prop.getProperty("rutaDestinos");
             RUTAPAQUETES = prop.getProperty("rutaPaquetes");
+            RUTARESERVAS = prop.getProperty("rutaReservas");
         } catch (IOException e) {
             log.severe("Ocurrio un error al momento de cargar las propiedades");
         }
+
+        administradores = new ArrayList<>();
+        administradores.add(new Administrador("Daniel", "123"));
+        administradores.add(new Administrador("Camila", "123"));
+        administradores.add(new Administrador("Juan Pablo", "123"));
+        administradores.add(new Administrador("caflorezvi", "123"));
+
         clientes = new ArrayList<>();
         leerClientes();
 
@@ -56,6 +69,9 @@ public class AgenciaViajes {
         destinos = new ArrayList<>();
         leerDestinos();
 
+        reservas = new ArrayList<>();
+        leerReserva();
+
     }
     private void inicializarLogger(){
         try {
@@ -67,7 +83,7 @@ public class AgenciaViajes {
         }
     }
 
-    public static AgenciaViajes getInstance(){
+    public static AgenciaViajes getInstance() throws RutaInvalidaException {
         if(agenciaViajes == null){
             agenciaViajes = new AgenciaViajes();
         }
@@ -109,6 +125,19 @@ public class AgenciaViajes {
         log.info("Se ha registrado un nuevo cliente con la cédula: "+cedula);
         return cliente;
     }
+
+// Metodo que elimina un cliente
+    public void eliminarCliente(String cedula) throws ElementoNoEncontradoException{
+        Cliente clienteAEliminar = null;
+        clienteAEliminar = obtenerCliente(cedula);
+        if (clienteAEliminar != null) {
+            clientes.remove(clienteAEliminar);
+            log.info("se ha eliminado el cliente con la cedula "+ cedula);
+        } else {
+            throw new ElementoNoEncontradoException("No se encontró un cliente con la cedula proporcionado.");
+        }
+    }
+
     private void escribirCliente(Cliente cliente){
         try {
             String linea = cliente.getCedula()+";"+cliente.getNombre()+";"+cliente.getCedula()+";"+cliente.getCorreo()+";"+cliente.getTelefono()+";"+cliente.getDireccion()+";"+cliente.getContrasenia();
@@ -155,7 +184,7 @@ public class AgenciaViajes {
         return existe;
     }
     //DESTINOS
-    public Destino registrarDestino(String nombre, String descripcion, FileChooser fileChooser, Clima clima) throws AtributoVacioException {
+    public Destino registrarDestino(String nombre, String descripcion, FileChooser fileChooser, Clima clima) throws AtributoVacioException, RutaInvalidaException {
         if (nombre == null || nombre.isBlank()) {
             throw new AtributoVacioException("El nombre del destino es obligatorio");
         }
@@ -187,7 +216,23 @@ public class AgenciaViajes {
         log.info("Se ha registrado un nuevo destino con el nombre: " + nombre);
         return destino;
     }
-    private void escribirDestino(){
+
+// Metodo que elimina un destino
+    public void eliminarDestino(String nombre) throws ElementoNoEncontradoException {
+        Destino destinoAEliminar = null;
+        destinoAEliminar = obtenerDestino(nombre);
+        if (destinoAEliminar != null) {
+            destinos.remove(destinoAEliminar);
+            log.info("se ha eliminado el destino "+ nombre);
+        } else {
+            throw new ElementoNoEncontradoException("No se encontró el destino con el nombre proporcionado.");
+        }
+    }
+
+    public Destino obtenerDestino(String nombre){
+        return destinos.stream().filter(c -> c.getNombre().equals(nombre)).findFirst().orElse(null);
+    }
+    private void escribirDestino() throws RutaInvalidaException{
         try{
             ArchivoUtils.serializarObjeto(RUTADESTINOS, destinos);
         }catch (Exception e){
@@ -203,15 +248,44 @@ public class AgenciaViajes {
                 destinos = lista;
             }
         } catch (IOException | ClassNotFoundException e) {
+
             log.severe(e.getMessage());
+            throw new RutaInvalidaException("A ocurrido un error al momento de leer los destinos");
         }
 
     }
 
+    private void escribirReserva() throws RutaInvalidaException{
+        try{
+            ArchivoUtils.serializarObjeto(RUTARESERVAS, reservas);
+        }catch (Exception e){
+            log.severe(e.getMessage());
+            throw new RutaInvalidaException("A ocurrido un error al momento de escribir las reservas");
+        }
+    }
+    // Metodo que lee los paquetes turisticos
+    private void leerReserva() throws RutaInvalidaException {
+
+        try {
+            ArrayList<Reserva> lista = (ArrayList<Reserva>) ArchivoUtils.deserializarObjeto(RUTARESERVAS);
+            if(lista != null){
+                reservas = lista;
+            }
+        } catch (ClassNotFoundException | IOException e) {
+            log.severe(e.getMessage());
+            throw new RutaInvalidaException("A ocurrido un error al momento de leer las reservas");
+        }
+
+    }
+    public static void registrarReserva(ArrayList<Reserva> listaReservas, Reserva reserva) {
+        listaReservas.add(reserva);
+    }
+
+
 
 // Metodo que reguistra los guias turisticos
 
-    public GuiasTuristicos registrarGuias(String nombre, String identificacion,Idiomas idiomas,String exp) throws AtributoVacioException, InformacionRepetidaException {
+    public GuiaTuristico registrarGuias(String nombre, String identificacion, Idiomas idiomas, String exp) throws AtributoVacioException, InformacionRepetidaException, RutaInvalidaException {
 
         if(identificacion == null || identificacion.isBlank()){
             throw new AtributoVacioException("La identificacion es obligatoria");
@@ -232,7 +306,7 @@ public class AgenciaViajes {
 
         //Demás validaciones
 
-        GuiasTuristicos guia = GuiasTuristicos.builder()
+        GuiaTuristico guia = GuiaTuristico.builder()
                 .nombre(nombre)
                 .identificacion(identificacion)
                 .idiomas(idiomas)
@@ -246,7 +320,7 @@ public class AgenciaViajes {
         return guia;
     }
 
-    public GuiasTuristicos obtenerGuia(String identificacion){
+    public GuiaTuristico obtenerGuia(String identificacion){
         return guias.stream().filter(c -> c.getIdentificacion().equals(identificacion)).findFirst().orElse(null);
     }
 
@@ -271,7 +345,7 @@ public class AgenciaViajes {
             for(String linea : lineas){
 
                 String[] valores = linea.split(";");
-                guias.add( GuiasTuristicos.builder()
+                guias.add( GuiaTuristico.builder()
 
                         .nombre(valores[0])
                         .identificacion(valores[1])
@@ -288,7 +362,7 @@ public class AgenciaViajes {
 
     // Metodo que registra los Paquetes turisticos
 
-    public PaquetesTuristicos registrarPaquetes(String nombre, String direccion, String serviciosAdicionales, float precio, int cupoMax, LocalDate fechaDisponible) throws AtributoVacioException, InformacionRepetidaException {
+    public PaquetesTuristicos registrarPaquetes(String nombre, String direccion, String serviciosAdicionales, float precio, int cupoMax, LocalDate fechaDisponible) throws AtributoVacioException, InformacionRepetidaException, RutaInvalidaException {
 
         if(nombre == null || nombre.isBlank()){
             throw new AtributoVacioException("El nombre es obligatorip");
@@ -336,15 +410,17 @@ public class AgenciaViajes {
         return paquetes.stream().filter(c -> c.getNombre().equals(nombre)).findFirst().orElse(null);
     }
 // Metodo que escribe los paquetes turisticos
-    private void escribirPaquete(){
+    private void escribirPaquete() throws RutaInvalidaException {
         try{
             ArchivoUtils.serializarObjeto(RUTAPAQUETES, paquetes);
         }catch (Exception e){
             log.severe(e.getMessage());
+            throw new RutaInvalidaException("A ocurrido un error al momento de leer los paquetes");
+
         }
     }
 // Metodo que lee los paquetes turisticos
-    private void leerPaquete(){
+    private void leerPaquete() throws RutaInvalidaException {
 
         try {
             ArrayList<PaquetesTuristicos> lista = (ArrayList<PaquetesTuristicos>) ArchivoUtils.deserializarObjeto(RUTAPAQUETES);
@@ -353,6 +429,8 @@ public class AgenciaViajes {
             }
         } catch (IOException | ClassNotFoundException e) {
             log.severe(e.getMessage());
+            throw new RutaInvalidaException("A ocurrido un error al momento de leer los paquetes");
+
         }
 
     }

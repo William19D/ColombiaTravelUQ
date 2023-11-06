@@ -1,5 +1,7 @@
-package co.edu.uniquindio.alquiler.model;
+package co.edu.uniquindio.agencia.model;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.LocalDate;
 import lombok.*;
 
@@ -10,7 +12,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Reservas {
+public class Reserva implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 42L;
 
     private LocalDate fechaSolicitud;
     private LocalDate fechaPlanificada;
