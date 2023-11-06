@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="co.edu.uniquindio.agencia.controller.VentanaRegistroCliente"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.VentanaRegistroCliente">
+   <children>
+      <Label layoutX="525.0" layoutY="139.0" text="Nombre:" />
+      <Label layoutX="525.0" layoutY="184.0" text="Cedula:" />
+      <Label layoutX="521.0" layoutY="235.0" text="Telefono:" />
+      <Label layoutX="526.0" layoutY="288.0" text="Correo:" />
+      <Label layoutX="522.0" layoutY="337.0" text="Direccion:" />
+      <TextField fx:id="txtNombre" layoutX="654.0" layoutY="135.0" promptText="Ingrese su nombre" />
+      <TextField fx:id="txtCedula" layoutX="654.0" layoutY="180.0" promptText="Ingrese su cedula" />
+      <TextField fx:id="txtTelefono" layoutX="654.0" layoutY="231.0" promptText="Ingrese su telefono" />
+      <TextField fx:id="txtDireccion" layoutX="654.0" layoutY="333.0" promptText="Ingrese su direccion" />
+      <TextField fx:id="txtCorreo" layoutX="654.0" layoutY="284.0" promptText="ingrese su correo" />
+      <Button fx:id="btnCancelar" layoutX="519.0" layoutY="434.0" mnemonicParsing="false" onAction="#cancelarEvent" text="Cancelar" />
+      <Button fx:id="btnRegistrarCliente" layoutX="680.0" layoutY="434.0" mnemonicParsing="false" onAction="#registrarClienteEvent" text="Registrar" />
+      <Label layoutX="598.0" layoutY="75.0" text="Registro cliente" />
+   </children>
 </AnchorPane>
