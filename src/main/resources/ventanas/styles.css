@@ -1,7 +1,7 @@
 .inicioPane{
-    -fx-background-image:url(fondoInicio.png)
+    -fx-background-image:url(../imagenes/fondoInicio.png)
 }
 
 .logoPane {
-    -fx-background-image:url(colombiaTravel.png)
+    -fx-background-image:url(../imagenes/colombiaTravel.png)
 }
