@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.BottomNavigationButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f08b182e" height="193.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
+      <ImageView fitHeight="276.0" fitWidth="499.0" layoutX="10.0" layoutY="-80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@colombiaTravelHorizontal.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="81.0" fitWidth="81.0" layoutX="1185.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@UsuarioFoto.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="959.0" layoutY="18.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="215.0" text="NombreUsuario">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button layoutX="1036.0" layoutY="72.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="138.0" text="Mis Viajes">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="276.0" fitWidth="273.0" layoutX="41.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Buenavista.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="276.0" fitWidth="273.0" layoutX="353.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Circasia.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="276.0" fitWidth="273.0" layoutX="661.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Filandia.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="276.0" fitWidth="273.0" layoutX="959.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Armenia.jpeg" />
+         </image>
+      </ImageView>
+      <GridPane layoutY="143.0" prefHeight="100.0" prefWidth="819.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <BottomNavigationButton />
+            <Button mnemonicParsing="false" prefHeight="95.0" prefWidth="306.0" text="Destinos">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="95.0" prefWidth="306.0" text="Paquetes" GridPane.columnIndex="1">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="95.0" prefWidth="306.0" text="Busca tu destino Ideal" GridPane.columnIndex="2">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <Label layoutX="382.0" layoutY="225.0" text="Destinos para ti">
+         <font>
+            <Font size="75.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

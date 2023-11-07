@@ -19,11 +19,13 @@ public class PaquetesTuristicos implements Serializable {
     private static final long serialVersionUID = 42L;
 
     private String nombre;
-    private String direccion;
+    private String descripcion;
     private String serviciosAdicionales;
-    private float precio;
+    private double precio;
     private int cupoMax;
-    private LocalDate fechaDisponible;
+    private LocalDate fechaDisponibleInicio;
+    private LocalDate fechaDisponibleFin;
+    private GuiaTuristico guia;
 
 
 }
