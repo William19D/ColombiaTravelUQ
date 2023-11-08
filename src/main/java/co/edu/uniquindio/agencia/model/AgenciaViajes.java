@@ -407,7 +407,7 @@ public class AgenciaViajes {
 
         PaquetesTuristicos paquete = PaquetesTuristicos.builder()
                 .nombre(nombre)
-                .direccion(direccion)
+                //.direccion(direccion)
                 .serviciosAdicionales(serviciosAdicionales)
                 .precio(precio)
                 .cupoMax(cupoMax)

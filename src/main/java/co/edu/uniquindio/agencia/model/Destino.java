@@ -20,5 +20,5 @@ public class Destino implements Serializable {
     private ArrayList<File> rutasImagenes;
     private Clima clima;
     private double calificacion;
-    private List<String> comentarios;
+    private ArrayList<String> comentarios;
 }

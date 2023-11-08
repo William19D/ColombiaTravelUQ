@@ -11,10 +11,10 @@ import javafx.scene.shape.Rectangle;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerInicio implements Initializable {
+public class ControllerInicio  {
 
-    @FXML
-    private Pane panel;
+
+    /*private Pane panel;
     private Rectangle[][] matriz1, matriz2;
 
     @Override
@@ -58,4 +58,5 @@ public class ControllerInicio implements Initializable {
         }
         return botones;
     }
+*/
 }

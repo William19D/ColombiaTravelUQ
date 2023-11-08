@@ -1,3 +1,51 @@
+@font-face {
+    font-family: 'Hitmo2.0-Regular';
+    src: url('../fuente/Hitmo2.0-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Hitmo2.0-Black';
+    src: url('../fuente/Hitmo2.0-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Hitmo2.0-Bold';
+    src: url('../fuente/Hitmo2.0-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Hitmo2.0-Light';
+    src: url('../fuente/Hitmo2.0-Light.ttf');
+}
+
+.botonSinFondo {
+
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 22px;
+}
+
+.botonSinFondo:hover {
+    -fx-text-fill: #5a5a5a;
+    -fx-font-size: 22px;
+}
+
+.textoRegular {
+    -fx-font-family: 'Hitmo2.0-Regular';
+}
+
+.textoNegrita {
+    -fx-font-family: 'Hitmo2.0-Bold';
+}
+
+.textoLight {
+    -fx-font-family: 'Hitmo2.0-Light';
+}
+
+.textoBlack {
+    -fx-font-family: 'Hitmo2.0-Black';
+}
+
 .inicioPane{
     -fx-background-image:url(../imagenes/fondoInicio.png)
 }
@@ -5,3 +53,4 @@
 .logoPane {
     -fx-background-image:url(../imagenes/colombiaTravel.png)
 }
+
