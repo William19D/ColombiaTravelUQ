@@ -54,3 +54,9 @@
     -fx-background-image:url(../imagenes/colombiaTravel.png)
 }
 
+.inicioSesionPane {
+    -fx-background-image:url(../imagenes/ventanaInicioSesion.png)
+}
+
+
+
