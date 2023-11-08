@@ -11,7 +11,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        FXMLLoader loader = new FXMLLoader(App.class.getResource("/ventanas/ventanaInicio.fxml"));
+        FXMLLoader loader = new FXMLLoader(App.class.getResource("/ventanas/ventanaMenu.fxml"));
         Parent parent = loader.load();
 
         Scene scene = new Scene(parent);
