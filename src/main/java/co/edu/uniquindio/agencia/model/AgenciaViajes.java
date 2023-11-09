@@ -90,7 +90,7 @@ public class AgenciaViajes {
 
         return agenciaViajes;
     }
-    public Cliente registrarCliente(String cedula, String nombreCompleto,String email,String direccion,String ciudad,String telefono,String contrasenia) throws AtributoVacioException, InformacionRepetidaException {
+    public Cliente registrarCliente(String cedula, String nombreCompleto,String email,String direccion,String telefono,String contrasenia) throws AtributoVacioException, InformacionRepetidaException {
 
         if(cedula == null || cedula.isBlank()){
             throw new AtributoVacioException("La cédula es obligatoria");

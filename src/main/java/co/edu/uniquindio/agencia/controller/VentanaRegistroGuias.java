@@ -1,14 +1,23 @@
 package co.edu.uniquindio.agencia.controller;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import co.edu.uniquindio.agencia.app.App;
+import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
+import co.edu.uniquindio.agencia.exceptions.ElementoNoEncontradoException;
+import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
+import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
+import co.edu.uniquindio.agencia.model.AgenciaViajes;
+import co.edu.uniquindio.agencia.model.GuiaTuristico;
+import co.edu.uniquindio.agencia.model.Idiomas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import lombok.SneakyThrows;
 
 public class VentanaRegistroGuias {
 
@@ -37,19 +46,19 @@ public class VentanaRegistroGuias {
     private CheckBox ckIngles;
 
     @FXML
-    private TableColumn<?, ?> columNombre;
+    private TableColumn<GuiaTuristico, String> columNombre;
 
     @FXML
-    private TableColumn<?, ?> columnExperiencia;
+    private TableColumn<GuiaTuristico, String> columnExperiencia;
 
     @FXML
-    private TableColumn<?, ?> columnIdentificacion;
+    private TableColumn<GuiaTuristico, String> columnIdentificacion;
 
     @FXML
-    private TableColumn<?, ?> columnIdiomas;
+    private TableColumn<GuiaTuristico, ?> columnIdiomas;
 
     @FXML
-    private TableView<?> tabGuiasRegistrados;
+    private TableView<GuiaTuristico> tabGuiasRegistrados;
 
     @FXML
     private TextField txtExperiencia;
@@ -60,6 +69,18 @@ public class VentanaRegistroGuias {
     @FXML
     private TextField txtNombre;
 
+    private App main;
+
+    private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
+
+
+    private Idiomas idiomas;
+
+
+
+    public VentanaRegistroGuias() throws RutaInvalidaException {
+    }
+
     @FXML
     void actualizarEvent(ActionEvent event) {
 
@@ -67,7 +88,6 @@ public class VentanaRegistroGuias {
 
     @FXML
     void eliminarEvent(ActionEvent event) {
-
     }
     @SneakyThrows
     @FXML
@@ -122,12 +142,8 @@ public class VentanaRegistroGuias {
             throw new ElementoNoEncontradoException("Error al registrar guía: " + e.getMessage());
         }
     }
-    
 
-    @FXML
-    void registrarGuiaEvent(ActionEvent event) {
 
-    }
 
     @FXML
     void initialize() {
