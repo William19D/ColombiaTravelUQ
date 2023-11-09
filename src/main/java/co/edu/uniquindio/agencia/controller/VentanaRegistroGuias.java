@@ -69,6 +69,60 @@ public class VentanaRegistroGuias {
     void eliminarEvent(ActionEvent event) {
 
     }
+    @SneakyThrows
+    @FXML
+    void registrarGuiaEvent(ActionEvent event) {
+        registrarGuiaAction();
+
+    }
+
+    private void registrarGuiaAction() throws ElementoNoEncontradoException{
+
+        try {
+            String nombre = txtNombre.getText();
+            String identificacion = txtIdentificacion.getText();
+            String experiencia = txtExperiencia.getText();
+
+            // Validar que al menos un idioma esté seleccionado
+            if (!ckEspañol.isSelected() && !ckIngles.isSelected() && !ckFrances.isSelected()) {
+                // Aquí puedes mostrar un mensaje de error o lanzar una excepción.
+                // Por ejemplo: throw new IdiomaNoSeleccionadoException("Debes seleccionar al menos un idioma.");
+                return;
+            }
+
+            // Recopilar los idiomas seleccionados
+            List<Idiomas> idiomasSeleccionados = new ArrayList<>();
+            if (ckEspañol.isSelected()) {
+                idiomasSeleccionados.add(Idiomas.ESPANOL);
+            }
+            if (ckIngles.isSelected()) {
+                idiomasSeleccionados.add(Idiomas.INGLES);
+            }
+            if (ckFrances.isSelected()) {
+                idiomasSeleccionados.add(Idiomas.FRANCES);
+            }
+
+            // Llamar al método de registro en la clase principal
+            GuiaTuristico guia = agenciaViajes.registrarGuias(nombre, identificacion, idiomasSeleccionados, experiencia);
+
+            // Limpia los campos después del registro
+            txtNombre.clear();
+            txtIdentificacion.clear();
+            txtExperiencia.clear();
+            ckEspañol.setSelected(false);
+            ckIngles.setSelected(false);
+            ckFrances.setSelected(false);
+
+            // Actualizar la tabla de guías registrados u otra lógica necesaria
+            //actualizarTablaGuias();
+
+            // Puedes mostrar un mensaje de éxito al usuario
+            throw new ElementoNoEncontradoException("Guía registrado con éxito: " + guia.getNombre());
+        } catch (AtributoVacioException | InformacionRepetidaException | RutaInvalidaException e) {
+            throw new ElementoNoEncontradoException("Error al registrar guía: " + e.getMessage());
+        }
+    }
+    
 
     @FXML
     void registrarGuiaEvent(ActionEvent event) {

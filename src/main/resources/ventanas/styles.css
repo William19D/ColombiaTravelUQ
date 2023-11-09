@@ -18,14 +18,33 @@
     src: url('../fuente/Hitmo2.0-Light.ttf');
 }
 
-.botonSinFondo {
+.botonSinFondo26px {
+
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 22px;
+}
+.botonSinFondo26px:hover {
+    -fx-text-fill: #5a5a5a;
+    -fx-font-size: 22px;
+}
+.botonBlanco {
+    -fx-background-color: #ffffff; /* Establece el color de fondo blanco */
+    -fx-text-fill: #000000; /* Establece el color del texto negro */
+}
+
+.botonBlanco:hover {
+    -fx-background-color: #cccccc; /* Cambia el color de fondo cuando el mouse pasa por encima */
+}
+
+.botonSinFondo22px {
 
     -fx-background-color: transparent;
     -fx-border-color: transparent;
     -fx-font-size: 22px;
 }
 
-.botonSinFondo:hover {
+.botonSinFondo22px:hover {
     -fx-text-fill: #5a5a5a;
     -fx-font-size: 22px;
 }
@@ -45,9 +64,35 @@
 .textoBlack {
     -fx-font-family: 'Hitmo2.0-Black';
 }
+.botonVolver {
+    -fx-graphic: url(../iconos/volver.png);
+    -fx-background-color: transparent; /* Esto asegura que el fondo del botón sea transparente */
+    -fx-background-insets: 0, 1, 2; /* Puedes ajustar estos valores según tu preferencia */
+}
+.botonClick {
+    -fx-background-color: transparent;
+    -fx-border-color: black;
+    -fx-border-radius: 15; /* Ajusta el radio según tus preferencias */
+    -fx-border-width: 2; /* Ajusta el ancho del borde según tus preferencias */
+    -fx-text-fill: black;
+    -fx-font-size: 25px;
+}
 
+.botonClick:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.1); /* Cambia el color del fondo cuando el mouse pasa por encima */
+    -fx-font-size: 25px;
+}
+
+
+.botonVolver:hover {
+    /* Puedes agregar efectos de hover si lo deseas */
+    -fx-opacity: 0.8; /* Por ejemplo, reducir la opacidad cuando el mouse está encima */
+}
 .inicioPane{
     -fx-background-image:url(../imagenes/fondoInicio.png)
+}
+.RegistroPane{
+    -fx-background-image:url(../imagenes/ventanaRegistrarCliente.png)
 }
 
 .logoPane {

@@ -7,16 +7,13 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ControllerVentanaInicio">
+<AnchorPane fx:id="ventanaMenuInicio" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ControllerVentanaInicio">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f08b182e" height="193.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
-      <ImageView fitHeight="276.0" fitWidth="499.0" layoutX="10.0" layoutY="-80.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f08b182e" height="172.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
+      <ImageView fitHeight="276.0" fitWidth="492.0" layoutX="8.0" layoutY="-80.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/colombiaTravelHorizontal.png" />
          </image>
@@ -26,24 +23,24 @@
             <Image url="@../imagenes/UsuarioFoto.png" />
          </image>
       </ImageView>
-      <Button alignment="CENTER_RIGHT" layoutX="992.0" layoutY="31.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="224.0" stylesheets="@styles.css" text="Nombre Usuario" textAlignment="RIGHT" textOverrun="CLIP">
+      <Button alignment="CENTER_RIGHT" layoutX="992.0" layoutY="31.0" mnemonicParsing="false" onAction="#mostrarVentanaUsuario" prefHeight="47.0" prefWidth="224.0" stylesheets="@styles.css" text="Nombre Usuario" textAlignment="RIGHT" textOverrun="CLIP">
          <font>
             <Font size="23.0" />
          </font>
          <styleClass>
             <String fx:value="textoNegrita" />
-            <String fx:value="botonSinFondo" />
+            <String fx:value="botonSinFondo26px" />
          </styleClass>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button alignment="CENTER_RIGHT" layoutX="1066.0" layoutY="68.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="143.0" stylesheets="@styles.css" text="Mis Viajes" textAlignment="RIGHT" textOverrun="CLIP" underline="true">
+      <Button alignment="CENTER_RIGHT" layoutX="1052.0" layoutY="68.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="157.0" stylesheets="@styles.css" text="Mis Viajes" textAlignment="RIGHT" textOverrun="CLIP" underline="true">
          <font>
             <Font size="23.0" />
          </font>
          <styleClass>
-            <String fx:value="botonSinFondo" />
+            <String fx:value="botonSinFondo26px" />
             <String fx:value="textoRegular" />
          </styleClass>
          <cursor>
@@ -70,45 +67,44 @@
             <Image url="@../imagenes/Armenia.jpeg" />
          </image>
       </ImageView>
-      <GridPane gridLinesVisible="true" layoutX="449.0" layoutY="143.0" prefHeight="100.0" prefWidth="424.0" stylesheets="@styles.css">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="95.0" prefWidth="306.0" stylesheets="@styles.css" text="Destinos">
-               <font>
-                  <Font size="22.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="botonSinFondo" />
-                  <String fx:value="textoRegular" />
-               </styleClass>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button alignment="CENTER" mnemonicParsing="false" prefHeight="47.0" prefWidth="323.0" stylesheets="@styles.css" text="Paquetes" GridPane.columnIndex="1">
-               <font>
-                  <Font size="22.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="botonSinFondo" />
-                  <String fx:value="textoRegular" />
-               </styleClass>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-         </children>
-      </GridPane>
-      <Label fx:id="lblDestinos" layoutX="382.0" layoutY="229.0" styleClass="textoRegular" stylesheets="@styles.css" text="Destinos para ti">
+      <Label fx:id="lblDestinos" layoutX="336.0" layoutY="210.0" styleClass="textoRegular" stylesheets="@styles.css" text="Destinos para ti">
          <font>
             <Font size="75.0" />
          </font>
       </Label>
+      <ImageView fitHeight="47.0" fitWidth="50.0" layoutX="208.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../iconos/avion.png" />
+         </image>
+      </ImageView>
+      <Button alignment="TOP_LEFT" layoutY="125.0" mnemonicParsing="false" onAction="#mostrarBuscarPaquetes" prefHeight="47.0" prefWidth="258.0" stylesheets="@styles.css" text="Buscar Destinos">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <styleClass>
+            <String fx:value="botonSinFondo26px" />
+            <String fx:value="textoRegular" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="258.0" layoutY="125.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="252.0" stylesheets="@styles.css" text="Buscar Paquetes">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <styleClass>
+            <String fx:value="botonSinFondo26px" />
+            <String fx:value="textoRegular" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="44.0" fitWidth="36.0" layoutX="472.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../iconos/maleta.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

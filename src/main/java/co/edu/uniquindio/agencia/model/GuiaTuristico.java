@@ -2,6 +2,8 @@ package co.edu.uniquindio.agencia.model;
 
 import lombok.*;
 
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -13,7 +15,7 @@ public class GuiaTuristico {
 
     private String nombre;
     private String identificacion;
-    private Idiomas idiomas;
+    private List<Idiomas> idiomas;
     private String exp;
     private double calificacion;
     private String comentarios;

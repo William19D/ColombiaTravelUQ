@@ -286,7 +286,7 @@ public class AgenciaViajes {
 
 // Metodo que reguistra los guias turisticos
 
-    public GuiaTuristico registrarGuias(String nombre, String identificacion, Idiomas idiomas, String exp) throws AtributoVacioException, InformacionRepetidaException, RutaInvalidaException {
+    public GuiaTuristico registrarGuias(String nombre, String identificacion, List<Idiomas> idiomas, String exp) throws AtributoVacioException, InformacionRepetidaException, RutaInvalidaException {
 
         if(identificacion == null || identificacion.isBlank()){
             throw new AtributoVacioException("La identificacion es obligatoria");
@@ -361,7 +361,7 @@ public class AgenciaViajes {
 
                         .nombre(valores[0])
                         .identificacion(valores[1])
-                        .idiomas(Idiomas.valueOf(valores[2]))
+                        //.idiomas(Idiomas.valueOf(valores[2]))
                         .exp(valores[3])
                         .build());
             }
