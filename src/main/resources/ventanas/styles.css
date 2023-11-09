@@ -28,13 +28,16 @@
     -fx-text-fill: #5a5a5a;
     -fx-font-size: 22px;
 }
-.botonBlanco {
+.botonBlanco28px {
     -fx-background-color: #ffffff; /* Establece el color de fondo blanco */
     -fx-text-fill: #000000; /* Establece el color del texto negro */
+    -fx-font-size: 28px;
+
 }
 
-.botonBlanco:hover {
+.botonBlanco28px:hover {
     -fx-background-color: #cccccc; /* Cambia el color de fondo cuando el mouse pasa por encima */
+    -fx-font-size: 28px;
 }
 
 .botonSinFondo22px {

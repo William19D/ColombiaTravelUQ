@@ -20,13 +20,13 @@
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
-         <styleClass>
-            <String fx:value="textoLight" />
-            <String fx:value="botonBlanco" />
-         </styleClass>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <styleClass>
+            <String fx:value="botonBlanco28px" />
+            <String fx:value="textoRegular" />
+         </styleClass>
       </Button>
       <Label layoutX="97.0" layoutY="133.0" styleClass="textoNegrita" stylesheets="@styles.css" text="Registro cliente">
          <font>

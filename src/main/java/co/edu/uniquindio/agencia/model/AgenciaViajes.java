@@ -29,10 +29,10 @@ public class AgenciaViajes {
     public static String RUTARESERVAS= null;
 
     private static ArrayList<GuiaTuristico> guias;
-    private static ArrayList<PaquetesTuristicos> paquetes;
+    private ArrayList<PaquetesTuristicos> paquetes;
     private static ArrayList<Cliente> clientes;
-    private static ArrayList<Destino> destinos;
-    private static ArrayList<Reserva> reservas;
+    private ArrayList<Destino> destinos;
+    private ArrayList<Reserva> reservas;
     private static ArrayList<Administrador> administradores;
 
     private AgenciaViajes() throws RutaInvalidaException {
@@ -45,6 +45,7 @@ public class AgenciaViajes {
             RUTACLIENTES = prop.getProperty("rutaClientes");
             RUTAGUIAS = prop.getProperty("rutaGuias");
             RUTADESTINOS = prop.getProperty("rutaDestinos");
+            log.info("Se ha cargado la Ruta"+ RUTADESTINOS);
             RUTAPAQUETES = prop.getProperty("rutaPaquetes");
             RUTARESERVAS = prop.getProperty("rutaReservas");
         } catch (IOException e) {
@@ -241,17 +242,15 @@ public class AgenciaViajes {
         }
     }
 
-    private void leerDestinos() throws RutaInvalidaException{
+    private void leerDestinos() {
 
         try {
             ArrayList<Destino> lista = (ArrayList<Destino>) ArchivoUtils.deserializarObjeto(RUTADESTINOS);
             if(lista != null){
-                destinos = lista;
+                this.destinos = lista;
             }
         } catch (IOException | ClassNotFoundException e) {
-
             log.severe(e.getMessage());
-            throw new RutaInvalidaException("A ocurrido un error al momento de leer los destinos");
         }
 
     }
@@ -265,7 +264,7 @@ public class AgenciaViajes {
         }
     }
     // Metodo que lee los paquetes turisticos
-    private void leerReserva() throws RutaInvalidaException {
+    private void leerReserva() {
 
         try {
             ArrayList<Reserva> lista = (ArrayList<Reserva>) ArchivoUtils.deserializarObjeto(RUTARESERVAS);
@@ -274,7 +273,6 @@ public class AgenciaViajes {
             }
         } catch (ClassNotFoundException | IOException e) {
             log.severe(e.getMessage());
-            throw new RutaInvalidaException("A ocurrido un error al momento de leer las reservas");
         }
 
     }
@@ -446,16 +444,17 @@ public class AgenciaViajes {
         }
     }
 // Metodo que lee los paquetes turisticos
-    private void leerPaquete() throws RutaInvalidaException {
+    private void leerPaquete() {
 
         try {
             ArrayList<PaquetesTuristicos> lista = (ArrayList<PaquetesTuristicos>) ArchivoUtils.deserializarObjeto(RUTAPAQUETES);
+            System.out.println(RUTAPAQUETES);
             if(lista != null){
-                paquetes = lista;
+                this.paquetes = lista;
             }
         } catch (IOException | ClassNotFoundException e) {
             log.severe(e.getMessage());
-            throw new RutaInvalidaException("A ocurrido un error al momento de leer los paquetes");
+            System.out.println(RUTAPAQUETES);
 
         }
 

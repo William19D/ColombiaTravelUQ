@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.agencia.app.App;
+import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,9 +47,12 @@ public class VentanaRegistroCliente {
     private TextField txtTelefono;
 
 
-    private AgenciaViajes agenciaViajes;
+    private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
 
     private App main;
+
+    public VentanaRegistroCliente() throws RutaInvalidaException {
+    }
 
     @FXML
     void cancelarEvent(ActionEvent event) {
