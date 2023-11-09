@@ -95,7 +95,7 @@
             <Image url="@../iconos/volver.png" />
          </image>
       </ImageView>
-      <Button layoutX="20.0" layoutY="637.0" mnemonicParsing="false" onAction="#vovlerMenu" prefHeight="69.0" prefWidth="71.0" styleClass="botonSinFondo22px" stylesheets="@styles.css">
+      <Button layoutX="20.0" layoutY="637.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="71.0" styleClass="botonSinFondo22px" stylesheets="@styles.css">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

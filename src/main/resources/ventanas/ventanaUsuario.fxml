@@ -12,12 +12,7 @@
 
 <AnchorPane fx:id="ventanaUsuario" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ControllerVentanaUsuario">
    <children>
-      <ImageView fitHeight="276.0" fitWidth="492.0" layoutX="28.0" layoutY="-60.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../imagenes/colombiaTravelHorizontal.png" />
-         </image>
-      </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#1c4f3b2e" height="155.0" layoutX="5.0" layoutY="171.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1301.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#1c4f3b2e" height="155.0" layoutX="-4.0" layoutY="171.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1310.0" />
       <Label fx:id="lblDestinos" layoutX="134.0" layoutY="166.0" prefHeight="70.0" prefWidth="532.0" styleClass="textoNegrita" stylesheets="@styles.css" text="Nombre del Usuario">
          <font>
             <Font size="50.0" />
@@ -75,5 +70,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <ImageView fitHeight="274.0" fitWidth="442.0" layoutX="10.0" layoutY="-47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/colombiaTravelHorizontal.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
