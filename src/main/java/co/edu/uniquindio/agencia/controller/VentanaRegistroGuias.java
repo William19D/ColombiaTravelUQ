@@ -26,10 +26,6 @@ import javafx.collections.ObservableList;
 
 public class VentanaRegistroGuias {
 
-
-    private ObservableList<GuiaTuristico> listaGuiasData = FXCollections.observableArrayList();
-
-
     @FXML
     private ResourceBundle resources;
 
@@ -85,21 +81,24 @@ public class VentanaRegistroGuias {
 
     private Idiomas idiomas;
 
+    ObservableList<GuiaTuristico> listaGuias = FXCollections.observableArrayList(AgenciaViajes.getInstance().getGuias());
+
 
     public VentanaRegistroGuias() throws RutaInvalidaException {
     }
 
     @FXML
-    void actualizarEvent(ActionEvent event) {
+    void actualizarEvent(ActionEvent event) throws RutaInvalidaException {
         actualizarAction();
 
     }
 
-    private void actualizarAction() {
+    private void actualizarAction() throws RutaInvalidaException {
+        actualizarTablaGuias();
     }
 
     @FXML
-    void eliminarEvent(ActionEvent event) throws AtributoVacioException {
+    void eliminarEvent(ActionEvent event) throws AtributoVacioException, RutaInvalidaException {
         eliminarAction();
     }
 
@@ -116,8 +115,6 @@ public class VentanaRegistroGuias {
             String nombre = txtNombre.getText();
             String identificacion = txtIdentificacion.getText();
             String experiencia = txtExperiencia.getText();
-
-
 
             if (!ckEspanol.isSelected() && !ckIngles.isSelected() && !ckFrances.isSelected()) {
 
@@ -140,8 +137,8 @@ public class VentanaRegistroGuias {
             // Llamar al método de registro en la clase principal
             GuiaTuristico guia = agenciaViajes.registrarGuias(nombre, identificacion, idiomasSeleccionados, experiencia);
 
-            AgenciaViajes.guias.add(guia);
-            listaGuiasData.add(guia);
+            this.agenciaViajes.getGuias().add(guia);
+            this.tabGuiasRegistrados.setItems(listaGuias);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText(null);
@@ -159,8 +156,6 @@ public class VentanaRegistroGuias {
             // Actualizar la tabla de guías registrados u otra lógica necesaria
             actualizarTablaGuias();
 
-
-
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(e.getMessage());
@@ -169,13 +164,15 @@ public class VentanaRegistroGuias {
         }
     }
 
-    public void actualizarTablaGuias() {
-        listaGuiasData.clear();
-        listaGuiasData.addAll(AgenciaViajes.guias);
+    public void actualizarTablaGuias() throws RutaInvalidaException {
+        listaGuias = FXCollections.observableArrayList(agenciaViajes.getGuias());
+        tabGuiasRegistrados.getItems().clear();
+        tabGuiasRegistrados.setItems(listaGuias);
+        tablaguias();
         tabGuiasRegistrados.refresh();
     }
 
-    private void eliminarAction() throws AtributoVacioException {
+    private void eliminarAction() throws AtributoVacioException, RutaInvalidaException {
         GuiaTuristico guiaSeleccionado = tabGuiasRegistrados.getSelectionModel().getSelectedItem();
 
         if (guiaSeleccionado != null) {
@@ -188,7 +185,7 @@ public class VentanaRegistroGuias {
             Optional<ButtonType> result = alert.showAndWait();
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 // Elimina el guía seleccionado de la lista de guías
-                AgenciaViajes.guias.remove(guiaSeleccionado);
+                agenciaViajes.getGuias().remove(guiaSeleccionado);
 
                 // Actualiza la tabla de guías
                 actualizarTablaGuias();
@@ -199,25 +196,25 @@ public class VentanaRegistroGuias {
         }
     }
 
-
-
     @FXML
-    void initialize() {
+    void initialize() throws RutaInvalidaException {
+        tablaguias();
+        actualizarTablaGuias();
+    }
+
+    void tablaguias() throws  RutaInvalidaException{
+
+        tabGuiasRegistrados.setItems(listaGuias);
 
         ckEspanol.setSelected(false);
         ckIngles.setSelected(false);
         ckFrances.setSelected(false);
 
+        columNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
+        columnIdentificacion.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getIdentificacion()));
+        columnExperiencia.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getExp()));
+        //columnIdiomas.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getIdiomas().toString()));
+        tabGuiasRegistrados.refresh();
 
-        columNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        columnIdentificacion.setCellValueFactory(new PropertyValueFactory<>("identificacion"));
-        columnExperiencia.setCellValueFactory(new PropertyValueFactory<>("exp"));
-
-
-    }
-
-    public void setApplication(App app) {
-
-        this.main=app;
     }
 }

@@ -104,3 +104,367 @@ nov. 09, 2023 11:12:52 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerR
 GRAVE: null
 nov. 09, 2023 11:13:20 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
 INFORMACIÓN: Se ha registrado un nuevo guia con la identificacion: 68645
+Nov 09, 2023 11:44:27 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 11:44:27 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 11:44:27 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 11:44:27 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 11:44:27 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 11:44:34 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 213
+Nov 09, 2023 11:46:19 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 11:46:19 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 11:46:19 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 11:46:19 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 11:46:19 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 11:46:41 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 1
+Nov 09, 2023 11:49:31 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 11:49:31 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 11:49:31 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 11:49:31 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 11:49:31 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 11:49:41 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 123
+Nov 09, 2023 11:49:55 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 11:49:55 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 11:49:55 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 11:49:55 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 11:49:55 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 11:50:42 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 11:50:42 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 11:50:42 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 11:50:42 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 11:50:42 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 11:50:51 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: AAAAAA
+Nov 09, 2023 11:51:04 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 11:51:04 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 11:51:04 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 11:51:04 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 11:51:04 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 11:53:27 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 11:53:27 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 11:53:27 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 11:53:27 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 11:53:27 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 11:53:36 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 2133
+Nov 09, 2023 11:53:46 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 321312
+Nov 09, 2023 11:53:59 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 11:53:59 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 11:53:59 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 11:53:59 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 11:53:59 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 11:59:02 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 11:59:02 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 11:59:02 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 11:59:02 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 11:59:02 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 11:59:13 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: AA
+Nov 09, 2023 12:00:56 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:00:56 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:01:26 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:01:26 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:01:26 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:01:26 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:01:26 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:01:31 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 213
+Nov 09, 2023 12:04:11 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:04:11 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:04:11 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:04:11 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:04:11 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:06:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:06:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:06:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:06:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:06:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:06:45 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 1
+Nov 09, 2023 12:08:13 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:08:13 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:08:13 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:08:13 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:08:13 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:08:18 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 2
+Nov 09, 2023 12:09:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:09:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:09:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:09:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:09:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:09:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 3
+Nov 09, 2023 12:10:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:10:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:10:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:10:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:10:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:10:24 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:10:24 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:10:24 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:10:24 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:10:24 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:10:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 4
+Nov 09, 2023 12:10:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 5
+Nov 09, 2023 12:11:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:11:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:11:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:11:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:11:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:11:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 1
+Nov 09, 2023 12:12:35 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:12:35 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:12:35 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:12:35 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:12:35 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:12:40 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 2
+Nov 09, 2023 12:12:57 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:12:57 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:12:57 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:12:57 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:12:57 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:14:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:14:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:14:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:14:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:14:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:14:19 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 3
+Nov 09, 2023 12:14:52 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:14:52 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:14:52 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:14:52 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:14:52 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:15:01 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 4
+Nov 09, 2023 12:29:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 12:29:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 12:29:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 12:29:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 12:29:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 12:29:21 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 5
+Nov 09, 2023 1:00:38 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 1:00:38 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 1:00:38 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 1:00:38 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 1:00:38 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 1:00:43 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 7
+Nov 09, 2023 1:05:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 1:05:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 1:05:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 1:05:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 1:05:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 1:11:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 1:11:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 1:11:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 1:11:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 1:11:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 1:11:11 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 213
+Nov 09, 2023 1:11:33 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 1:11:33 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 1:11:33 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 1:11:33 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 1:11:33 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 1:11:37 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 3
+Nov 09, 2023 1:13:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 1:13:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 1:13:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 1:13:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 1:13:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 1:13:17 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 4
+Nov 09, 2023 1:15:55 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 1:15:55 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 1:15:55 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 1:15:55 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 1:15:55 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 1:16:03 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 2
+Nov 09, 2023 1:27:19 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 1:27:19 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 1:27:20 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 1:27:20 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 1:27:20 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 1:27:25 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 111
+Nov 09, 2023 1:28:58 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 1:28:58 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 1:28:58 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 1:28:58 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 1:28:58 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 5:58:04 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 09, 2023 5:58:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
+Nov 09, 2023 5:58:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 09, 2023 5:58:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 09, 2023 5:58:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 09, 2023 5:58:11 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFO: Se ha registrado un nuevo guia con la identificacion: 5
