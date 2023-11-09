@@ -56,7 +56,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <CheckBox fx:id="ckEspañol" layoutX="302.0" layoutY="481.0" mnemonicParsing="false" text="Español">
+      <CheckBox fx:id="ckEspanol" layoutX="302.0" layoutY="481.0" mnemonicParsing="false" text="Español">
          <font>
             <Font size="14.0" />
          </font>

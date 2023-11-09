@@ -28,7 +28,7 @@ public class AgenciaViajes {
     public static String RUTAPAQUETES= null;
     public static String RUTARESERVAS= null;
 
-    private static ArrayList<GuiaTuristico> guias;
+    public static ArrayList<GuiaTuristico> guias;
     private ArrayList<PaquetesTuristicos> paquetes;
     private static ArrayList<Cliente> clientes;
     private ArrayList<Destino> destinos;
