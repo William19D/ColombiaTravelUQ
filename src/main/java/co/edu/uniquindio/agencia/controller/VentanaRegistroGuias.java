@@ -14,12 +14,21 @@ import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
 import co.edu.uniquindio.agencia.model.GuiaTuristico;
 import co.edu.uniquindio.agencia.model.Idiomas;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import lombok.SneakyThrows;
+import javafx.collections.ObservableList;
 
 public class VentanaRegistroGuias {
+
+
+    private ObservableList<GuiaTuristico> listaGuiasData = FXCollections.observableArrayList();
+
+    private GuiaTuristico guiaTuristico;
+
+    GuiaTuristico guiaSeleccionado;
 
     @FXML
     private ResourceBundle resources;
@@ -77,14 +86,20 @@ public class VentanaRegistroGuias {
     private Idiomas idiomas;
 
 
-
     public VentanaRegistroGuias() throws RutaInvalidaException {
     }
 
     @FXML
     void actualizarEvent(ActionEvent event) {
+        actualizarAction();
 
     }
+
+    private void actualizarAction() {
+
+        
+
+}
 
     @FXML
     void eliminarEvent(ActionEvent event) {
