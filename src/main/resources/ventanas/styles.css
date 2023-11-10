@@ -84,6 +84,8 @@
     -fx-background-radius: 5; /* Ajusta el radio del borde */
     -fx-border-radius: 5; /* Ajusta el radio del borde */
     -fx-border-color: #CCCCCC; /* Cambia el color del borde */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 0);
+
 }
 
 .botonClick:hover {
