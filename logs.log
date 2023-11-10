@@ -468,3 +468,5 @@ Nov 09, 2023 5:58:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserv
 SEVERE: null
 Nov 09, 2023 5:58:11 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
 INFO: Se ha registrado un nuevo guia con la identificacion: 5
+Nov 09, 2023 10:05:13 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel

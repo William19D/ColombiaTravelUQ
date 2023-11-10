@@ -1,6 +1,5 @@
 package co.edu.uniquindio.agencia.model;
 
-import javafx.stage.FileChooser;
 import lombok.*;
 
 import java.io.File;
@@ -22,5 +21,5 @@ public class Destino implements Serializable {
     private Clima clima;
     private double calificacion;
     private ArrayList<String> comentarios;
-    private FileChooser foto;
+
 }

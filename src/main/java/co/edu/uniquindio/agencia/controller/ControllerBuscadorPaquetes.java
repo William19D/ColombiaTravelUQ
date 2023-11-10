@@ -1,5 +1,7 @@
 package co.edu.uniquindio.agencia.controller;
 
+import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
+import co.edu.uniquindio.agencia.model.AgenciaViajes;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ScrollPane;
@@ -39,6 +41,12 @@ public class ControllerBuscadorPaquetes {
 
     @FXML
     private AnchorPane ventanaBuscadorPaquetes;
+
+    private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
+
+    public ControllerBuscadorPaquetes() throws RutaInvalidaException {
+    }
+
 
     public void initialize() throws IOException {
         scrollPaquetes.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);

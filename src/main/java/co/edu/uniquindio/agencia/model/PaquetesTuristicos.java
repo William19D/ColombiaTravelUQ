@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import javafx.stage.FileChooser;
 import lombok.*;
 
 
@@ -30,7 +29,6 @@ public class PaquetesTuristicos implements Serializable {
     private LocalDate fechaDisponibleInicio;
     private LocalDate fechaDisponibleFin;
     private GuiaTuristico guia;
-    private FileChooser foto;
 
 
 
