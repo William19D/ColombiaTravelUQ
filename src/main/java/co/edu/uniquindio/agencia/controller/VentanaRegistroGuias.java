@@ -137,7 +137,7 @@ public class VentanaRegistroGuias {
             // Llamar al método de registro en la clase principal
             GuiaTuristico guia = agenciaViajes.registrarGuias(nombre, identificacion, idiomasSeleccionados, experiencia);
 
-            this.agenciaViajes.getGuias().add(guia);
+          //  this.agenciaViajes.getGuias().add(guia);
             this.tabGuiasRegistrados.setItems(listaGuias);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

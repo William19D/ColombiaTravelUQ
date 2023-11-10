@@ -185,9 +185,12 @@ public class AgenciaViajes {
         return existe;
     }
     //DESTINOS
-    public Destino registrarDestino(String nombre, String descripcion, FileChooser fileChooser, Clima clima) throws AtributoVacioException, RutaInvalidaException {
+    public Destino registrarDestino(String nombre, String ciudad, String descripcion, FileChooser fileChooser, Clima clima) throws AtributoVacioException, RutaInvalidaException {
         if (nombre == null || nombre.isBlank()) {
             throw new AtributoVacioException("El nombre del destino es obligatorio");
+        }
+        if (ciudad == null || ciudad.isBlank()) {
+            throw new AtributoVacioException("La ciudad del destino es obligatorio");
         }
         if (descripcion == null || descripcion.isBlank()) {
             throw new AtributoVacioException("La descripción es obligatoria");
