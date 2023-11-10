@@ -80,13 +80,20 @@
     -fx-text-fill: black;
     -fx-font-size: 25px;
 }
+.text-field {
+    -fx-background-radius: 5; /* Ajusta el radio del borde */
+    -fx-border-radius: 5; /* Ajusta el radio del borde */
+    -fx-border-color: #CCCCCC; /* Cambia el color del borde */
+}
 
 .botonClick:hover {
     -fx-background-color: rgba(0, 0, 0, 0.1); /* Cambia el color del fondo cuando el mouse pasa por encima */
     -fx-font-size: 25px;
 }
 
-
+.botonSeleccionado {
+    -fx-background-color: rgba(0, 0, 0, 0.25); /* Cambia el color de fondo a gris */
+}
 .botonVolver:hover {
     /* Puedes agregar efectos de hover si lo deseas */
     -fx-opacity: 0.8; /* Por ejemplo, reducir la opacidad cuando el mouse está encima */
