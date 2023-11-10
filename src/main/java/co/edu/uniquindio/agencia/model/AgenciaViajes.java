@@ -45,11 +45,27 @@ public class AgenciaViajes {
             RUTACLIENTES = prop.getProperty("rutaClientes");
             RUTAGUIAS = prop.getProperty("rutaGuias");
             RUTADESTINOS = prop.getProperty("rutaDestinos");
-            log.info("Se ha cargado la Ruta"+ RUTADESTINOS);
             RUTAPAQUETES = prop.getProperty("rutaPaquetes");
             RUTARESERVAS = prop.getProperty("rutaReservas");
+
+
+            //CODIGO PARA PROBRAR LOS PAQUETES TURISTICOS
+            ArrayList<Destino> destinosQuindio = new ArrayList<>();
+            Destino armenia = registrarDestino("Armenia","feo", null,Clima.TEMPLADO);
+            Destino filandia = registrarDestino("Filandia","hermoso", null,Clima.FRIO);
+            Destino salento = registrarDestino("Salento","bonito", null,Clima.FRIO);
+            destinosQuindio.add(armenia);
+            destinosQuindio.add(filandia);
+            destinosQuindio.add(salento);
+            PaquetesTuristicos paqueteQuindio = registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio,"Conoce Armenia y Filandia", "Desayuno", 3990000,30, LocalDate.now().plusDays(1),LocalDate.now().plusWeeks(1),null);
+            //FIN DE CODIGO PARA PROBAR PAQUETES
+
         } catch (IOException e) {
             log.severe("Ocurrio un error al momento de cargar las propiedades");
+        } catch (AtributoVacioException e) {
+            throw new RuntimeException(e);
+        } catch (InformacionRepetidaException e) {
+            throw new RuntimeException(e);
         }
 
         administradores = new ArrayList<>();
@@ -376,7 +392,7 @@ public class AgenciaViajes {
 
     // Metodo que registra los Paquetes turisticos
 
-    public PaquetesTuristicos registrarPaquetes(String nombre, String direccion, String serviciosAdicionales, float precio, int cupoMax, LocalDate fechaDisponible) throws AtributoVacioException, InformacionRepetidaException, RutaInvalidaException {
+    public PaquetesTuristicos registrarPaquetes(String nombre,ArrayList<Destino> destinos, String descripcion, String serviciosAdicionales, double precio, int cupoMax, LocalDate fechaDisponible,LocalDate fechaDisponibleFin,GuiaTuristico guia) throws AtributoVacioException, InformacionRepetidaException, RutaInvalidaException {
 
         if(nombre == null || nombre.isBlank()){
             throw new AtributoVacioException("El nombre es obligatorip");
@@ -386,8 +402,8 @@ public class AgenciaViajes {
             throw new InformacionRepetidaException("El paquete "+nombre+" ya está registrado");
         }
 
-        if(direccion == null || direccion.isBlank()){
-            throw new AtributoVacioException("La direccion es obligatoria");
+        if(descripcion == null || descripcion.isBlank()){
+            throw new AtributoVacioException("La descripcion es obligatoria");
         }
 
         if(serviciosAdicionales == null || serviciosAdicionales.isBlank()){
@@ -408,12 +424,17 @@ public class AgenciaViajes {
 
         PaquetesTuristicos paquete = PaquetesTuristicos.builder()
                 .nombre(nombre)
-                //.direccion(direccion)
+                .destinos(destinos)
+                .descripcion(descripcion)
                 .serviciosAdicionales(serviciosAdicionales)
                 .precio(precio)
                 .cupoMax(cupoMax)
+                .fechaDisponibleInicio(fechaDisponible)
+                .fechaDisponibleFin(fechaDisponibleFin)
                 .build();
-
+        if(guia != null){
+            paquete.setGuia(guia);
+        }
         paquetes.add(paquete);
         escribirPaquete();
 

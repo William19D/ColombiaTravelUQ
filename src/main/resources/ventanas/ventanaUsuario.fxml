@@ -57,7 +57,6 @@
             <Image url="@../iconos/volver.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" />
       <Button layoutX="15.0" layoutY="625.0" mnemonicParsing="false" onAction="#vovlerMenu" prefHeight="77.0" prefWidth="84.0" stylesheets="@styles.css">
          <font>
             <Font size="24.0" />
@@ -70,7 +69,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fitHeight="274.0" fitWidth="442.0" layoutX="10.0" layoutY="-47.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="276.0" fitWidth="492.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../imagenes/colombiaTravelHorizontal.png" />
          </image>

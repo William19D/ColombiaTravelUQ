@@ -104,18 +104,6 @@ nov. 09, 2023 11:12:52 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes lee
 GRAVE: null
 nov. 09, 2023 11:13:20 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
 INFORMACIï¿½N: Se ha registrado un nuevo guia con la identificacion: 68645
-nov. 09, 2023 11:19:23 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
-nov. 09, 2023 11:19:23 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIï¿½N: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
-nov. 09, 2023 11:19:23 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-GRAVE: null
-nov. 09, 2023 11:19:23 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
-GRAVE: null
-nov. 09, 2023 11:19:23 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-GRAVE: null
-nov. 09, 2023 11:19:54 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
-INFORMACIï¿½N: Se ha registrado un nuevo guia con la identificacion: 456
 Nov 09, 2023 11:44:27 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
 INFO: Se crea una nueva instancia de Colombia Travel
 Nov 09, 2023 11:44:27 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
@@ -480,15 +468,3 @@ Nov 09, 2023 5:58:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserv
 SEVERE: null
 Nov 09, 2023 5:58:11 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
 INFO: Se ha registrado un nuevo guia con la identificacion: 5
-nov. 09, 2023 8:33:29 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
-nov. 09, 2023 8:33:29 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIÓN: Se ha cargado la Rutasrc/main/resources/persistencia/destinos.ser
-nov. 09, 2023 8:33:29 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-GRAVE: null
-nov. 09, 2023 8:33:29 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
-GRAVE: null
-nov. 09, 2023 8:33:29 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-GRAVE: null
-nov. 09, 2023 8:34:14 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
-INFORMACIÓN: Se ha registrado un nuevo guia con la identificacion: 87587

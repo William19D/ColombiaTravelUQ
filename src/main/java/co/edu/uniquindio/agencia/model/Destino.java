@@ -22,4 +22,5 @@ public class Destino implements Serializable {
     private Clima clima;
     private double calificacion;
     private ArrayList<String> comentarios;
+
 }
