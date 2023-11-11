@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="ventanaBuscadorPaquetes" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="1280.0" style="-fx-background-color: #F1F3E5;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ControllerBuscadorPaquetes">
    <children>
       <GridPane layoutX="53.0" layoutY="72.0" prefHeight="383.0" prefWidth="498.0">
@@ -38,7 +37,7 @@
                   <Font size="40.0" />
                </font>
             </Label>
-            <Label styleClass="textoRegular" stylesheets="@styles.css" text="Presupuesto" GridPane.rowIndex="2">
+            <Label styleClass="textoRegular" stylesheets="@styles.css" text="Precio" GridPane.rowIndex="2">
                <font>
                   <Font size="40.0" />
                </font>
@@ -74,13 +73,7 @@
       </Label>
       <ScrollPane fx:id="scrollPaquetes" layoutX="664.0" layoutY="117.0" prefHeight="397.0" prefWidth="583.0">
         <content>
-          <AnchorPane fx:id="scrollAnchorPane">
-               <children>
-                  <AnchorPane fx:id="scrollAnchorPaquetes" prefHeight="200.0" prefWidth="583.0" />
-                  <AnchorPane fx:id="scrollAnchorPaquetes1" layoutY="200.0" prefHeight="200.0" prefWidth="583.0" />
-                  <AnchorPane fx:id="scrollAnchorPaquetes11" layoutY="397.0" prefHeight="200.0" prefWidth="583.0" />
-               </children>
-            </AnchorPane>
+          <AnchorPane fx:id="scrollAnchorPane" />
         </content>
       </ScrollPane>
    </children>

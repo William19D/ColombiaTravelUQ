@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
+import java.util.stream.Collectors;
 
 
 @Getter
@@ -137,6 +138,10 @@ public class AgenciaViajes {
         for (Destino destino : destinos) {
             System.out.println(destino.toString());
         }
+        for (PaquetesTuristicos paquete : paquetes) {
+            System.out.println(paquete.toString());
+        }
+
     }
 
     private boolean existeArchivoSerializable(String NOMBRE_ARCHIVO) {
@@ -538,6 +543,17 @@ public class AgenciaViajes {
 
         }
 
+    }
+    public List<PaquetesTuristicos> getPaquetesPorPresupuesto(double valorPresupuesto) {
+        try {
+
+            return paquetes.stream()
+                    .filter(paquete -> paquete.getPrecio() <= valorPresupuesto)
+                    .collect(Collectors.toList());
+        } catch (NumberFormatException e) {
+
+            return new ArrayList<>(paquetes);
+        }
     }
 
 }
