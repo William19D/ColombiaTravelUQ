@@ -47,24 +47,24 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fitHeight="276.0" fitWidth="273.0" layoutX="41.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagen1" fitHeight="276.0" fitWidth="273.0" layoutX="41.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagenes/Buenavista.jpeg" />
+            <Image url="@../imagenes/destinos/Buenavista.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="276.0" fitWidth="273.0" layoutX="353.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagen2" fitHeight="276.0" fitWidth="273.0" layoutX="353.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagenes/Circasia.jpeg" />
+            <Image url="@../imagenes/destinos/Circasia.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="276.0" fitWidth="273.0" layoutX="661.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagen3" fitHeight="276.0" fitWidth="273.0" layoutX="661.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagenes/Filandia.jpeg" />
+            <Image url="@../imagenes/destinos/Filandia.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="276.0" fitWidth="273.0" layoutX="959.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imagen4" fitHeight="276.0" fitWidth="273.0" layoutX="959.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../imagenes/Armenia.jpeg" />
+            <Image url="@../imagenes/destinos/Armenia.jpeg" />
          </image>
       </ImageView>
       <Label fx:id="lblDestinos" layoutX="336.0" layoutY="210.0" styleClass="textoRegular" stylesheets="@styles.css" text="Destinos para ti">

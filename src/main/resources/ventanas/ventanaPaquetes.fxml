@@ -57,12 +57,12 @@
                   <Font size="40.0" />
                </font>
             </Label>
-            <TextField fx:id="txtCiudad" prefHeight="31.0" prefWidth="211.0" styleClass="text-field" stylesheets="@styles.css" GridPane.columnIndex="1" />
+            <TextField fx:id="txtCiudad" prefHeight="31.0" prefWidth="211.0" style="-fx-background-radius: 100;" styleClass="text-field" stylesheets="@styles.css" GridPane.columnIndex="1" />
             <DatePicker fx:id="fechaIda" prefHeight="31.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <DatePicker fx:id="fechaVuelta" prefHeight="31.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField fx:id="txtPersonas" prefHeight="31.0" prefWidth="211.0" styleClass="text-field" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="txtPresupuesto" prefHeight="31.0" prefWidth="211.0" styleClass="text-field" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtClima" prefHeight="31.0" prefWidth="211.0" styleClass="text-field" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtPersonas" prefHeight="31.0" prefWidth="211.0" style="-fx-background-radius: 100;" styleClass="text-field" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtPresupuesto" prefHeight="31.0" prefWidth="211.0" style="-fx-background-radius: 100;" styleClass="text-field" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtClima" prefHeight="31.0" prefWidth="211.0" style="-fx-background-radius: 100;" styleClass="text-field" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <Pane layoutX="634.0" prefHeight="548.0" prefWidth="3.0" style="-fx-background-color: black;" />

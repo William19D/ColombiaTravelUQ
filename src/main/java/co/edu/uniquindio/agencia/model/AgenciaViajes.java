@@ -105,22 +105,27 @@ public class AgenciaViajes {
             ArrayList<File> listaDeImagenes1 = new ArrayList<>();
             ArrayList<File> listaDeImagenes2 = new ArrayList<>();
             ArrayList<File> listaDeImagenes3 = new ArrayList<>();
+            ArrayList<File> listaDeImagenes4 = new ArrayList<>();
 
             // Cargar la imagen de Armenia
-            File armeniaFoto = new File("src/main/resources/imagenes/Armenia.jpeg");
+            File armeniaFoto = new File("src/main/resources/imagenes/destinos/Armenia.jpeg");
             listaDeImagenes1.add(armeniaFoto);
 
             // Cargar la imagen de Filandia
-            File filandiaFoto = new File("src/main/resources/imagenes/Filandia.jpeg");
+            File filandiaFoto = new File("src/main/resources/imagenes/destinos/Filandia.jpeg");
             listaDeImagenes2.add(filandiaFoto);
 
             // Cargar la imagen de Salento
-            File salentoFoto = new File("src/main/resources/imagenes/Salento.jpeg");
+            File salentoFoto = new File("src/main/resources/imagenes/destinos/Salento.jpeg");
             listaDeImagenes3.add(salentoFoto);
+            // Cargar la imagen de BuenaVista
+            File buenavistaFoto = new File("src/main/resources/imagenes/destinos/Buenavista.jpeg");
+            listaDeImagenes4.add(buenavistaFoto);
 
             Destino armenia = registrarDestino("Plaza de Bolivar", "Aremenia", "Meh", listaDeImagenes1, Clima.TEMPLADO);
             Destino filandia = registrarDestino("Mirador", "Filandia", "Bonito", listaDeImagenes2, Clima.TEMPLADO);
             Destino salento = registrarDestino("Cocora", "Salento", "Bonito", listaDeImagenes3, Clima.TEMPLADO);
+            Destino buenavista = registrarDestino("Pueblo", "Buenavista", "Bonito", listaDeImagenes4, Clima.TEMPLADO);
 
             ArrayList<Destino> destinosQuindio = new ArrayList<>();
             destinosQuindio.add(armenia);
@@ -128,9 +133,7 @@ public class AgenciaViajes {
             destinosQuindio.add(salento);
 
             // TODO: HACER LA FUNCION DE VERIFICAR SI YA EXISTE UN PAQUETE QUE RETORNE UN MENSAJE
-            PaquetesTuristicos paqueteQuindio = registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio, "Conoce Armenia y Filandia", "Desayuno", 3990000, 30, LocalDate.now().plusDays(1), LocalDate.now().plusWeeks(1), null);
-            System.out.println(paqueteQuindio.toString());
-            paquetes.add(paqueteQuindio);
+            registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio, "Conoce Armenia y Filandia", "Desayuno", 3990000, 30, LocalDate.now().plusDays(1), LocalDate.now().plusWeeks(1), null);
             // FIN DE CODIGO PARA PROBAR PAQUETES.
         }
 
