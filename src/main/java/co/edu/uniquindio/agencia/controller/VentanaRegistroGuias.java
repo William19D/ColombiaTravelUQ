@@ -8,10 +8,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.agencia.app.App;
-import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
-import co.edu.uniquindio.agencia.exceptions.ElementoNoEncontradoException;
-import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
-import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
+import co.edu.uniquindio.agencia.exceptions.*;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
 import co.edu.uniquindio.agencia.model.GuiaTuristico;
 import co.edu.uniquindio.agencia.model.Idiomas;
@@ -84,7 +81,7 @@ public class VentanaRegistroGuias {
     ObservableList<GuiaTuristico> listaGuias = FXCollections.observableArrayList(AgenciaViajes.getInstance().getGuias());
 
 
-    public VentanaRegistroGuias() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException {
+    public VentanaRegistroGuias() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
     }
 
     @FXML

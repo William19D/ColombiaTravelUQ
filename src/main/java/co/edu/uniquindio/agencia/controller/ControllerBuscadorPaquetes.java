@@ -1,6 +1,7 @@
 package co.edu.uniquindio.agencia.controller;
 
 import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
+import co.edu.uniquindio.agencia.exceptions.DestinoRepetidoException;
 import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
 import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
@@ -46,7 +47,7 @@ public class ControllerBuscadorPaquetes {
 
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
 
-    public ControllerBuscadorPaquetes() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException {
+    public ControllerBuscadorPaquetes() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
     }
 
 

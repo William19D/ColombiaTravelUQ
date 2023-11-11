@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import co.edu.uniquindio.agencia.app.App;
 import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
+import co.edu.uniquindio.agencia.exceptions.DestinoRepetidoException;
 import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
 import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
@@ -53,7 +54,7 @@ public class VentanaRegistroCliente {
 
     private App main;
 
-    public VentanaRegistroCliente() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException {
+    public VentanaRegistroCliente() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
     }
 
     @FXML
