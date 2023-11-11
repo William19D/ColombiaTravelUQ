@@ -72,7 +72,7 @@ public class AgenciaViajes {
         reservas = new ArrayList<>();
         leerReserva();
 
-        //inicializarDestinosTest();
+        inicializarDestinosTest();
     }
     private void inicializarLogger() {
         try {
@@ -95,38 +95,59 @@ public class AgenciaViajes {
     }
 
     private void inicializarDestinosTest() throws AtributoVacioException, RutaInvalidaException, InformacionRepetidaException, DestinoRepetidoException {
-        //CODIGO PARA PROBRAR LOS PAQUETES TURISTICOS
-        ArrayList<File> listaDeImagenes1 = new ArrayList<>();
-        ArrayList<File> listaDeImagenes2 = new ArrayList<>();
-        ArrayList<File> listaDeImagenes3 = new ArrayList<>();
+        if (existeArchivoSerializable(RUTAPAQUETES)  || existeArchivoSerializable(RUTADESTINOS) ) {
+            // Si el archivo serializable existe, cargar la información desde el archivo
+            log.info("No se han cargado los datos ya que ya se tiene informacion ");
+        } else {
+            // Si el archivo no existe, realizar la inicialización normal
+            ArrayList<File> listaDeImagenes1 = new ArrayList<>();
+            ArrayList<File> listaDeImagenes2 = new ArrayList<>();
+            ArrayList<File> listaDeImagenes3 = new ArrayList<>();
 
-        // Cargar la  imagen de Armenia
-        File armeniaFoto = new File("imagenes/Armenia.jpeg");
-        listaDeImagenes1.add(new File(armeniaFoto.getPath()));
+            // Cargar la imagen de Armenia
+            File armeniaFoto = new File("src/main/resources/imagenes/Armenia.jpeg");
+            listaDeImagenes1.add(new File(armeniaFoto.getPath()));
 
-        // Cargar la  imagen de Filandia
-        File filandiaFoto = new File("imagenes/Filandia.jpeg");
-        listaDeImagenes2.add(new File(armeniaFoto.getPath()));
+            // Cargar la imagen de Filandia
+            File filandiaFoto = new File("src/main/resources/imagenes/Filandia.jpeg");
+            listaDeImagenes2.add(new File(filandiaFoto.getPath()));
 
-        // Cargar la  imagen de Salento
-        File salentoFoto = new File("imagenes/Salento.jpeg");
-        listaDeImagenes3.add(new File(armeniaFoto.getPath()));
+            // Cargar la imagen de Salento
+            File salentoFoto = new File("src/main/resources/imagenes/Salento.jpeg");
+            listaDeImagenes3.add(new File(salentoFoto.getPath()));
 
-        Destino armenia = registrarDestino("Plaza de Bolivar","Aremenia","Meh", listaDeImagenes1,Clima.TEMPLADO);
-        Destino filandia = registrarDestino("Mirador","Filandia","Bonito", listaDeImagenes2,Clima.TEMPLADO);
-        Destino salento = registrarDestino("Cocora","Salento","Bonito", listaDeImagenes3,Clima.TEMPLADO);
+            Destino armenia = registrarDestino("Plaza de Bolivar", "Aremenia", "Meh", listaDeImagenes1, Clima.TEMPLADO);
+            Destino filandia = registrarDestino("Mirador", "Filandia", "Bonito", listaDeImagenes2, Clima.TEMPLADO);
+            Destino salento = registrarDestino("Cocora", "Salento", "Bonito", listaDeImagenes3, Clima.TEMPLADO);
 
-        ArrayList<Destino> destinosQuindio = new ArrayList<>();
-        destinosQuindio.add(armenia);
-        destinosQuindio.add(filandia);
-        destinosQuindio.add(salento);
+            ArrayList<Destino> destinosQuindio = new ArrayList<>();
+            destinosQuindio.add(armenia);
+            destinosQuindio.add(filandia);
+            destinosQuindio.add(salento);
 
-        //TODO HACER LA FUNCION DE VERIFICAR SI YA EXISTE UN PAQUETE QUE RETORNE UN MENSAJE
-        PaquetesTuristicos paqueteQuindio = registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio,"Conoce Armenia y Filandia", "Desayuno", 3990000,30, LocalDate.now().plusDays(1),LocalDate.now().plusWeeks(1),null);
-        //FIN DE CODIGO PARA PROBAR PAQUETES
+            // TODO: HACER LA FUNCION DE VERIFICAR SI YA EXISTE UN PAQUETE QUE RETORNE UN MENSAJE
+            PaquetesTuristicos paqueteQuindio = registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio, "Conoce Armenia y Filandia", "Desayuno", 3990000, 30, LocalDate.now().plusDays(1), LocalDate.now().plusWeeks(1), null);
+            // FIN DE CODIGO PARA PROBAR PAQUETES
+
+            // Guardar la información en el archivo serializable
+            escribirDestino();
+        }
+
+        // Imprimir destinos
         for (Destino destino : destinos) {
             System.out.println(destino.toString());
         }
+    }
+
+    private boolean existeArchivoSerializable(String NOMBRE_ARCHIVO) {
+        File archivo = new File(NOMBRE_ARCHIVO);
+        return archivo.exists() && archivo.isFile() && archivo.length() > 0;
+    }
+    public Destino obtenerDestinoPorNombre(String nombre) {
+        return destinos.stream()
+                .filter(destino -> destino.getNombre().equals(nombre))
+                .findFirst()
+                .orElse(null);
     }
 
 
@@ -247,14 +268,18 @@ public class AgenciaViajes {
         if (clima == null) {
             throw new AtributoVacioException("El clima es obligatorio");
         }
+        Destino destinoExistente = obtenerDestinoPorNombre(nombre);
+        if (destinoExistente != null) {
+            // Aquí puedes manejar el caso de que ya existe un destino con ese nombre
+            // Puedes lanzar una excepción, imprimir un mensaje, etc.
+            throw new DestinoRepetidoException("Ya existe un destino con el nombre: " + nombre);
+        }
 
         // Verificar si el nombre o la ciudad ya existen en destinos
-        if (existeDestinoConNombreCiudad(nombre, ciudad)) {
-            throw new DestinoRepetidoException("Ya existe un destino con el mismo nombre o ciudad");
-        }
 
         Destino destino = Destino.builder()
                 .nombre(nombre)
+                .ciudad(ciudad)
                 .descripcion(descripcion)
                 .rutasImagenes(imagenes)
                 .clima(clima)
@@ -267,11 +292,6 @@ public class AgenciaViajes {
         return destino;
     }
 
-    private boolean existeDestinoConNombreCiudad(String nombre, String ciudad) {
-        // Verificar si existe algún destino con el mismo nombre o ciudad
-        return destinos.stream()
-                .anyMatch(destino -> destino.getNombre().equalsIgnoreCase(nombre) || destino.getCiudad().equalsIgnoreCase(ciudad));
-    }
 
 // Metodo que elimina un destino
     public void eliminarDestino(String nombre) throws ElementoNoEncontradoException {
