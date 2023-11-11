@@ -1,9 +1,6 @@
 package co.edu.uniquindio.agencia.model;
 
-import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
-import co.edu.uniquindio.agencia.exceptions.ElementoNoEncontradoException;
-import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
-import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
+import co.edu.uniquindio.agencia.exceptions.*;
 import com.sun.javafx.iio.ImageLoader;
 import javafx.stage.FileChooser;
 import lombok.*;
@@ -37,7 +34,7 @@ public class AgenciaViajes {
     private ArrayList<Reserva> reservas;
     private static ArrayList<Administrador> administradores;
 
-    private AgenciaViajes() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException {
+    private AgenciaViajes() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
         inicializarLogger();
         log.info("Se crea una nueva instancia de Colombia Travel" );
         try {
@@ -75,10 +72,10 @@ public class AgenciaViajes {
         reservas = new ArrayList<>();
         leerReserva();
 
-        inicializarDestinosTest();
+        //inicializarDestinosTest();
     }
 
-    private void inicializarDestinosTest() throws AtributoVacioException, RutaInvalidaException, InformacionRepetidaException {
+    private void inicializarDestinosTest() throws AtributoVacioException, RutaInvalidaException, InformacionRepetidaException, DestinoRepetidoException {
         //CODIGO PARA PROBRAR LOS PAQUETES TURISTICOS
         ArrayList<File> listaDeImagenes1 = new ArrayList<>();
         ArrayList<File> listaDeImagenes2 = new ArrayList<>();
@@ -90,11 +87,11 @@ public class AgenciaViajes {
 
         // Cargar la  imagen de Filandia
         File filandiaFoto = new File("imagenes/Filandia.jpeg");
-        listaDeImagenes1.add(new File(armeniaFoto.getPath()));
+        listaDeImagenes2.add(new File(armeniaFoto.getPath()));
 
         // Cargar la  imagen de Salento
         File salentoFoto = new File("imagenes/Salento.jpeg");
-        listaDeImagenes1.add(new File(armeniaFoto.getPath()));
+        listaDeImagenes3.add(new File(armeniaFoto.getPath()));
 
         Destino armenia = registrarDestino("Plaza de Bolivar","Aremenia","Meh", listaDeImagenes1,Clima.TEMPLADO);
         Destino filandia = registrarDestino("Mirador","Filandia","Bonito", listaDeImagenes2,Clima.TEMPLADO);
@@ -105,8 +102,12 @@ public class AgenciaViajes {
         destinosQuindio.add(filandia);
         destinosQuindio.add(salento);
 
+        //TODO HACER LA FUNCION DE VERIFICAR SI YA EXISTE UN PAQUETE QUE RETORNE UN MENSAJE
         PaquetesTuristicos paqueteQuindio = registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio,"Conoce Armenia y Filandia", "Desayuno", 3990000,30, LocalDate.now().plusDays(1),LocalDate.now().plusWeeks(1),null);
         //FIN DE CODIGO PARA PROBAR PAQUETES
+        for (Destino destino : destinos) {
+            System.out.println(destino.toString());
+        }
     }
     private void inicializarLogger(){
         try {
@@ -118,7 +119,7 @@ public class AgenciaViajes {
         }
     }
 
-    public static AgenciaViajes getInstance() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException {
+    public static AgenciaViajes getInstance() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
         if(agenciaViajes == null){
             agenciaViajes = new AgenciaViajes();
         }
@@ -219,21 +220,26 @@ public class AgenciaViajes {
         return existe;
     }
     //DESTINOS
-    public Destino registrarDestino(String nombre, String ciudad, String descripcion, ArrayList<File> imagenes , Clima clima) throws AtributoVacioException, RutaInvalidaException {
+    public Destino registrarDestino(String nombre, String ciudad, String descripcion, ArrayList<File> imagenes, Clima clima) throws AtributoVacioException, RutaInvalidaException, DestinoRepetidoException {
         if (nombre == null || nombre.isBlank()) {
             throw new AtributoVacioException("El nombre del destino es obligatorio");
         }
         if (ciudad == null || ciudad.isBlank()) {
-            throw new AtributoVacioException("La ciudad del destino es obligatorio");
+            throw new AtributoVacioException("La ciudad del destino es obligatoria");
         }
         if (descripcion == null || descripcion.isBlank()) {
             throw new AtributoVacioException("La descripción es obligatoria");
         }
-        if (imagenes == null) {
+        if (imagenes == null || imagenes.isEmpty()) {
             throw new AtributoVacioException("Debes seleccionar al menos una imagen");
         }
         if (clima == null) {
             throw new AtributoVacioException("El clima es obligatorio");
+        }
+
+        // Verificar si el nombre o la ciudad ya existen en destinos
+        if (existeDestinoConNombreCiudad(nombre, ciudad)) {
+            throw new DestinoRepetidoException("Ya existe un destino con el mismo nombre o ciudad");
         }
 
         Destino destino = Destino.builder()
@@ -248,6 +254,12 @@ public class AgenciaViajes {
 
         log.info("Se ha registrado un nuevo destino con el nombre: " + nombre);
         return destino;
+    }
+
+    private boolean existeDestinoConNombreCiudad(String nombre, String ciudad) {
+        // Verificar si existe algún destino con el mismo nombre o ciudad
+        return destinos.stream()
+                .anyMatch(destino -> destino.getNombre().equalsIgnoreCase(nombre) || destino.getCiudad().equalsIgnoreCase(ciudad));
     }
 
 // Metodo que elimina un destino
