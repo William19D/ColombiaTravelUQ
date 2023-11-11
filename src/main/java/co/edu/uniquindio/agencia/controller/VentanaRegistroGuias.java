@@ -18,6 +18,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import lombok.SneakyThrows;
 import javafx.collections.ObservableList;
 
@@ -70,6 +71,9 @@ public class VentanaRegistroGuias {
 
     @FXML
     private TextField txtNombre;
+
+    @FXML
+    private AnchorPane ventanaGuias;
 
     private App main;
 
@@ -191,6 +195,11 @@ public class VentanaRegistroGuias {
             // Si no se selecciona ningún guía, muestra un mensaje de error
             throw new AtributoVacioException("Selecciona un guía para eliminar.");
         }
+    }
+
+    @FXML
+    void vovlerMenuAdmins(ActionEvent event) throws IOException {
+        new ViewController(ventanaGuias, "/ventanas/ventanaMenuAdmins.fxml");
     }
 
     @FXML
