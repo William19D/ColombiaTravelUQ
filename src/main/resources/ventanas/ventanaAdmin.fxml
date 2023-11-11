@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ventanaUsuario" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ControllerVentanaAdmin">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#1c4f3b2e" height="155.0" layoutX="-6.0" layoutY="177.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1310.0" />
+        <Label fx:id="lblDestinos" layoutX="134.0" layoutY="166.0" prefHeight="70.0" prefWidth="532.0" styleClass="textoNegrita" stylesheets="@styles.css" text="Nombre del Admin">
+            <font>
+                <Font size="50.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="110.0" fitWidth="132.0" layoutX="18.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagenes/UsuarioFoto.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="41.0" fitWidth="45.0" layoutX="134.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../iconos/correo.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="lblDestinos1" layoutX="179.0" layoutY="213.0" prefHeight="56.0" prefWidth="386.0" styleClass="textoLight" stylesheets="@styles.css" text="correofalso@correo.com">
+            <font>
+                <Font size="31.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="34.0" fitWidth="46.0" layoutX="134.0" layoutY="265.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../iconos/telefono.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="lblDestinos11" layoutX="179.0" layoutY="254.0" prefHeight="56.0" prefWidth="386.0" styleClass="textoLight" stylesheets="@styles.css" text="+57 3217856357">
+            <font>
+                <Font size="31.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnCerrar" layoutX="990.0" layoutY="217.0" mnemonicParsing="false" onAction="#cerrarSecionEvent" prefHeight="70.0" prefWidth="246.0" style="-fx-background-color: F44F2C;" stylesheets="@styles.css" text="Cerrar Sesion">
+            <font>
+                <Font size="24.0" />
+            </font>
+            <styleClass>
+                <String fx:value="textoLight" />
+                <String fx:value="botonClick" />
+            </styleClass>
+        </Button>
+        <ImageView fx:id="btnVolver" fitHeight="77.0" fitWidth="164.0" layoutX="18.0" layoutY="625.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../iconos/volver.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="btnVolverMenuAdmins" layoutX="15.0" layoutY="625.0" mnemonicParsing="false" onAction="#vovlerMenuAdmins" prefHeight="77.0" prefWidth="84.0" stylesheets="@styles.css">
+            <font>
+                <Font size="24.0" />
+            </font>
+            <styleClass>
+                <String fx:value="textoLight" />
+                <String fx:value="botonClick" />
+            </styleClass>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <ImageView fitHeight="276.0" fitWidth="492.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagenes/colombiaTravelHorizontal.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>
