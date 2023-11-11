@@ -1,252 +1,144 @@
-Nov 10, 2023 10:10:51 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+Nov 10, 2023 11:38:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarLogger
+INFO: INICIO ARCHIVO LOG COLOMBIA TRAVEL.
+Nov 10, 2023 11:38:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
 INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:11:24 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:14:01 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:14:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:16:00 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:16:00 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+Nov 10, 2023 11:38:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
 SEVERE: null
-Nov 10, 2023 10:16:00 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+Nov 10, 2023 11:38:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 SEVERE: null
-Nov 10, 2023 10:16:00 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 10:21:21 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+Nov 10, 2023 11:38:59 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
 INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:29:00 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:29:39 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:32:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:32:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+Nov 10, 2023 11:38:59 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
 SEVERE: null
-Nov 10, 2023 10:32:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+Nov 10, 2023 11:38:59 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 SEVERE: null
-Nov 10, 2023 10:32:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+Nov 10, 2023 11:40:30 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 10, 2023 11:40:30 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
 SEVERE: null
-Nov 10, 2023 10:32:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+Nov 10, 2023 11:40:30 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 10, 2023 11:41:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 10, 2023 11:41:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 10, 2023 11:41:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 10, 2023 11:41:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 10, 2023 11:41:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
 INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
-Nov 10, 2023 10:32:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+Nov 10, 2023 11:42:18 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 10, 2023 11:42:18 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 10, 2023 11:42:18 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 10, 2023 11:42:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 10, 2023 11:42:35 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 10, 2023 11:42:35 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 10, 2023 11:42:35 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 10, 2023 11:42:35 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
+Nov 10, 2023 11:42:37 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 10, 2023 11:42:37 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 10, 2023 11:42:37 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 10, 2023 11:42:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 10, 2023 11:42:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 10, 2023 11:42:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 10, 2023 11:42:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 10, 2023 11:42:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
+Nov 10, 2023 11:47:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 10, 2023 11:47:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 10, 2023 11:47:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 10, 2023 11:47:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
+Nov 10, 2023 11:47:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
 INFO: Se ha registrado un nuevo destino con el nombre: Mirador
-Nov 10, 2023 10:32:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+Nov 10, 2023 11:47:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
 INFO: Se ha registrado un nuevo destino con el nombre: Cocora
-Nov 10, 2023 10:32:12 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarPaquetes
+Nov 10, 2023 11:51:50 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 10, 2023 11:51:50 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 10, 2023 11:51:50 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 10, 2023 11:52:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 10, 2023 11:52:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 10, 2023 11:52:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 10, 2023 11:52:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 10, 2023 11:52:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
+Nov 10, 2023 11:52:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+INFO: Se ha registrado un nuevo destino con el nombre: Mirador
+Nov 10, 2023 11:52:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+INFO: Se ha registrado un nuevo destino con el nombre: Cocora
+Nov 10, 2023 11:52:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarPaquetes
 INFO: Se ha registrado un nuevo paquete con el nombre: Quindio: Corazon del Cafe
-Nov 10, 2023 10:34:53 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+Nov 10, 2023 11:53:36 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
 INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:34:53 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+Nov 10, 2023 11:53:36 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
 SEVERE: null
-Nov 10, 2023 10:34:53 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+Nov 10, 2023 11:53:36 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 10, 2023 11:53:36 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 10, 2023 11:53:36 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
 INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
-Nov 10, 2023 10:34:53 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+Nov 10, 2023 11:53:36 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
 INFO: Se ha registrado un nuevo destino con el nombre: Mirador
-Nov 10, 2023 10:34:53 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+Nov 10, 2023 11:53:36 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
 INFO: Se ha registrado un nuevo destino con el nombre: Cocora
-Nov 10, 2023 10:35:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+Nov 10, 2023 11:53:36 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarPaquetes
+INFO: Se ha registrado un nuevo paquete con el nombre: Quindio: Corazon del Cafe
+Nov 10, 2023 11:59:24 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
 INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:35:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+Nov 10, 2023 11:59:24 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
 SEVERE: null
-Nov 10, 2023 10:35:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+Nov 10, 2023 11:59:24 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 10, 2023 11:59:24 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 10, 2023 11:59:24 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 11, 2023 12:00:28 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 11, 2023 12:00:28 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+SEVERE: null
+Nov 11, 2023 12:00:28 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+SEVERE: null
+Nov 11, 2023 12:00:28 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 11, 2023 12:00:28 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
 INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
-Nov 10, 2023 10:35:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+Nov 11, 2023 12:00:28 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
 INFO: Se ha registrado un nuevo destino con el nombre: Mirador
-Nov 10, 2023 10:35:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+Nov 11, 2023 12:00:28 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
 INFO: Se ha registrado un nuevo destino con el nombre: Cocora
-Nov 10, 2023 10:35:46 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+Nov 11, 2023 12:00:28 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarPaquetes
+INFO: Se ha registrado un nuevo paquete con el nombre: Quindio: Corazon del Cafe
+Nov 11, 2023 12:00:43 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
 INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:35:46 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+Nov 11, 2023 12:00:43 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 SEVERE: null
-Nov 10, 2023 10:35:46 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
-Nov 10, 2023 10:35:46 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Mirador
-Nov 10, 2023 10:35:46 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Cocora
-Nov 10, 2023 10:36:32 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:36:32 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 10:36:32 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
-Nov 10, 2023 10:36:32 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Mirador
-Nov 10, 2023 10:36:32 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Cocora
-Nov 10, 2023 10:42:42 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:42:42 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 10:42:42 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
-Nov 10, 2023 10:42:42 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Mirador
-Nov 10, 2023 10:42:42 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Cocora
-Nov 10, 2023 10:47:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:47:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 10:49:26 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:49:26 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 10:49:26 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
-SEVERE: null
-Nov 10, 2023 10:49:26 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 10:49:26 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
-Nov 10, 2023 10:50:31 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:50:31 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 10:50:31 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
-SEVERE: null
-Nov 10, 2023 10:50:31 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 10:50:31 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
-Nov 10, 2023 10:51:09 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:51:09 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 10:51:09 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
-SEVERE: null
-Nov 10, 2023 10:51:09 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 10:51:09 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
-Nov 10, 2023 10:52:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:52:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 10:52:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 10:53:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 10:53:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 10:53:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
-SEVERE: null
-Nov 10, 2023 10:53:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 10:53:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
-Nov 10, 2023 11:01:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:01:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:01:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
-SEVERE: invalid stream header: EFBFBDEF
-Nov 10, 2023 11:01:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:01:15 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
-INFO: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
-Nov 10, 2023 11:01:42 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:01:42 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:01:42 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:01:43 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:01:43 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:01:43 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:08:02 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:08:02 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:08:02 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:08:03 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:08:03 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:08:03 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:08:03 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:08:03 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:08:03 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:08:04 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:08:04 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:08:04 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:08:04 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:08:04 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:08:04 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:08:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:08:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:08:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:08:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:08:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:08:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:08:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:08:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:08:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:08:09 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:08:09 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:08:09 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:08:11 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:08:11 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:08:11 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:09:49 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:09:49 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:09:49 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:10:38 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:10:38 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:10:38 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:10:51 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:10:51 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:10:51 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:12:14 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:12:14 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:12:14 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
-Nov 10, 2023 11:31:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarLogger
-INFO: Se utilizará el archivo de log existente.
-Nov 10, 2023 11:31:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFO: Se crea una nueva instancia de Colombia Travel
-Nov 10, 2023 11:31:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
-SEVERE: null
-Nov 10, 2023 11:31:54 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
-SEVERE: null
+Nov 11, 2023 12:00:43 AM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
