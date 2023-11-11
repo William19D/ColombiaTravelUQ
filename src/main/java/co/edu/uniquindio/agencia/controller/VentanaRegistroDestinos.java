@@ -1,6 +1,7 @@
 package co.edu.uniquindio.agencia.controller;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 
 public class VentanaRegistroDestinos {
 
@@ -66,6 +68,9 @@ public class VentanaRegistroDestinos {
 
     @FXML
     private TextField txtNombre;
+
+    @FXML
+    private AnchorPane ventanaDestinos;
 
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
 
@@ -152,6 +157,11 @@ public class VentanaRegistroDestinos {
             tablaDestinos();
             tabDestinosRegistrados.refresh();
 
+    }
+
+    @FXML
+    void vovlerMenuAdmins(ActionEvent event) throws IOException {
+        new ViewController(ventanaDestinos, "/ventanas/ventanaMenuAdmins.fxml");
     }
 
     @FXML
