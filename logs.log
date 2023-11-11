@@ -392,3 +392,9 @@ Nov 11, 2023 1:18:57 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserv
 SEVERE: null
 Nov 11, 2023 1:18:57 AM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
 INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 11, 2023 1:21:52 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 11, 2023 1:21:52 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 11, 2023 1:21:52 AM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 

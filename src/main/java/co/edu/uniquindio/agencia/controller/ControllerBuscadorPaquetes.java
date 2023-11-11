@@ -14,12 +14,15 @@ import javafx.scene.Parent;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.UnaryOperator;
+import java.util.regex.Pattern;
 
 public class ControllerBuscadorPaquetes {
 
@@ -61,6 +64,19 @@ public class ControllerBuscadorPaquetes {
     public void initialize() throws IOException {
         scrollPaquetes.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
+        // Configurar el filtro para aceptar solo caracteres numéricos
+        UnaryOperator<TextFormatter.Change> numericFilter = change -> {
+            String newText = change.getControlNewText();
+            if (Pattern.matches("[0-9]*", newText)) {
+                return change;
+            } else {
+                return null; // Rechazar el cambio si el nuevo texto contiene caracteres no numéricos
+            }
+        };
+
+        // Aplicar el filtro al TextFormatter del TextField de presupuesto
+        txtPresupuesto.setTextFormatter(new TextFormatter<>(numericFilter));
+
         // Listener para el cambio en el campo de presupuesto
         txtPresupuesto.textProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -76,30 +92,24 @@ public class ControllerBuscadorPaquetes {
 
     public void cargarPaquetesPorPresupuesto(String presupuesto) {
         try {
-            // Verificar si el campo de presupuesto está vacío
-            if (presupuesto.isEmpty()) {
-                // Si está vacío, cargar todos los paquetes
-                cargarPaquetes();
-            } else {
-                // Obtener la lista de paquetes que cumplen con el presupuesto
-                List<PaquetesTuristicos> paquetesFiltrados = agenciaViajes.getPaquetesPorPresupuesto(Double.parseDouble(presupuesto));
+            // Obtener la lista de paquetes que cumplen con el presupuesto
+            List<PaquetesTuristicos> paquetesFiltrados = agenciaViajes.getPaquetesPorPresupuesto(Double.parseDouble(presupuesto));
 
-                // Crear un VBox para almacenar las instancias de ControllerPaquete
-                VBox vbox = new VBox();
+            // Crear un VBox para almacenar las instancias de ControllerPaquete
+            VBox vbox = new VBox();
 
-                // Configurar cada instancia con un paquete diferente
-                for (PaquetesTuristicos paquete : paquetesFiltrados) {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/paquete.fxml"));
-                    Parent root = loader.load();
-                    ControllerPaquete controller = loader.getController();
-                    controller.setPaquete(paquete);
-                    vbox.getChildren().add(root);
-                }
-
-                // Limpiar el contenido actual y agregar el nuevo VBox al ScrollPane
-                scrollAnchorPane.getChildren().clear();
-                scrollAnchorPane.getChildren().add(vbox);
+            // Configurar cada instancia con un paquete diferente
+            for (PaquetesTuristicos paquete : paquetesFiltrados) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/paquete.fxml"));
+                Parent root = loader.load();
+                ControllerPaquete controller = loader.getController();
+                controller.setPaquete(paquete);
+                vbox.getChildren().add(root);
             }
+
+            // Limpiar el contenido actual y agregar el nuevo VBox al ScrollPane
+            scrollAnchorPane.getChildren().clear();
+            scrollAnchorPane.getChildren().add(vbox);
         } catch (IOException e) {
             e.printStackTrace();
             // Manejo de excepciones específicas según sea necesario
@@ -107,7 +117,6 @@ public class ControllerBuscadorPaquetes {
             // Manejo de la excepción si el valor ingresado no es un número válido
         }
     }
-
 
     private void cargarPaquetes() {
         try {
