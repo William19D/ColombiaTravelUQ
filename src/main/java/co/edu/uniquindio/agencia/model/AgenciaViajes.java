@@ -72,6 +72,7 @@ public class AgenciaViajes {
         reservas = new ArrayList<>();
         leerReserva();
 
+        //TODO ESTO ES UNA FUNCION DE PRUEBA PARA ANADIR DESTINOS Y PAQUETES
         inicializarDestinosTest();
     }
     private void inicializarLogger() {
@@ -106,15 +107,15 @@ public class AgenciaViajes {
 
             // Cargar la imagen de Armenia
             File armeniaFoto = new File("src/main/resources/imagenes/Armenia.jpeg");
-            listaDeImagenes1.add(new File(armeniaFoto.getPath()));
+            listaDeImagenes1.add(armeniaFoto);
 
             // Cargar la imagen de Filandia
             File filandiaFoto = new File("src/main/resources/imagenes/Filandia.jpeg");
-            listaDeImagenes2.add(new File(filandiaFoto.getPath()));
+            listaDeImagenes2.add(filandiaFoto);
 
             // Cargar la imagen de Salento
             File salentoFoto = new File("src/main/resources/imagenes/Salento.jpeg");
-            listaDeImagenes3.add(new File(salentoFoto.getPath()));
+            listaDeImagenes3.add(salentoFoto);
 
             Destino armenia = registrarDestino("Plaza de Bolivar", "Aremenia", "Meh", listaDeImagenes1, Clima.TEMPLADO);
             Destino filandia = registrarDestino("Mirador", "Filandia", "Bonito", listaDeImagenes2, Clima.TEMPLADO);
@@ -127,10 +128,9 @@ public class AgenciaViajes {
 
             // TODO: HACER LA FUNCION DE VERIFICAR SI YA EXISTE UN PAQUETE QUE RETORNE UN MENSAJE
             PaquetesTuristicos paqueteQuindio = registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio, "Conoce Armenia y Filandia", "Desayuno", 3990000, 30, LocalDate.now().plusDays(1), LocalDate.now().plusWeeks(1), null);
+            System.out.println(paqueteQuindio.toString());
+            paquetes.add(paqueteQuindio);
             // FIN DE CODIGO PARA PROBAR PAQUETES
-
-            // Guardar la información en el archivo serializable
-            escribirDestino();
         }
 
         // Imprimir destinos
