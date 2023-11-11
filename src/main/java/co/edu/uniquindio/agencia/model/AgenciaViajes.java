@@ -130,7 +130,7 @@ public class AgenciaViajes {
             PaquetesTuristicos paqueteQuindio = registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio, "Conoce Armenia y Filandia", "Desayuno", 3990000, 30, LocalDate.now().plusDays(1), LocalDate.now().plusWeeks(1), null);
             System.out.println(paqueteQuindio.toString());
             paquetes.add(paqueteQuindio);
-            // FIN DE CODIGO PARA PROBAR PAQUETES
+            // FIN DE CODIGO PARA PROBAR PAQUETES.
         }
 
         // Imprimir destinos
