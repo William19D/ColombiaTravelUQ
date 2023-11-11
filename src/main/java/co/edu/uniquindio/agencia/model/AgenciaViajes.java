@@ -37,7 +37,7 @@ public class AgenciaViajes {
     private ArrayList<Reserva> reservas;
     private static ArrayList<Administrador> administradores;
 
-    private AgenciaViajes() throws RutaInvalidaException {
+    private AgenciaViajes() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException {
         inicializarLogger();
         log.info("Se crea una nueva instancia de Colombia Travel" );
         try {
@@ -49,35 +49,6 @@ public class AgenciaViajes {
             RUTADESTINOS = prop.getProperty("rutaDestinos");
             RUTAPAQUETES = prop.getProperty("rutaPaquetes");
             RUTARESERVAS = prop.getProperty("rutaReservas");
-
-            /*CODIGO PARA PROBRAR LOS PAQUETES TURISTICOS
-            ArrayList<File> listaDeImagenes1 = new ArrayList<>();
-            ArrayList<File> listaDeImagenes2 = new ArrayList<>();
-            ArrayList<File> listaDeImagenes3 = new ArrayList<>();
-
-            // Cargar la  imagen de Armenia
-            URL armeniaFoto = ImageLoader.class.getClassLoader().getResource("imagenes/Armenia.jpeg");
-            listaDeImagenes1.add(new File(armeniaFoto.getFile()));
-
-            // Cargar la  imagen de Salento
-            URL salentoFoto = ImageLoader.class.getClassLoader().getResource("imagenes/Salento.jpeg");
-            listaDeImagenes2.add(new File(salentoFoto.getFile()));
-
-            // Cargar la  imagen de Salento
-            URL filandiaFoto = ImageLoader.class.getClassLoader().getResource("imagenes/Filandia.jpeg");
-            listaDeImagenes3.add(new File(filandiaFoto.getFile()));
-
-            Destino armenia = registrarDestino("Plaza de Bolivar","Aremenia","Meh", listaDeImagenes1,Clima.TEMPLADO);
-            Destino filandia = registrarDestino("Mirador","Filandia","Bonito", listaDeImagenes2,Clima.TEMPLADO);
-            Destino salento = registrarDestino("Cocora","Salento","Bonito", listaDeImagenes3,Clima.TEMPLADO);
-
-            ArrayList<Destino> destinosQuindio = new ArrayList<>();
-            destinosQuindio.add(armenia);
-            destinosQuindio.add(filandia);
-            destinosQuindio.add(salento);
-
-            PaquetesTuristicos paqueteQuindio = registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio,"Conoce Armenia y Filandia", "Desayuno", 3990000,30, LocalDate.now().plusDays(1),LocalDate.now().plusWeeks(1),null);
-            //FIN DE CODIGO PARA PROBAR PAQUETES*/
 
         } catch (IOException e) {
             log.severe("Ocurrio un error al momento de cargar las propiedades");
@@ -104,6 +75,38 @@ public class AgenciaViajes {
         reservas = new ArrayList<>();
         leerReserva();
 
+        inicializarDestinosTest();
+    }
+
+    private void inicializarDestinosTest() throws AtributoVacioException, RutaInvalidaException, InformacionRepetidaException {
+        //CODIGO PARA PROBRAR LOS PAQUETES TURISTICOS
+        ArrayList<File> listaDeImagenes1 = new ArrayList<>();
+        ArrayList<File> listaDeImagenes2 = new ArrayList<>();
+        ArrayList<File> listaDeImagenes3 = new ArrayList<>();
+
+        // Cargar la  imagen de Armenia
+        File armeniaFoto = new File("imagenes/Armenia.jpeg");
+        listaDeImagenes1.add(new File(armeniaFoto.getPath()));
+
+        // Cargar la  imagen de Filandia
+        File filandiaFoto = new File("imagenes/Filandia.jpeg");
+        listaDeImagenes1.add(new File(armeniaFoto.getPath()));
+
+        // Cargar la  imagen de Salento
+        File salentoFoto = new File("imagenes/Salento.jpeg");
+        listaDeImagenes1.add(new File(armeniaFoto.getPath()));
+
+        Destino armenia = registrarDestino("Plaza de Bolivar","Aremenia","Meh", listaDeImagenes1,Clima.TEMPLADO);
+        Destino filandia = registrarDestino("Mirador","Filandia","Bonito", listaDeImagenes2,Clima.TEMPLADO);
+        Destino salento = registrarDestino("Cocora","Salento","Bonito", listaDeImagenes3,Clima.TEMPLADO);
+
+        ArrayList<Destino> destinosQuindio = new ArrayList<>();
+        destinosQuindio.add(armenia);
+        destinosQuindio.add(filandia);
+        destinosQuindio.add(salento);
+
+        PaquetesTuristicos paqueteQuindio = registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio,"Conoce Armenia y Filandia", "Desayuno", 3990000,30, LocalDate.now().plusDays(1),LocalDate.now().plusWeeks(1),null);
+        //FIN DE CODIGO PARA PROBAR PAQUETES
     }
     private void inicializarLogger(){
         try {
@@ -115,7 +118,7 @@ public class AgenciaViajes {
         }
     }
 
-    public static AgenciaViajes getInstance() throws RutaInvalidaException {
+    public static AgenciaViajes getInstance() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException {
         if(agenciaViajes == null){
             agenciaViajes = new AgenciaViajes();
         }

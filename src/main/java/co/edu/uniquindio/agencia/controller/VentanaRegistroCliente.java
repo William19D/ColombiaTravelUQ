@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import co.edu.uniquindio.agencia.app.App;
+import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
+import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
 import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
 import javafx.event.ActionEvent;
@@ -51,7 +53,7 @@ public class VentanaRegistroCliente {
 
     private App main;
 
-    public VentanaRegistroCliente() throws RutaInvalidaException {
+    public VentanaRegistroCliente() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException {
     }
 
     @FXML

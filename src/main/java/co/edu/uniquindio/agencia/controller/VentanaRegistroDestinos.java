@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
 import co.edu.uniquindio.agencia.exceptions.ElementoNoEncontradoException;
+import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
 import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
 import co.edu.uniquindio.agencia.model.*;
 import javafx.beans.property.SimpleStringProperty;
@@ -70,7 +72,7 @@ public class VentanaRegistroDestinos {
 
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
 
-    public VentanaRegistroDestinos() throws RutaInvalidaException {
+    public VentanaRegistroDestinos() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException {
     }
 
     @FXML
