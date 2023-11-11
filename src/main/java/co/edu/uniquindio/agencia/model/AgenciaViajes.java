@@ -74,6 +74,25 @@ public class AgenciaViajes {
 
         //inicializarDestinosTest();
     }
+    private void inicializarLogger() {
+        try {
+            File logFile = new File("logs.log");
+            if (!logFile.exists()) {
+                // Si el archivo no existe, se crea el FileHandler
+                FileHandler fh = new FileHandler("logs.log", true);
+                fh.setFormatter(new SimpleFormatter());
+                log.addHandler(fh);
+                log.info("INICIO ARCHIVO LOG COLOMBIA TRAVEL.");
+            } else {
+                // Si el archivo ya existe, se utiliza sin crear uno nuevo
+                FileHandler fh = new FileHandler("logs.log", true);
+                fh.setFormatter(new SimpleFormatter());
+                log.addHandler(fh);
+            }
+        } catch (IOException e) {
+            log.severe("Error al inicializar el logger: " + e.getMessage());
+        }
+    }
 
     private void inicializarDestinosTest() throws AtributoVacioException, RutaInvalidaException, InformacionRepetidaException, DestinoRepetidoException {
         //CODIGO PARA PROBRAR LOS PAQUETES TURISTICOS
@@ -109,15 +128,7 @@ public class AgenciaViajes {
             System.out.println(destino.toString());
         }
     }
-    private void inicializarLogger(){
-        try {
-            FileHandler fh = new FileHandler("logs.log", true);
-            fh.setFormatter( new SimpleFormatter());
-            log.addHandler(fh);
-        }catch (IOException e){
-            log.severe(e.getMessage() );
-        }
-    }
+
 
     public static AgenciaViajes getInstance() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
         if(agenciaViajes == null){
