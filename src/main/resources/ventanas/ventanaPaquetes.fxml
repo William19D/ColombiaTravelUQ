@@ -78,7 +78,7 @@
                <children>
                   <AnchorPane fx:id="scrollAnchorPaquetes" prefHeight="200.0" prefWidth="583.0" />
                   <AnchorPane fx:id="scrollAnchorPaquetes1" layoutY="200.0" prefHeight="200.0" prefWidth="583.0" />
-                  <AnchorPane fx:id="scrollAnchorPaquetes11" layoutX="5.0" layoutY="400.0" prefHeight="200.0" prefWidth="583.0" />
+                  <AnchorPane fx:id="scrollAnchorPaquetes11" layoutY="397.0" prefHeight="200.0" prefWidth="583.0" />
                </children>
             </AnchorPane>
         </content>

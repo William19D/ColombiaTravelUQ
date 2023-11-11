@@ -95,7 +95,7 @@ public class VentanaRegistroDestinos {
             String nombre = txtNombre.getText();
             String ciudad = txtCiudad.getText();
             String descripcion = txtDescripcion.getText();
-            File imagen =
+           // File imagen =
 
             if (!ckSoleado.isSelected() && !ckTemplado.isSelected() && !ckFrio.isSelected()) {
 
@@ -116,7 +116,7 @@ public class VentanaRegistroDestinos {
             }
 
             // Llamar al método de registro en la clase principal
-            Destino destino = agenciaViajes.registrarDestino(nombre, ciudad, descripcion);
+           // Destino destino = agenciaViajes.registrarDestino(nombre, ciudad, descripcion);
 
             //  this.agenciaViajes.getGuias().add(guia);
             this.tabDestinosRegistrados.setItems(listaDestino);

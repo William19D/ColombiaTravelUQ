@@ -4,11 +4,13 @@ import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
 import co.edu.uniquindio.agencia.exceptions.ElementoNoEncontradoException;
 import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
 import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
+import com.sun.javafx.iio.ImageLoader;
 import javafx.stage.FileChooser;
 import lombok.*;
 import lombok.extern.java.Log;
 
 import java.io.*;
+import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,24 +50,37 @@ public class AgenciaViajes {
             RUTAPAQUETES = prop.getProperty("rutaPaquetes");
             RUTARESERVAS = prop.getProperty("rutaReservas");
 
+            /*CODIGO PARA PROBRAR LOS PAQUETES TURISTICOS
+            ArrayList<File> listaDeImagenes1 = new ArrayList<>();
+            ArrayList<File> listaDeImagenes2 = new ArrayList<>();
+            ArrayList<File> listaDeImagenes3 = new ArrayList<>();
 
-            //CODIGO PARA PROBRAR LOS PAQUETES TURISTICOS
+            // Cargar la  imagen de Armenia
+            URL armeniaFoto = ImageLoader.class.getClassLoader().getResource("imagenes/Armenia.jpeg");
+            listaDeImagenes1.add(new File(armeniaFoto.getFile()));
+
+            // Cargar la  imagen de Salento
+            URL salentoFoto = ImageLoader.class.getClassLoader().getResource("imagenes/Salento.jpeg");
+            listaDeImagenes2.add(new File(salentoFoto.getFile()));
+
+            // Cargar la  imagen de Salento
+            URL filandiaFoto = ImageLoader.class.getClassLoader().getResource("imagenes/Filandia.jpeg");
+            listaDeImagenes3.add(new File(filandiaFoto.getFile()));
+
+            Destino armenia = registrarDestino("Plaza de Bolivar","Aremenia","Meh", listaDeImagenes1,Clima.TEMPLADO);
+            Destino filandia = registrarDestino("Mirador","Filandia","Bonito", listaDeImagenes2,Clima.TEMPLADO);
+            Destino salento = registrarDestino("Cocora","Salento","Bonito", listaDeImagenes3,Clima.TEMPLADO);
+
             ArrayList<Destino> destinosQuindio = new ArrayList<>();
-            Destino armenia = registrarDestino("Armenia","feo", null,Clima.TEMPLADO);
-            Destino filandia = registrarDestino("Filandia","hermoso", null,Clima.FRIO);
-            Destino salento = registrarDestino("Salento","bonito", null,Clima.FRIO);
             destinosQuindio.add(armenia);
             destinosQuindio.add(filandia);
             destinosQuindio.add(salento);
+
             PaquetesTuristicos paqueteQuindio = registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio,"Conoce Armenia y Filandia", "Desayuno", 3990000,30, LocalDate.now().plusDays(1),LocalDate.now().plusWeeks(1),null);
-            //FIN DE CODIGO PARA PROBAR PAQUETES
+            //FIN DE CODIGO PARA PROBAR PAQUETES*/
 
         } catch (IOException e) {
             log.severe("Ocurrio un error al momento de cargar las propiedades");
-        } catch (AtributoVacioException e) {
-            throw new RuntimeException(e);
-        } catch (InformacionRepetidaException e) {
-            throw new RuntimeException(e);
         }
 
         administradores = new ArrayList<>();
@@ -201,7 +216,7 @@ public class AgenciaViajes {
         return existe;
     }
     //DESTINOS
-    public Destino registrarDestino(String nombre, String ciudad, String descripcion, FileChooser fileChooser, Clima clima) throws AtributoVacioException, RutaInvalidaException {
+    public Destino registrarDestino(String nombre, String ciudad, String descripcion, ArrayList<File> imagenes , Clima clima) throws AtributoVacioException, RutaInvalidaException {
         if (nombre == null || nombre.isBlank()) {
             throw new AtributoVacioException("El nombre del destino es obligatorio");
         }
@@ -211,17 +226,12 @@ public class AgenciaViajes {
         if (descripcion == null || descripcion.isBlank()) {
             throw new AtributoVacioException("La descripción es obligatoria");
         }
-        if (fileChooser == null || fileChooser.showOpenDialog(null) == null) {
-            throw new AtributoVacioException("Debes seleccionar una imagen");
+        if (imagenes == null) {
+            throw new AtributoVacioException("Debes seleccionar al menos una imagen");
         }
         if (clima == null) {
             throw new AtributoVacioException("El clima es obligatorio");
         }
-
-        //Demás validaciones
-        ArrayList<File> imagenes = new ArrayList<>();
-        File imagenSeleccionada = fileChooser.showOpenDialog(null);
-        imagenes.add(imagenSeleccionada);
 
         Destino destino = Destino.builder()
                 .nombre(nombre)
