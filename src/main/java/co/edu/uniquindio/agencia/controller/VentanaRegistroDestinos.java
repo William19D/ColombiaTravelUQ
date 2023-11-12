@@ -151,6 +151,9 @@ public class VentanaRegistroDestinos {
             if (ckFrio.isSelected()) {
                 climaSeleccionado = (Clima.FRIO);
             }
+            if(imagenesDestino != null){
+                imagenesSeleccionadas.clear();
+            }
 
 
             agenciaViajes.registrarDestino(nombre, ciudad, descripcion,imagenesDestino,climaSeleccionado);
