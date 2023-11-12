@@ -3,6 +3,8 @@ package co.edu.uniquindio.agencia.model;
 
 import co.edu.uniquindio.agencia.Persistencia.ArchivoUtils;
 import co.edu.uniquindio.agencia.exceptions.*;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import lombok.*;
 import lombok.extern.java.Log;
 
@@ -620,6 +622,23 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
 
             return new ArrayList<>(paquetes);
         }
+    }
+
+    public List<File> seleccionarImagenes(){
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Seleccionar Imagen");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Archivos de Imagen", "*.png", "*.jpg", "*.jpeg", "*.gif")
+        );
+
+        List<File> imagenesSeleccionadas = fileChooser.showOpenMultipleDialog(new Stage());
+
+        if (imagenesSeleccionadas != null) {
+            for (File imagen : imagenesSeleccionadas) {
+                log.info("Imagen seleccionada: " + imagen.getAbsolutePath());
+            }
+        }
+        return imagenesSeleccionadas;
     }
 
 }
