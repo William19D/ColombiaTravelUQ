@@ -95,11 +95,11 @@ public class VentanaRegistroGuias {
     }
 
     private void actualizarAction() throws RutaInvalidaException {
-        actualizarTablaGuias();
+
     }
 
     @FXML
-    void eliminarEvent(ActionEvent event) throws AtributoVacioException, RutaInvalidaException {
+    void eliminarEvent(ActionEvent event) throws AtributoVacioException, RutaInvalidaException, DestinoRepetidoException, ElementoNoEncontradoException, InformacionRepetidaException {
         eliminarAction();
     }
 
@@ -177,19 +177,18 @@ public class VentanaRegistroGuias {
         GuiaTuristico guiaSeleccionado = tabGuiasRegistrados.getSelectionModel().getSelectedItem();
 
         if (guiaSeleccionado != null) {
-            // Muestra un cuadro de diálogo de confirmación al usuario
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Confirmar Eliminación");
-            alert.setHeaderText("¿Estás seguro de que quieres eliminar al guía seleccionado?");
-            alert.setContentText("Esta acción no se puede deshacer.");
-
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.isPresent() && result.get() == ButtonType.OK) {
-                // Elimina el guía seleccionado de la lista de guías
-                agenciaViajes.getGuias().remove(guiaSeleccionado);
+            try {
+                // Llamar al método de eliminación en la clase principal
+                AgenciaViajes.getInstance().eliminarGuia(guiaSeleccionado.getIdentificacion());
 
                 // Actualiza la tabla de guías
                 actualizarTablaGuias();
+            } catch (ElementoNoEncontradoException | InformacionRepetidaException | DestinoRepetidoException e) {
+                // Manejar la excepción si el guía no se encuentra
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText(e.getMessage());
+                alert.setHeaderText(null);
+                alert.show();
             }
         } else {
             // Si no se selecciona ningún guía, muestra un mensaje de error
@@ -208,7 +207,7 @@ public class VentanaRegistroGuias {
         actualizarTablaGuias();
     }
 
-    void tablaguias() throws  RutaInvalidaException{
+    void tablaguias() throws  RutaInvalidaException {
 
         tabGuiasRegistrados.setItems(listaGuias);
 
@@ -219,7 +218,10 @@ public class VentanaRegistroGuias {
         columNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
         columnIdentificacion.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getIdentificacion()));
         columnExperiencia.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getExp()));
-        //columnIdiomas.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getIdiomas().toString()));
+
+
+
+
         tabGuiasRegistrados.refresh();
 
     }

@@ -78,9 +78,35 @@ public class VentanaRegistroDestinos {
     }
 
     @FXML
-    void EliminarDestinoEvent(ActionEvent event) {
+    void EliminarDestinoEvent(ActionEvent event) throws AtributoVacioException {
+        eliminarDestinoAction();
 
 
+    }
+
+    private void eliminarDestinoAction() throws AtributoVacioException {
+
+        Destino destinoSeleccionado = tabDestinosRegistrados.getSelectionModel().getSelectedItem();
+
+        if (destinoSeleccionado != null) {
+            try {
+                // Llamar al método de eliminación en la clase principal
+                AgenciaViajes.getInstance().eliminarDestino(destinoSeleccionado.getNombre());
+
+                // Actualiza la tabla de guías
+                actualizarTablaDestinos();
+            } catch (ElementoNoEncontradoException | InformacionRepetidaException | DestinoRepetidoException |
+                     RutaInvalidaException e) {
+                // Manejar la excepción si el guía no se encuentra
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText(e.getMessage());
+                alert.setHeaderText(null);
+                alert.show();
+            }
+        } else {
+            // Si no se selecciona ningún guía, muestra un mensaje de error
+            throw new AtributoVacioException("Selecciona un guía para eliminar.");
+        }
     }
 
     @FXML
@@ -99,7 +125,7 @@ public class VentanaRegistroDestinos {
             String nombre = txtNombre.getText();
             String ciudad = txtCiudad.getText();
             String descripcion = txtDescripcion.getText();
-           // File imagen =
+
 
             if (!ckSoleado.isSelected() && !ckTemplado.isSelected() && !ckFrio.isSelected()) {
 
@@ -118,9 +144,9 @@ public class VentanaRegistroDestinos {
             if (ckFrio.isSelected()) {
                 climaSeleccionados.add(Clima.FRIO);
             }
-
             // Llamar al método de registro en la clase principal
-           // Destino destino = agenciaViajes.registrarDestino(nombre, ciudad, descripcion);
+            Clima clima = null;
+          //  Destino destino = agenciaViajes.registrarDestino(nombre, ciudad, descripcion,imagen,clima);
 
             //  this.agenciaViajes.getGuias().add(guia);
             this.tabDestinosRegistrados.setItems(listaDestino);
@@ -134,11 +160,12 @@ public class VentanaRegistroDestinos {
             txtNombre.clear();
             txtCiudad.clear();
             txtImagen.clear();
+            txtDescripcion.clear();
             ckSoleado.setSelected(false);
             ckTemplado.setSelected(false);
             ckFrio.setSelected(false);
 
-            // Actualizar la tabla de guías registrados u otra lógica necesaria
+
             actualizarTablaDestinos();
 
         } catch (Exception e) {

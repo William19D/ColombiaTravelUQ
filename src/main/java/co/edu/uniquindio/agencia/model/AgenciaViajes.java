@@ -302,14 +302,33 @@ public class AgenciaViajes {
 
 
 // Metodo que elimina un destino
-    public void eliminarDestino(String nombre) throws ElementoNoEncontradoException {
-        Destino destinoAEliminar = null;
-        destinoAEliminar = obtenerDestino(nombre);
-        if (destinoAEliminar != null) {
-            destinos.remove(destinoAEliminar);
-            log.info("se ha eliminado el destino "+ nombre);
-        } else {
-            throw new ElementoNoEncontradoException("No se encontró el destino con el nombre proporcionado.");
+public void eliminarDestino(String nombre) throws ElementoNoEncontradoException {
+    Destino destinoAeliminar = obtenerDestino(nombre);
+    if (destinoAeliminar != null) {
+        guias.remove(destinoAeliminar);
+        log.info("Se ha eliminado el destino de nombre " + nombre);
+
+        // Eliminar la información del guía del archivo de texto
+        eliminarInfoGuiaArchivo(nombre);
+    } else {
+        throw new ElementoNoEncontradoException("No se encontró un guía con la identificación proporcionada.");
+    }
+}
+
+    private void eliminarInfoDestinoArchivo(String nombre) {
+        try {
+            // Leer todas las líneas del archivo
+            List<String> lineas = ArchivoUtils.leerArchivoScanner(RUTADESTINOS);
+
+            // Filtrar las líneas para excluir la información del guía a eliminar
+            lineas = lineas.stream()
+                    .filter(linea -> !linea.contains(nombre))
+                    .collect(Collectors.toList());
+
+            // Escribir las líneas actualizadas al archivo
+            ArchivoUtils.escribirArchivoBufferedWriter(RUTADESTINOS, lineas, false);
+        } catch (IOException e) {
+            log.severe("Error al intentar eliminar la información del destino del archivo: " + e.getMessage());
         }
     }
 
@@ -401,14 +420,33 @@ public class AgenciaViajes {
         log.info("Se ha registrado un nuevo guia con la identificacion: "+identificacion);
         return guia;
     }
-    public void eliminarGuia(String identificacion) throws ElementoNoEncontradoException{
-        GuiaTuristico guiaAEliminar = null;
-        guiaAEliminar = obtenerGuia(identificacion);
+    public void eliminarGuia(String identificacion) throws ElementoNoEncontradoException {
+        GuiaTuristico guiaAEliminar = obtenerGuia(identificacion);
         if (guiaAEliminar != null) {
-            clientes.remove(guiaAEliminar);
-            log.info("se ha eliminado el guia con la identificacion  "+ identificacion);
+            guias.remove(guiaAEliminar);
+            log.info("Se ha eliminado el guía con la identificación " + identificacion);
+
+            // Eliminar la información del guía del archivo de texto
+            eliminarInfoGuiaArchivo(identificacion);
         } else {
-            throw new ElementoNoEncontradoException("No se encontró un guia con la identificacion proporcionada.");
+            throw new ElementoNoEncontradoException("No se encontró un guía con la identificación proporcionada.");
+        }
+    }
+
+    private void eliminarInfoGuiaArchivo(String identificacion) {
+        try {
+            // Leer todas las líneas del archivo
+            List<String> lineas = ArchivoUtils.leerArchivoScanner(RUTAGUIAS);
+
+            // Filtrar las líneas para excluir la información del guía a eliminar
+            lineas = lineas.stream()
+                    .filter(linea -> !linea.contains(identificacion))
+                    .collect(Collectors.toList());
+
+            // Escribir las líneas actualizadas al archivo
+            ArchivoUtils.escribirArchivoBufferedWriter(RUTAGUIAS, lineas, false);
+        } catch (IOException e) {
+            log.severe("Error al intentar eliminar la información del guía del archivo: " + e.getMessage());
         }
     }
 

@@ -19,4 +19,5 @@ public class GuiaTuristico {
     private String exp;
     private double calificacion;
     private String comentarios;
+
 }

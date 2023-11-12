@@ -142,6 +142,28 @@ Nov 11, 2023 12:00:43 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerReser
 SEVERE: null
 Nov 11, 2023 12:00:43 AM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
 INFO: No se han cargado los datos ya que ya se tiene informacion 
+nov. 11, 2023 12:55:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 11, 2023 12:55:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
+GRAVE: null
+nov. 11, 2023 12:55:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerDestinos
+GRAVE: null
+nov. 11, 2023 12:55:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 11, 2023 12:55:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+INFORMACIï¿½N: Se ha registrado un nuevo destino con el nombre: Plaza de Bolivar
+nov. 11, 2023 12:55:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+INFORMACIï¿½N: Se ha registrado un nuevo destino con el nombre: Mirador
+nov. 11, 2023 12:55:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+INFORMACIï¿½N: Se ha registrado un nuevo destino con el nombre: Cocora
+nov. 11, 2023 12:55:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarPaquetes
+INFORMACIï¿½N: Se ha registrado un nuevo paquete con el nombre: Quindio: Corazon del Cafe
+nov. 11, 2023 12:56:21 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 11, 2023 12:56:21 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 11, 2023 12:56:21 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
 Nov 11, 2023 12:05:45 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
 INFO: Se crea una nueva instancia de Colombia Travel
 Nov 11, 2023 12:05:45 AM co.edu.uniquindio.agencia.model.AgenciaViajes leerPaquete
@@ -516,3 +538,9 @@ Nov 11, 2023 1:52:32 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarD
 INFO: Se ha registrado un nuevo destino con el nombre: Pueblo
 Nov 11, 2023 1:52:32 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarPaquetes
 INFO: Se ha registrado un nuevo paquete con el nombre: Quindio: Corazon del Cafe
+nov. 11, 2023 6:25:22 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 11, 2023 6:25:22 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 11, 2023 6:25:22 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
