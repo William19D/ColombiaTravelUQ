@@ -72,7 +72,12 @@ public class VentanaRegistroDestinos {
     @FXML
     private AnchorPane ventanaDestinos;
 
+    List<File> imagenesSeleccionadas;
+
+
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
+
+
 
     public VentanaRegistroDestinos() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
     }
@@ -125,6 +130,7 @@ public class VentanaRegistroDestinos {
             String nombre = txtNombre.getText();
             String ciudad = txtCiudad.getText();
             String descripcion = txtDescripcion.getText();
+            List<File> imagenesDestino = imagenesSeleccionadas;
 
 
             if (!ckSoleado.isSelected() && !ckTemplado.isSelected() && !ckFrio.isSelected()) {
@@ -143,6 +149,9 @@ public class VentanaRegistroDestinos {
             }
             if (ckFrio.isSelected()) {
                 climaSeleccionados.add(Clima.FRIO);
+            }
+            if(imagenesDestino != null){
+                imagenesSeleccionadas.clear();
             }
 
             Clima clima = null;
@@ -189,6 +198,11 @@ public class VentanaRegistroDestinos {
     @FXML
     void vovlerMenuAdmins(ActionEvent event) throws IOException {
         new ViewController(ventanaDestinos, "/ventanas/ventanaMenuAdmins.fxml");
+    }
+    @FXML
+    void seleccionarImagenEvent(ActionEvent event) throws IOException {
+        imagenesSeleccionadas = agenciaViajes.seleccionarImagenes();
+
     }
 
     @FXML
