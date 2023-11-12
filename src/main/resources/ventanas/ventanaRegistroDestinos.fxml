@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="ventanaDestinos" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.VentanaRegistroDestinos">
+<AnchorPane fx:id="ventanaDestinos" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.VentanaRegistroDestinos">
    <children>
       <ImageView fx:id="btnVolver" fitHeight="77.0" fitWidth="164.0" layoutX="38.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -58,7 +49,7 @@
             <TextField fx:id="txtNombre" prefHeight="37.0" prefWidth="244.0" promptText="Ingrese el nombre" GridPane.columnIndex="1" />
             <TextField fx:id="txtCiudad" prefHeight="37.0" prefWidth="244.0" promptText="Ingrese la ciudad" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtDescripcion" prefHeight="37.0" prefWidth="244.0" promptText="Ingrese la descripcion" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="btnSeleccionarImagen" mnemonicParsing="false" onAction="#seleccionarImagenEvent" prefHeight="29.0" prefWidth="132.0" text="Seleccionar Imagen" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="btnSeleccionarImagen" mnemonicParsing="false" onAction="#seleccionarImagenEvent" prefHeight="29.0" prefWidth="132.0" text="Seleccionar Imagen " GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Label layoutX="166.0" layoutY="522.0" styleClass="textoRegular" stylesheets="@styles.css" text="Clima:">
