@@ -18,7 +18,7 @@ public class Destino implements Serializable {
     private String nombre;
     private String descripcion;
     private String ciudad;
-    private ArrayList<File> rutasImagenes;
+    private List<File> rutasImagenes;
     private Clima clima;
     private double calificacion;
     private ArrayList<String> comentarios;

@@ -3,6 +3,7 @@ package co.edu.uniquindio.agencia.model;
 import co.edu.uniquindio.agencia.exceptions.*;
 import com.sun.javafx.iio.ImageLoader;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import lombok.*;
 import lombok.extern.java.Log;
 
@@ -102,10 +103,10 @@ public class AgenciaViajes {
             log.info("No se han cargado los datos ya que ya se tiene informacion ");
         } else {
             // Si el archivo no existe, realizar la inicialización normal
-            ArrayList<File> listaDeImagenes1 = new ArrayList<>();
-            ArrayList<File> listaDeImagenes2 = new ArrayList<>();
-            ArrayList<File> listaDeImagenes3 = new ArrayList<>();
-            ArrayList<File> listaDeImagenes4 = new ArrayList<>();
+            List<File> listaDeImagenes1 = new ArrayList<>();
+            List<File> listaDeImagenes2 = new ArrayList<>();
+            List<File> listaDeImagenes3 = new ArrayList<>();
+            List<File> listaDeImagenes4 = new ArrayList<>();
 
             // Cargar la imagen de Armenia
             File armeniaFoto = new File("src/main/resources/imagenes/destinos/Armenia.jpeg");
@@ -249,18 +250,8 @@ public class AgenciaViajes {
         }
 
     }
-    public static boolean verificarLoginUsuario(String usuario, String contrasenia) {
-        boolean existe = false;
-        for (Cliente cliente : clientes) {
-            if (cliente.getCorreo().equals(usuario) && cliente.getContrasenia().equals(contrasenia)) {
-                existe = true; // Veterinario encontrado
-                break; // Salir del ciclo una vez que encuentra al cliente
-            }
-        }
-        return existe;
-    }
     //DESTINOS
-    public Destino registrarDestino(String nombre, String ciudad, String descripcion, ArrayList<File> imagenes, Clima clima) throws AtributoVacioException, RutaInvalidaException, DestinoRepetidoException {
+    public Destino registrarDestino(String nombre, String ciudad, String descripcion, List<File> imagenes, Clima clima) throws AtributoVacioException, RutaInvalidaException, DestinoRepetidoException {
         if (nombre == null || nombre.isBlank()) {
             throw new AtributoVacioException("El nombre del destino es obligatorio");
         }
@@ -276,11 +267,12 @@ public class AgenciaViajes {
         if (clima == null) {
             throw new AtributoVacioException("El clima es obligatorio");
         }
-        Destino destinoExistente = obtenerDestinoPorNombre(nombre);
-        if (destinoExistente != null) {
-            // Aquí puedes manejar el caso de que ya existe un destino con ese nombre
-            // Puedes lanzar una excepción, imprimir un mensaje, etc.
-            throw new DestinoRepetidoException("Ya existe un destino con el nombre: " + nombre);
+        if(obtenerDestinoPorNombre(nombre) != null){
+            if (obtenerDestinoPorNombre(nombre).getCiudad() == ciudad) {
+                // Aquí puedes manejar el caso de que ya existe un destino con ese nombre
+                // Puedes lanzar una excepción, imprimir un mensaje, etc.
+                throw new DestinoRepetidoException("Ya existe un destino con esas caracteristicas: " + "Nombre: " + nombre + " Ciudad: " + ciudad);
+            }
         }
 
         // Verificar si el nombre o la ciudad ya existen en destinos
@@ -595,6 +587,22 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
 
             return new ArrayList<>(paquetes);
         }
+    }
+    public List<File> seleccionarImagenes(){
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Seleccionar Imagen");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Archivos de Imagen", "*.png", "*.jpg", "*.jpeg", "*.gif")
+        );
+
+        List<File> imagenesSeleccionadas = fileChooser.showOpenMultipleDialog(new Stage());
+
+        if (imagenesSeleccionadas != null) {
+            for (File imagen : imagenesSeleccionadas) {
+                log.info("Imagen seleccionada: " + imagen.getAbsolutePath());
+            }
+        }
+        return imagenesSeleccionadas;
     }
 
 }

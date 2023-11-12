@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class ControllerVentanaInicio {
 
@@ -75,7 +76,7 @@ public class ControllerVentanaInicio {
     }
     private void setRandomImage(ImageView imageView, Destino destino) {
         // Obtén las rutas de imágenes del destino
-        ArrayList<File> rutasImagenes = destino.getRutasImagenes();
+        List<File> rutasImagenes = destino.getRutasImagenes();
 
         // Baraja las rutas de imágenes para obtener una al azar
         Collections.shuffle(rutasImagenes);

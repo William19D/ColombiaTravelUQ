@@ -2,6 +2,7 @@ package co.edu.uniquindio.agencia.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +73,12 @@ public class VentanaRegistroDestinos {
     @FXML
     private AnchorPane ventanaDestinos;
 
+    List<File> imagenesSeleccionadas;
+
+
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
+
+
 
     public VentanaRegistroDestinos() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
     }
@@ -125,6 +131,7 @@ public class VentanaRegistroDestinos {
             String nombre = txtNombre.getText();
             String ciudad = txtCiudad.getText();
             String descripcion = txtDescripcion.getText();
+            List<File> imagenesDestino = imagenesSeleccionadas;
 
 
             if (!ckSoleado.isSelected() && !ckTemplado.isSelected() && !ckFrio.isSelected()) {
@@ -133,22 +140,20 @@ public class VentanaRegistroDestinos {
             }
 
             // Recopilar los idiomas seleccionados
-            List<Clima> climaSeleccionados = new ArrayList<>();
+            Clima climaSeleccionado = null;
 
             if (ckSoleado.isSelected()) {
-                climaSeleccionados.add(Clima.CALIDO);
+                climaSeleccionado = (Clima.CALIDO);
             }
             if (ckTemplado.isSelected()) {
-                climaSeleccionados.add(Clima.TEMPLADO);
+                climaSeleccionado = (Clima.TEMPLADO);
             }
             if (ckFrio.isSelected()) {
-                climaSeleccionados.add(Clima.FRIO);
+                climaSeleccionado = (Clima.FRIO);
             }
-            // Llamar al método de registro en la clase principal
-            Clima clima = null;
-          //  Destino destino = agenciaViajes.registrarDestino(nombre, ciudad, descripcion,imagen,clima);
 
-            //  this.agenciaViajes.getGuias().add(guia);
+
+            agenciaViajes.registrarDestino(nombre, ciudad, descripcion,imagenesDestino,climaSeleccionado);
             this.tabDestinosRegistrados.setItems(listaDestino);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -159,36 +164,43 @@ public class VentanaRegistroDestinos {
             // Limpia los campos después del registro
             txtNombre.clear();
             txtCiudad.clear();
-            txtImagen.clear();
             txtDescripcion.clear();
             ckSoleado.setSelected(false);
             ckTemplado.setSelected(false);
             ckFrio.setSelected(false);
-
+            imagenesSeleccionadas.clear();
 
             actualizarTablaDestinos();
 
-        } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(e.getMessage());
-            alert.setHeaderText(null);
-            alert.show();
+        } catch (AtributoVacioException e) {
+            throw new RuntimeException(e);
+        } catch (ElementoNoEncontradoException e) {
+            throw new RuntimeException(e);
+        } catch (DestinoRepetidoException e) {
+            throw new RuntimeException(e);
+        } catch (RutaInvalidaException e) {
+            throw new RuntimeException(e);
         }
     }
 
     private void actualizarTablaDestinos() throws RutaInvalidaException {
 
-            listaDestino = FXCollections.observableArrayList(agenciaViajes.getDestinos());
-            tabDestinosRegistrados.getItems().clear();
-            tabDestinosRegistrados.setItems(listaDestino);
-            tablaDestinos();
-            tabDestinosRegistrados.refresh();
+        listaDestino = FXCollections.observableArrayList(agenciaViajes.getDestinos());
+        tabDestinosRegistrados.getItems().clear();
+        tabDestinosRegistrados.setItems(listaDestino);
+        tablaDestinos();
+        tabDestinosRegistrados.refresh();
 
     }
 
     @FXML
     void vovlerMenuAdmins(ActionEvent event) throws IOException {
         new ViewController(ventanaDestinos, "/ventanas/ventanaMenuAdmins.fxml");
+    }
+    @FXML
+    void seleccionarImagenEvent(ActionEvent event) throws IOException {
+        imagenesSeleccionadas = agenciaViajes.seleccionarImagenes();
+
     }
 
     @FXML
@@ -208,7 +220,7 @@ public class VentanaRegistroDestinos {
 
         columNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
         columCiudad.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCiudad()));
-        //columClima.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
+        // columClima.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
 
         tabDestinosRegistrados.refresh();
 
