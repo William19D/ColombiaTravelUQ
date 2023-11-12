@@ -1,13 +1,12 @@
 package co.edu.uniquindio.agencia.model;
 
+
+import co.edu.uniquindio.agencia.Persistencia.ArchivoUtils;
 import co.edu.uniquindio.agencia.exceptions.*;
-import com.sun.javafx.iio.ImageLoader;
-import javafx.stage.FileChooser;
 import lombok.*;
 import lombok.extern.java.Log;
 
 import java.io.*;
-import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -160,6 +159,7 @@ public class AgenciaViajes {
 
 
     public static AgenciaViajes getInstance() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
+        //agenciaViajes = Persistencia.cargarRecursoBinario();
         if(agenciaViajes == null){
             agenciaViajes = new AgenciaViajes();
         }
@@ -249,6 +249,7 @@ public class AgenciaViajes {
         }
 
     }
+    /*
     public static boolean verificarLoginUsuario(String usuario, String contrasenia) {
         boolean existe = false;
         for (Cliente cliente : clientes) {
@@ -259,6 +260,8 @@ public class AgenciaViajes {
         }
         return existe;
     }
+    */
+
     //DESTINOS
     public Destino registrarDestino(String nombre, String ciudad, String descripcion, ArrayList<File> imagenes, Clima clima) throws AtributoVacioException, RutaInvalidaException, DestinoRepetidoException {
         if (nombre == null || nombre.isBlank()) {
@@ -420,6 +423,28 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
         log.info("Se ha registrado un nuevo guia con la identificacion: "+identificacion);
         return guia;
     }
+
+    public void actualizarGuia(String nombre, String identificacion, List<Idiomas> idiomas, String exp)throws AtributoVacioException, InformacionRepetidaException, RutaInvalidaException{
+        if(identificacion == null || identificacion.isBlank()){
+            throw new AtributoVacioException("La identificacion es obligatoria");
+        }
+
+        if(nombre == null || nombre.isBlank()){
+            throw new AtributoVacioException("El nombre es obligatorio");
+        }
+
+        if(exp == null || exp.isBlank()){
+            throw new AtributoVacioException("la experiencia es obligatoria");
+        }
+
+        GuiaTuristico guiaTuristico= obtenerGuia(identificacion);
+        guiaTuristico.setNombre(nombre);
+        guiaTuristico.setExp(exp);
+        guiaTuristico.setIdiomas(idiomas);
+        log.info("Se ha actualizado un nuevo guia con la identificacion: "+identificacion);
+
+    }
+
     public void eliminarGuia(String identificacion) throws ElementoNoEncontradoException {
         GuiaTuristico guiaAEliminar = obtenerGuia(identificacion);
         if (guiaAEliminar != null) {

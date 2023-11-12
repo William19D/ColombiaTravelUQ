@@ -2,6 +2,7 @@ package co.edu.uniquindio.agencia.model;
 
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -11,8 +12,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class GuiaTuristico {
+public class GuiaTuristico  implements Serializable {
 
+    private static final long serialVersioUID = 1L;
     private String nombre;
     private String identificacion;
     private List<Idiomas> idiomas;

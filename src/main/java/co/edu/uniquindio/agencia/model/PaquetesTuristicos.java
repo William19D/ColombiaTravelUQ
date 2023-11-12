@@ -19,7 +19,7 @@ public class PaquetesTuristicos implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 42L;
-
+    private static final long serialVersioUID = 1L;
     private String nombre;
     private ArrayList<Destino> destinos;
     private String descripcion;

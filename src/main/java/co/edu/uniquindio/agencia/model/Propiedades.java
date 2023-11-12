@@ -1,4 +1,7 @@
 package co.edu.uniquindio.agencia.model;
 
-public class Propiedades {
+import java.io.Serializable;
+
+public class Propiedades  implements Serializable {
+    private static final long serialVersioUID = 1L;
 }

@@ -12,7 +12,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        FXMLLoader loader = new FXMLLoader(App.class.getResource("/ventanas/ventanaRegistroDestinos.fxml"));
+        FXMLLoader loader = new FXMLLoader(App.class.getResource("/ventanas/ventanaMenuAdmins.fxml"));
         Parent parent = loader.load();
 
         Scene scene = new Scene(parent);

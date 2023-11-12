@@ -58,25 +58,25 @@
             <TextField fx:id="txtNombre" prefHeight="37.0" prefWidth="244.0" promptText="Ingrese el nombre" GridPane.columnIndex="1" />
             <TextField fx:id="txtCiudad" prefHeight="37.0" prefWidth="244.0" promptText="Ingrese la ciudad" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="txtDescripcion" prefHeight="37.0" prefWidth="244.0" promptText="Ingrese la descripcion" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtImagen" prefHeight="37.0" prefWidth="244.0" promptText="ingrese imagen " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="btnSeleccionarImagen" mnemonicParsing="false" onAction="#seleccionarImagenEvent" prefHeight="29.0" prefWidth="132.0" text="Seleccionar Imagen" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Label layoutX="174.0" layoutY="468.0" styleClass="textoRegular" stylesheets="@styles.css" text="Clima:">
+      <Label layoutX="166.0" layoutY="522.0" styleClass="textoRegular" stylesheets="@styles.css" text="Clima:">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
-      <CheckBox fx:id="ckSoleado" layoutX="302.0" layoutY="477.0" mnemonicParsing="false" text="Soleado">
+      <CheckBox fx:id="ckSoleado" layoutX="292.0" layoutY="529.0" mnemonicParsing="false" text="Soleado">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ckTemplado" layoutX="416.0" layoutY="477.0" mnemonicParsing="false" text="Templado">
+      <CheckBox fx:id="ckTemplado" layoutX="418.0" layoutY="529.0" mnemonicParsing="false" text="Templado">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ckFrio" layoutX="543.0" layoutY="477.0" mnemonicParsing="false" text="Frio">
+      <CheckBox fx:id="ckFrio" layoutX="555.0" layoutY="529.0" mnemonicParsing="false" text="Frio">
          <font>
             <Font size="18.0" />
          </font>
@@ -95,7 +95,7 @@
         <columns>
           <TableColumn fx:id="columNombre" prefWidth="113.0" text="Nombre" />
           <TableColumn fx:id="columCiudad" prefWidth="119.0" text="Ciudad" />
-            <TableColumn fx:id="columClima" prefWidth="118.0" text="Clima" />
+            <TableColumn fx:id="columDescripcion" prefWidth="118.0" text="Descripcion" />
         </columns>
       </TableView>
       <Label layoutX="878.0" layoutY="89.0" text="Destinos registrados">

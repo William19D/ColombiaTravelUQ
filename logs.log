@@ -538,9 +538,77 @@ Nov 11, 2023 1:52:32 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarD
 INFO: Se ha registrado un nuevo destino con el nombre: Pueblo
 Nov 11, 2023 1:52:32 AM co.edu.uniquindio.agencia.model.AgenciaViajes registrarPaquetes
 INFO: Se ha registrado un nuevo paquete con el nombre: Quindio: Corazon del Cafe
-nov. 11, 2023 6:25:22 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
-nov. 11, 2023 6:25:22 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+nov. 11, 2023 6:25:22 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 11, 2023 6:25:22 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 GRAVE: null
-nov. 11, 2023 6:25:22 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+nov. 11, 2023 6:25:22 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 11, 2023 7:47:17 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 11, 2023 7:47:18 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 11, 2023 7:47:18 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 11, 2023 7:47:37 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFORMACIï¿½N: Se ha registrado un nuevo guia con la identificacion: 846546
+nov. 11, 2023 8:50:15 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 11, 2023 8:50:15 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 11, 2023 8:50:15 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 11, 2023 9:04:40 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 11, 2023 9:04:40 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 11, 2023 9:04:40 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 11, 2023 9:05:35 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 11, 2023 9:05:35 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 11, 2023 9:05:35 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 11, 2023 9:05:44 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes actualizarGuia
+INFORMACIï¿½N: Se ha actualizado un nuevo guia con la identificacion: 4
+nov. 11, 2023 10:15:58 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 11, 2023 10:15:58 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 11, 2023 10:15:58 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 11, 2023 10:16:14 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes actualizarGuia
+INFORMACIï¿½N: Se ha actualizado un nuevo guia con la identificacion: 111
+nov. 11, 2023 10:17:40 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 11, 2023 10:17:40 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 11, 2023 10:17:40 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 11, 2023 10:18:02 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFORMACIï¿½N: Se ha registrado un nuevo guia con la identificacion: 846854
+nov. 11, 2023 10:18:30 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes actualizarGuia
+INFORMACIï¿½N: Se ha actualizado un nuevo guia con la identificacion: 846854
+nov. 12, 2023 10:34:29 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 12, 2023 10:34:29 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 12, 2023 10:34:29 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 12, 2023 10:34:43 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFORMACIï¿½N: Se ha registrado un nuevo guia con la identificacion: 65496
+nov. 12, 2023 10:35:48 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes actualizarGuia
+INFORMACIï¿½N: Se ha actualizado un nuevo guia con la identificacion: 65496
+nov. 12, 2023 10:35:59 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes eliminarGuia
+INFORMACIï¿½N: Se ha eliminado el guï¿½a con la identificaciï¿½n 65496
+nov. 12, 2023 11:20:36 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 12, 2023 11:20:36 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 12, 2023 11:20:36 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
 INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
+nov. 12, 2023 11:20:51 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes actualizarGuia
+INFORMACIÓN: Se ha actualizado un nuevo guia con la identificacion: 846854
+nov. 12, 2023 11:21:12 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes eliminarGuia
+INFORMACIÓN: Se ha eliminado el guía con la identificación 111

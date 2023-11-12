@@ -144,9 +144,9 @@ public class VentanaRegistroDestinos {
             if (ckFrio.isSelected()) {
                 climaSeleccionados.add(Clima.FRIO);
             }
-            // Llamar al método de registro en la clase principal
+
             Clima clima = null;
-          //  Destino destino = agenciaViajes.registrarDestino(nombre, ciudad, descripcion,imagen,clima);
+          //  Destino destino = agenciaViajes.registrarDestino(nombre, ciudad, descripcion,imagen,;
 
             //  this.agenciaViajes.getGuias().add(guia);
             this.tabDestinosRegistrados.setItems(listaDestino);
@@ -208,7 +208,7 @@ public class VentanaRegistroDestinos {
 
         columNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
         columCiudad.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCiudad()));
-        //columClima.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
+       // columClima.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
 
         tabDestinosRegistrados.refresh();
 
