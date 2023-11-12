@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import co.edu.uniquindio.agencia.Persistencia.Persistencia;
 import co.edu.uniquindio.agencia.app.App;
 import co.edu.uniquindio.agencia.exceptions.*;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
@@ -23,6 +24,8 @@ import lombok.SneakyThrows;
 import javafx.collections.ObservableList;
 
 public class VentanaRegistroGuias {
+
+    GuiaTuristico guiaTuristicoSeleccionado;
 
     @FXML
     private ResourceBundle resources;
@@ -96,6 +99,50 @@ public class VentanaRegistroGuias {
 
     private void actualizarAction() throws RutaInvalidaException {
 
+        try {
+            String nombre = txtNombre.getText();
+            String identificacion = txtIdentificacion.getText();
+            String experiencia = txtExperiencia.getText();
+
+            if (!ckEspanol.isSelected() && !ckIngles.isSelected() && !ckFrances.isSelected()) {
+
+                throw new ElementoNoEncontradoException("Debes seleccionar al menos un idioma.");
+            }
+            List<Idiomas> idiomasSeleccionados = new ArrayList<>();
+
+            if (ckEspanol.isSelected()) {
+                idiomasSeleccionados.add(Idiomas.ESPANOL);
+            }
+            if (ckIngles.isSelected()) {
+                idiomasSeleccionados.add(Idiomas.INGLES);
+            }
+            if (ckFrances.isSelected()) {
+                idiomasSeleccionados.add(Idiomas.FRANCES);
+            }
+            agenciaViajes.actualizarGuia(nombre,identificacion,idiomasSeleccionados,experiencia);
+            //Persistencia.guardarRecursoBinario(agenciaViajes);
+
+            // Limpia los campos después del registro
+            txtNombre.clear();
+            txtIdentificacion.clear();
+            txtExperiencia.clear();
+            ckEspanol.setSelected(false);
+            ckIngles.setSelected(false);
+            ckFrances.setSelected(false);
+
+            this.tabGuiasRegistrados.setItems(listaGuias);
+            actualizarTablaGuias();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setContentText("Se ha actualizado correctamente el guia con la cedula  " + txtIdentificacion.getText());
+            alert.show();
+        }catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
+        }
+
     }
 
     @FXML
@@ -117,6 +164,7 @@ public class VentanaRegistroGuias {
             String identificacion = txtIdentificacion.getText();
             String experiencia = txtExperiencia.getText();
 
+
             if (!ckEspanol.isSelected() && !ckIngles.isSelected() && !ckFrances.isSelected()) {
 
                 throw new ElementoNoEncontradoException("Debes seleccionar al menos un idioma.");
@@ -137,7 +185,7 @@ public class VentanaRegistroGuias {
 
             // Llamar al método de registro en la clase principal
             GuiaTuristico guia = agenciaViajes.registrarGuias(nombre, identificacion, idiomasSeleccionados, experiencia);
-
+            //Persistencia.guardarRecursoBinario(agenciaViajes);
           //  this.agenciaViajes.getGuias().add(guia);
             this.tabGuiasRegistrados.setItems(listaGuias);
 
@@ -180,7 +228,7 @@ public class VentanaRegistroGuias {
             try {
                 // Llamar al método de eliminación en la clase principal
                 AgenciaViajes.getInstance().eliminarGuia(guiaSeleccionado.getIdentificacion());
-
+                //Persistencia.guardarRecursoBinario(agenciaViajes);
                 // Actualiza la tabla de guías
                 actualizarTablaGuias();
             } catch (ElementoNoEncontradoException | InformacionRepetidaException | DestinoRepetidoException e) {
@@ -218,11 +266,41 @@ public class VentanaRegistroGuias {
         columNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
         columnIdentificacion.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getIdentificacion()));
         columnExperiencia.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getExp()));
+       /* columNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        columnIdentificacion.setCellValueFactory(new PropertyValueFactory<>("identificacion"));
+        columnExperiencia.setCellValueFactory(new PropertyValueFactory<>("exp"));*/
+        tabGuiasRegistrados.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection)->{
+            guiaTuristicoSeleccionado= newSelection;
+            mostrarInformacion();
+        });
+        TableColumn<GuiaTuristico, String> columnIdiomas = new TableColumn<>("Idiomas");
+        columnIdiomas.setCellValueFactory(cellData -> {
+            GuiaTuristico guia = cellData.getValue();
+            List<String> idiomas = new ArrayList<>();
 
+            // Agregar idiomas seleccionados
+            if (ckEspanol.isSelected()) {
+                idiomas.add("Español");
+            }
+            if (ckIngles.isSelected()) {
+                idiomas.add("Inglés");
+            }
+            if (ckFrances.isSelected()) {
+                idiomas.add("Francés");
+            }
 
+            return new SimpleStringProperty(String.join(", ", idiomas));
+        });
 
+        // Actualizar la tabla
 
         tabGuiasRegistrados.refresh();
 
+    }
+
+    private void mostrarInformacion() {
+        txtNombre.setText(guiaTuristicoSeleccionado.getNombre());
+        txtIdentificacion.setText(guiaTuristicoSeleccionado.getIdentificacion());
+        txtExperiencia.setText(guiaTuristicoSeleccionado.getExp());
     }
 }

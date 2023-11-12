@@ -15,7 +15,7 @@ import lombok.*;
 public class Reserva implements Serializable {
     @Serial
     private static final long serialVersionUID = 42L;
-
+    private static final long serialVersioUID = 1L;
     private LocalDate fechaSolicitud;
     private LocalDate fechaPlanificada;
     private Cliente cliente;

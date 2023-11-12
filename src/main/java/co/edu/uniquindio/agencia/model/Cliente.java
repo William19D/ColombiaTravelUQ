@@ -2,6 +2,8 @@ package co.edu.uniquindio.agencia.model;
 
 import lombok.*;
 
+import java.io.Serializable;
+
 
 @Getter
 @Setter
@@ -9,8 +11,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Cliente {
-
+public class Cliente  implements Serializable {
+    private static final long serialVersioUID = 1L;
     private String cedula;
     private String nombre;
     private String correo;

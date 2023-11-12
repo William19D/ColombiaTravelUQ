@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Destino implements Serializable {
-
+    private static final long serialVersioUID = 1L;
     private String nombre;
     private String descripcion;
     private String ciudad;
