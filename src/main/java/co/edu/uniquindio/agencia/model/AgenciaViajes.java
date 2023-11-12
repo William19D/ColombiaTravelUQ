@@ -30,10 +30,10 @@ public class AgenciaViajes {
 
     public final ArrayList<GuiaTuristico> guias;
     private ArrayList<PaquetesTuristicos> paquetes;
-    private static ArrayList<Cliente> clientes;
+    private ArrayList<Cliente> clientes;
     private ArrayList<Destino> destinos;
     private ArrayList<Reserva> reservas;
-    private static ArrayList<Administrador> administradores;
+    private ArrayList<Administrador> administradores;
 
     private AgenciaViajes() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
         inicializarLogger();
