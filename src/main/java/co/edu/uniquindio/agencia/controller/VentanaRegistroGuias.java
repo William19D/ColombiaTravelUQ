@@ -4,10 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
-import co.edu.uniquindio.agencia.Persistencia.Persistencia;
 import co.edu.uniquindio.agencia.app.App;
 import co.edu.uniquindio.agencia.exceptions.*;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
@@ -18,7 +16,6 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import lombok.SneakyThrows;
 import javafx.collections.ObservableList;
@@ -119,7 +116,7 @@ public class VentanaRegistroGuias {
             if (ckFrances.isSelected()) {
                 idiomasSeleccionados.add(Idiomas.FRANCES);
             }
-            agenciaViajes.actualizarGuia(nombre,identificacion,idiomasSeleccionados,experiencia);
+            //agenciaViajes.actualizarGuia(nombre,identificacion,idiomasSeleccionados,experiencia);
             //Persistencia.guardarRecursoBinario(agenciaViajes);
 
             // Limpia los campos después del registro

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import co.edu.uniquindio.agencia.Persistencia.Persistencia;
 import co.edu.uniquindio.agencia.app.App;
 import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
 import co.edu.uniquindio.agencia.exceptions.DestinoRepetidoException;

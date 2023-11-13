@@ -1,14 +1,13 @@
 package co.edu.uniquindio.agencia.model;
 
+import co.edu.uniquindio.agencia.persistencia.ArchivoUtils;
 import co.edu.uniquindio.agencia.exceptions.*;
-import com.sun.javafx.iio.ImageLoader;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import lombok.*;
 import lombok.extern.java.Log;
 
 import java.io.*;
-import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -123,7 +122,7 @@ public class AgenciaViajes {
             File buenavistaFoto = new File("src/main/resources/imagenes/destinos/Buenavista.jpeg");
             listaDeImagenes4.add(buenavistaFoto);
 
-            Destino armenia = registrarDestino("Plaza de Bolivar", "Aremenia", "Meh", listaDeImagenes1, Clima.TEMPLADO);
+            Destino armenia = registrarDestino("Plaza de Bolivar", "Armenia", "Meh", listaDeImagenes1, Clima.TEMPLADO);
             Destino filandia = registrarDestino("Mirador", "Filandia", "Bonito", listaDeImagenes2, Clima.TEMPLADO);
             Destino salento = registrarDestino("Cocora", "Salento", "Bonito", listaDeImagenes3, Clima.TEMPLADO);
             Destino buenavista = registrarDestino("Pueblo", "Buenavista", "Bonito", listaDeImagenes4, Clima.TEMPLADO);
@@ -604,5 +603,19 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
         }
         return imagenesSeleccionadas;
     }
+    public List<PaquetesTuristicos> getPaquetesPorCiudad(String ciudad) {
+        List<PaquetesTuristicos> paquetesPorCiudad = new ArrayList<>();
+
+        for (PaquetesTuristicos paquete : paquetes) {
+            // Verificar si alguno de los destinos del paquete tiene la ciudad especificada
+            if (paquete.getDestinos().stream().anyMatch(destino -> destino.getCiudad().equalsIgnoreCase(ciudad))) {
+                paquetesPorCiudad.add(paquete);
+            }
+        }
+
+        return paquetesPorCiudad;
+    }
+
+
 
 }

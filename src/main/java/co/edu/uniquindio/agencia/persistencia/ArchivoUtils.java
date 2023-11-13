@@ -1,4 +1,4 @@
-package co.edu.uniquindio.agencia.Persistencia;
+package co.edu.uniquindio.agencia.persistencia;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;

@@ -1,4 +1,4 @@
-package co.edu.uniquindio.agencia.Persistencia;
+package co.edu.uniquindio.agencia.persistencia;
 
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
 
