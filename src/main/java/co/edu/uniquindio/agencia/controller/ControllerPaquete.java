@@ -1,5 +1,10 @@
 package co.edu.uniquindio.agencia.controller;
 
+import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
+import co.edu.uniquindio.agencia.exceptions.DestinoRepetidoException;
+import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
+import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
+import co.edu.uniquindio.agencia.model.AgenciaViajes;
 import co.edu.uniquindio.agencia.model.PaquetesTuristicos;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -33,6 +38,12 @@ public class ControllerPaquete {
     private AnchorPane paqueteScroll;
     private PaquetesTuristicos paquete;
 
+    private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
+
+    public ControllerPaquete() throws AtributoVacioException, DestinoRepetidoException, RutaInvalidaException, InformacionRepetidaException {
+    }
+
+
     @FXML
     void initialize() {
         // Configurar elementos gráficos con la información del paquete
@@ -40,7 +51,7 @@ public class ControllerPaquete {
             lblNombrePaquete.setText(paquete.getNombre());
             lblDescripcionPaquete.setText(paquete.getDescripcion());
             lblPrecioPaquete.setText(String.valueOf(paquete.getPrecio()));
-            lblCupo.setText(String.valueOf(paquete.getCupoMax()));
+            lblCupo.setText(String.valueOf(agenciaViajes.calcularCuposRestantes(paquete.getCupoMax(),paquete.getCupoActual())));
             File primeraImagen = paquete.getDestinos().get(0).getRutasImagenes().get(0);
 
             // Configurar la imagen en el ImageView

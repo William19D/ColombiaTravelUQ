@@ -26,6 +26,7 @@ public class PaquetesTuristicos implements Serializable {
     private String serviciosAdicionales;
     private double precio;
     private int cupoMax;
+    private int cupoActual;
     private LocalDate fechaDisponibleInicio;
     private LocalDate fechaDisponibleFin;
     private GuiaTuristico guia;

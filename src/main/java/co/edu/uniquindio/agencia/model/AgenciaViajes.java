@@ -629,6 +629,18 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
                 .filter(paquete -> paquete.getDestinos().stream().anyMatch(destino -> destino.getClima() == clima))
                 .toList();
     }
+    public int calcularCuposRestantes(int cupoMax, int cupoActual){
+        int cupo = cupoMax-cupoActual;
+        return cupo;
+    }
+    public boolean paqueteDisponible(int interesados, PaquetesTuristicos paquete){
+        boolean disponible = false;
+
+        if(interesados > calcularCuposRestantes(paquete.getCupoMax(),paquete.getCupoActual())){
+            disponible = true;
+        }
+        return disponible;
+    }
 
 
 
