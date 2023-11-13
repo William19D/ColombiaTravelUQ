@@ -41,11 +41,7 @@ public class ControllerInicioSesion {
         ArrayList<Cliente> clientes = agenciaViajes.getClientes();
         ArrayList<Administrador> administradores = agenciaViajes.getAdministradores();
 
-
-
-
     }
-
 
     @FXML
     void mostrarMenu(ActionEvent event) throws IOException, AtributoVacioException, ElementoNoEncontradoException, DestinoRepetidoException, RutaInvalidaException, InformacionRepetidaException {

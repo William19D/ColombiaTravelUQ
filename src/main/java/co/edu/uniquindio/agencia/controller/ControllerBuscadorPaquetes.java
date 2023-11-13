@@ -18,6 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
@@ -70,8 +71,31 @@ public class ControllerBuscadorPaquetes {
         configurarPresupuestoListener();
         configurarCiudadListener();
         configurarPersonasListener();
+        configurarFechasListener();
         cargarPaquetes();
         menuClima.getItems().forEach(item -> item.setOnAction(this::seleccionarClima));
+    }
+
+    private void configurarFechasListener() {
+        fechaIda.valueProperty().addListener((observable, oldValue, newValue) -> cargarPaquetesPorFechas());
+        fechaVuelta.valueProperty().addListener((observable, oldValue, newValue) -> cargarPaquetesPorFechas());
+    }
+
+    private void cargarPaquetesPorFechas() {
+        try {
+            LocalDate salida = fechaIda.getValue();
+            LocalDate llegada = fechaVuelta.getValue();
+
+            if (salida != null && llegada != null) {
+                List<PaquetesTuristicos> paquetesEnFechas = agenciaViajes.getPaquetesPorFechas(salida, llegada);
+                mostrarPaquetesEnScrollPane(paquetesEnFechas);
+            } else {
+                // Manejo si alguna de las fechas es nula
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Manejo de excepciones específicas según sea necesario
+        }
     }
 
     private void configurarScrollPane() {

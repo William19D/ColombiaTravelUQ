@@ -142,7 +142,7 @@ public class AgenciaViajes {
 
             // TODO: HACER LA FUNCION DE VERIFICAR SI YA EXISTE UN PAQUETE QUE RETORNE UN MENSAJE
             registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio, "Conoce Armenia y Filandia", "Desayuno", 3990000, 30, LocalDate.now().plusDays(1), LocalDate.now().plusWeeks(1), null);
-            registrarPaquetes("Salento Oferta", cocoraPaseo, "Conoce cocora y pasea a caballo ", "Desayuno, almuerzo y fotos", 1490000, 20, LocalDate.now().plusDays(1), LocalDate.now().plusWeeks(1), null);
+            registrarPaquetes("Salento Oferta", cocoraPaseo, "Conoce cocora y pasea a caballo ", "Desayuno, almuerzo y fotos", 1490000, 20, LocalDate.now().plusDays(5), LocalDate.now().plusWeeks(1), null);
             // FIN DE CODIGO PARA PROBAR PAQUETES.
         }
 
@@ -656,8 +656,22 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
         return paquetesDisponibles;
     }
 
+    public List<PaquetesTuristicos> getPaquetesPorFechas(LocalDate salida, LocalDate llegada) {
+        List<PaquetesTuristicos> paquetesEnFechas = new ArrayList<>();
 
+        for (PaquetesTuristicos paquete : paquetes) {
+            LocalDate fechaInicioPaquete = paquete.getFechaDisponibleInicio();
+            LocalDate fechaFinPaquete = paquete.getFechaDisponibleFin();
 
+            // Verificar si las fechas de salida y llegada están dentro del rango del paquete
+            if ((fechaInicioPaquete.isEqual(salida) || fechaInicioPaquete.isAfter(salida))
+                    && (fechaFinPaquete.isEqual(llegada) || fechaFinPaquete.isBefore(llegada))) {
+                paquetesEnFechas.add(paquete);
+            }
+        }
+
+        return paquetesEnFechas;
+    }
 
 
 }
