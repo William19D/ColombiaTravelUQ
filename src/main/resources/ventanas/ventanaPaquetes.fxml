@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -62,7 +64,16 @@
             <DatePicker fx:id="fechaVuelta" prefHeight="31.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <TextField fx:id="txtPersonas" prefHeight="31.0" prefWidth="211.0" style="-fx-background-radius: 100;" styleClass="text-field" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="txtPresupuesto" prefHeight="31.0" prefWidth="211.0" style="-fx-background-radius: 100;" styleClass="text-field" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtClima" prefHeight="31.0" prefWidth="211.0" style="-fx-background-radius: 100;" styleClass="text-field" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <MenuButton fx:id="menuClima" mnemonicParsing="false" onAction="#seleccionarClima" prefHeight="40.0" prefWidth="211.0" style="-fx-background-radius: 100; -fx-font-size: 17;" styleClass="textoRegular" stylesheets="@styles.css" text="Seleccionar" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Frio" />
+                <MenuItem mnemonicParsing="false" text="Templado" />
+                  <MenuItem mnemonicParsing="false" text="Calido" />
+              </items>
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </MenuButton>
          </children>
       </GridPane>
       <Pane layoutX="634.0" prefHeight="548.0" prefWidth="3.0" style="-fx-background-color: black;" />
@@ -71,7 +82,7 @@
             <Font size="40.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="scrollPaquetes" layoutX="664.0" layoutY="117.0" prefHeight="397.0" prefWidth="583.0">
+      <ScrollPane fx:id="scrollPaquetes" layoutX="664.0" layoutY="117.0" prefHeight="397.0" prefWidth="583.0" style="-fx-background-image: red;">
         <content>
           <AnchorPane fx:id="scrollAnchorPane" />
         </content>

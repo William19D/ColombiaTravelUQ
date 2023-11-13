@@ -5,16 +5,15 @@ import co.edu.uniquindio.agencia.exceptions.DestinoRepetidoException;
 import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
 import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
+import co.edu.uniquindio.agencia.model.Clima;
 import co.edu.uniquindio.agencia.model.PaquetesTuristicos;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
@@ -24,6 +23,9 @@ import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 
 public class ControllerBuscadorPaquetes {
+
+    @FXML
+    private MenuButton menuClima;
 
     @FXML
     private DatePicker fechaIda;
@@ -55,122 +57,128 @@ public class ControllerBuscadorPaquetes {
     @FXML
     private AnchorPane ventanaBuscadorPaquetes;
 
+    private Clima climaSeleccionado;
+
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
 
     public ControllerBuscadorPaquetes() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
     }
 
     public void initialize() throws IOException {
-        scrollPaquetes.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        configurarScrollPane();
+        configurarFiltroNumerico();
+        configurarPresupuestoListener();
+        configurarCiudadListener();
+        cargarPaquetes();
+        menuClima.getItems().forEach(item -> item.setOnAction(this::seleccionarClima));
+    }
 
-        // Configurar el filtro para aceptar solo caracteres numéricos
+    private void configurarScrollPane() {
+        scrollPaquetes.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+    }
+
+    private void configurarFiltroNumerico() {
         UnaryOperator<TextFormatter.Change> numericFilter = change -> {
             String newText = change.getControlNewText();
-            if (Pattern.matches("[0-9]*", newText)) {
-                return change;
-            } else {
-                return null; // Rechazar el cambio si el nuevo texto contiene caracteres no numéricos
-            }
+            return Pattern.matches("[0-9]*", newText) ? change : null;
         };
 
-        // Aplicar el filtro al TextFormatter del TextField de presupuesto
         txtPresupuesto.setTextFormatter(new TextFormatter<>(numericFilter));
-
-        // Listener para el cambio en el campo de presupuesto
-        txtPresupuesto.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                // Volver a cargar los paquetes cada vez que cambie el texto
-                cargarPaquetesPorPresupuesto(newValue);
-            }
-        });
-
-        // Listener para el cambio en el campo de ciudad
-        txtCiudad.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                // Volver a cargar los paquetes por ciudad cada vez que cambie el texto
-                cargarPaquetesPorCiudad(newValue);
-            }
-        });
-
-        // Cargar los paquetes al inicio
-        cargarPaquetes();
     }
 
-    public void cargarPaquetesPorPresupuesto(String presupuesto) {
-        try {
-            // Obtener la lista de paquetes que cumplen con el presupuesto
-            List<PaquetesTuristicos> paquetesFiltrados = agenciaViajes.getPaquetesPorPresupuesto(Double.parseDouble(presupuesto));
-
-            // Crear un VBox para almacenar las instancias de ControllerPaquete
-            VBox vbox = new VBox();
-
-            // Configurar cada instancia con un paquete diferente
-            for (PaquetesTuristicos paquete : paquetesFiltrados) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/paquete.fxml"));
-                Parent root = loader.load();
-                ControllerPaquete controller = loader.getController();
-                controller.setPaquete(paquete);
-                vbox.getChildren().add(root);
-            }
-
-            // Limpiar el contenido actual y agregar el nuevo VBox al ScrollPane
-            scrollAnchorPane.getChildren().clear();
-            scrollAnchorPane.getChildren().add(vbox);
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Manejo de excepciones específicas según sea necesario
-        } catch (NumberFormatException ex) {
-            // Manejo de la excepción si el valor ingresado no es un número válido
-        }
+    private void configurarPresupuestoListener() {
+        txtPresupuesto.textProperty().addListener((observable, oldValue, newValue) ->
+                cargarPaquetesPorPresupuesto(newValue));
     }
 
-    public void cargarPaquetesPorCiudad(String ciudad) {
-        try {
-            // Obtener la lista de paquetes por ciudad
-            List<PaquetesTuristicos> paquetesPorCiudad = agenciaViajes.getPaquetesPorCiudad(ciudad);
+    private void configurarCiudadListener() {
+        UnaryOperator<TextFormatter.Change> letterFilter = change -> {
+            String newText = change.getControlNewText();
+            return Pattern.matches("[a-zA-Z]*", newText) ? change : null;
+        };
+        configurarFiltroSoloLetras();
 
-            // Crear un VBox para almacenar las instancias de ControllerPaquete
-            VBox vbox = new VBox();
+        txtCiudad.setTextFormatter(new TextFormatter<>(letterFilter));
 
-            // Configurar cada instancia con un paquete diferente
-            for (PaquetesTuristicos paquete : paquetesPorCiudad) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/paquete.fxml"));
-                Parent root = loader.load();
-                ControllerPaquete controller = loader.getController();
-                controller.setPaquete(paquete);
-                vbox.getChildren().add(root);
-            }
+        txtCiudad.textProperty().addListener((observable, oldValue, newValue) ->
+                cargarPaquetesPorCiudad(newValue));
+    }
+    private void configurarFiltroSoloLetras() {
+        UnaryOperator<TextFormatter.Change> numericFilter = change -> {
+            String newText = change.getControlNewText();
+            return Pattern.matches("[0-9]*", newText) ? change : null;
+        };
 
-            // Limpiar el contenido actual y agregar el nuevo VBox al ScrollPane
-            scrollAnchorPane.getChildren().clear();
-            scrollAnchorPane.getChildren().add(vbox);
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Manejo de excepciones específicas según sea necesario
-        }
+        txtPresupuesto.setTextFormatter(new TextFormatter<>(numericFilter));
     }
 
     private void cargarPaquetes() {
         try {
-            // Obtener la lista de paquetes desde tu AgenciaViajes
             List<PaquetesTuristicos> listaDePaquetes = agenciaViajes.getPaquetes();
+            mostrarPaquetesEnScrollPane(listaDePaquetes);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Manejo de excepciones específicas según sea necesario
+        }
+    }
 
-            // Crear un VBox para almacenar las instancias de ControllerPaquete
-            VBox vbox = new VBox();
+    private void cargarPaquetesPorPresupuesto(String presupuesto) {
+        try {
+            List<PaquetesTuristicos> paquetesFiltrados = agenciaViajes.getPaquetesPorPresupuesto(Double.parseDouble(presupuesto));
+            mostrarPaquetesEnScrollPane(paquetesFiltrados);
+        } catch (IOException | NumberFormatException ex) {
+            ex.printStackTrace();
+            // Manejo de excepciones según sea necesario
+        }
+    }
 
-            // Configurar cada instancia con un paquete diferente
-            for (PaquetesTuristicos paquete : listaDePaquetes) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/paquete.fxml"));
-                Parent root = loader.load();
-                ControllerPaquete controller = loader.getController();
-                controller.setPaquete(paquete);
-                vbox.getChildren().add(root);
+    private void cargarPaquetesPorCiudad(String ciudad) {
+        try {
+            List<PaquetesTuristicos> paquetesPorCiudad = agenciaViajes.getPaquetesPorCiudad(ciudad);
+            mostrarPaquetesEnScrollPane(paquetesPorCiudad);
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Manejo de excepciones específicas según sea necesario
+        }
+    }
+
+    private void mostrarPaquetesEnScrollPane(List<PaquetesTuristicos> paquetes) throws IOException {
+        VBox vbox = new VBox();
+
+        for (PaquetesTuristicos paquete : paquetes) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/paquete.fxml"));
+            Parent root = loader.load();
+            ControllerPaquete controller = loader.getController();
+            controller.setPaquete(paquete);
+            vbox.getChildren().add(root);
+        }
+
+        scrollAnchorPane.getChildren().clear();
+        scrollAnchorPane.getChildren().add(vbox);
+    }
+
+    @FXML
+    private void seleccionarClima(ActionEvent event) {
+        MenuItem menuItem = (MenuItem) event.getSource();
+        String climaText = menuItem.getText();
+        climaSeleccionado = Clima.valueOf(climaText.toUpperCase());
+        menuClima.setText(climaText);
+        filtrarPaquetes();
+    }
+
+    private void filtrarPaquetes() {
+        try {
+            String ciudad = txtCiudad.getText();
+            if (!ciudad.isEmpty()) {
+                cargarPaquetesPorCiudad(ciudad);
+                return;
             }
 
-            // Configurar el VBox en el ScrollPane
-            scrollAnchorPane.getChildren().add(vbox);
+            if (climaSeleccionado != null) {
+                List<PaquetesTuristicos> paquetesFiltrados = agenciaViajes.getPaquetesPorClima(climaSeleccionado);
+                mostrarPaquetesEnScrollPane(paquetesFiltrados);
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
             // Manejo de excepciones específicas según sea necesario

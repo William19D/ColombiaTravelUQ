@@ -106,6 +106,7 @@ public class AgenciaViajes {
             List<File> listaDeImagenes2 = new ArrayList<>();
             List<File> listaDeImagenes3 = new ArrayList<>();
             List<File> listaDeImagenes4 = new ArrayList<>();
+            List<File> listaDeImagenes5 = new ArrayList<>();
 
             // Cargar la imagen de Armenia
             File armeniaFoto = new File("src/main/resources/imagenes/destinos/Armenia.jpeg");
@@ -121,19 +122,27 @@ public class AgenciaViajes {
             // Cargar la imagen de BuenaVista
             File buenavistaFoto = new File("src/main/resources/imagenes/destinos/Buenavista.jpeg");
             listaDeImagenes4.add(buenavistaFoto);
+            File paseoCaballoFoto = new File("src/main/resources/imagenes/destinos/paseoCaballo.jpg");
+            listaDeImagenes5.add(paseoCaballoFoto);
 
             Destino armenia = registrarDestino("Plaza de Bolivar", "Armenia", "Meh", listaDeImagenes1, Clima.TEMPLADO);
             Destino filandia = registrarDestino("Mirador", "Filandia", "Bonito", listaDeImagenes2, Clima.TEMPLADO);
             Destino salento = registrarDestino("Cocora", "Salento", "Bonito", listaDeImagenes3, Clima.TEMPLADO);
             Destino buenavista = registrarDestino("Pueblo", "Buenavista", "Bonito", listaDeImagenes4, Clima.TEMPLADO);
+            Destino caballo = registrarDestino("Paseo a caballo cocora", "Salento", "Bonito", listaDeImagenes5, Clima.FRIO);
 
             ArrayList<Destino> destinosQuindio = new ArrayList<>();
+            ArrayList<Destino> cocoraPaseo = new ArrayList<>();
+            cocoraPaseo.add(caballo);
+            cocoraPaseo.add(salento);
             destinosQuindio.add(armenia);
             destinosQuindio.add(filandia);
             destinosQuindio.add(salento);
+            destinosQuindio.add(buenavista);
 
             // TODO: HACER LA FUNCION DE VERIFICAR SI YA EXISTE UN PAQUETE QUE RETORNE UN MENSAJE
             registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio, "Conoce Armenia y Filandia", "Desayuno", 3990000, 30, LocalDate.now().plusDays(1), LocalDate.now().plusWeeks(1), null);
+            registrarPaquetes("Salento Oferta", cocoraPaseo, "Conoce cocora y pasea a caballo ", "Desayuno, almuerzo y fotos", 1490000, 20, LocalDate.now().plusDays(1), LocalDate.now().plusWeeks(1), null);
             // FIN DE CODIGO PARA PROBAR PAQUETES.
         }
 
@@ -615,6 +624,12 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
 
         return paquetesPorCiudad;
     }
+    public List<PaquetesTuristicos> getPaquetesPorClima(Clima clima) {
+        return paquetes.stream()
+                .filter(paquete -> paquete.getDestinos().stream().anyMatch(destino -> destino.getClima() == clima))
+                .toList();
+    }
+
 
 
 
