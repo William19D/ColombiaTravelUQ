@@ -87,22 +87,40 @@ public class ControllerBuscadorPaquetes {
     }
 
     private void configurarPresupuestoListener() {
-        txtPresupuesto.textProperty().addListener((observable, oldValue, newValue) ->
-                cargarPaquetesPorPresupuesto(newValue));
+        UnaryOperator<TextFormatter.Change> numericFilter = change -> {
+            String newText = change.getControlNewText();
+            return Pattern.matches("[0-9]*", newText) ? change : null;
+        };
+
+        txtPresupuesto.setTextFormatter(new TextFormatter<>(numericFilter));
+
+        txtPresupuesto.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.isEmpty()) {
+                cargarPaquetes();
+            } else {
+                cargarPaquetesPorPresupuesto(newValue);
+            }
+        });
     }
+
 
     private void configurarCiudadListener() {
         UnaryOperator<TextFormatter.Change> letterFilter = change -> {
             String newText = change.getControlNewText();
             return Pattern.matches("[a-zA-Z]*", newText) ? change : null;
         };
-        configurarFiltroSoloLetras();
 
         txtCiudad.setTextFormatter(new TextFormatter<>(letterFilter));
 
-        txtCiudad.textProperty().addListener((observable, oldValue, newValue) ->
-                cargarPaquetesPorCiudad(newValue));
+        txtCiudad.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.isEmpty()) {
+                cargarPaquetes();
+            } else {
+                cargarPaquetesPorCiudad(newValue);
+            }
+        });
     }
+
     private void configurarFiltroSoloLetras() {
         UnaryOperator<TextFormatter.Change> numericFilter = change -> {
             String newText = change.getControlNewText();
