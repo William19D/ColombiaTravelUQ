@@ -636,11 +636,26 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
     public boolean paqueteDisponible(int interesados, PaquetesTuristicos paquete){
         boolean disponible = false;
 
-        if(interesados > calcularCuposRestantes(paquete.getCupoMax(),paquete.getCupoActual())){
+        if(interesados < calcularCuposRestantes(paquete.getCupoMax(),paquete.getCupoActual())){
             disponible = true;
         }
         return disponible;
     }
+
+    public List<PaquetesTuristicos> getPaquetesDisponiblesPorPersonas(int cantidadPersonas) {
+        List<PaquetesTuristicos> paquetesDisponibles = new ArrayList<>();
+
+        List<PaquetesTuristicos> todosLosPaquetes = agenciaViajes.getPaquetes();
+
+        for (PaquetesTuristicos paquete : todosLosPaquetes) {
+            if (paqueteDisponible(cantidadPersonas, paquete)) {
+                paquetesDisponibles.add(paquete);
+            }
+        }
+
+        return paquetesDisponibles;
+    }
+
 
 
 

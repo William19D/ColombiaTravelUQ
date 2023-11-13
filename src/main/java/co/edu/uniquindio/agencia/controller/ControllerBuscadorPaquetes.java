@@ -69,6 +69,7 @@ public class ControllerBuscadorPaquetes {
         configurarFiltroNumerico();
         configurarPresupuestoListener();
         configurarCiudadListener();
+        configurarPersonasListener();
         cargarPaquetes();
         menuClima.getItems().forEach(item -> item.setOnAction(this::seleccionarClima));
     }
@@ -200,6 +201,34 @@ public class ControllerBuscadorPaquetes {
         } catch (IOException e) {
             e.printStackTrace();
             // Manejo de excepciones específicas según sea necesario
+        }
+    }
+    private void configurarPersonasListener() {
+        UnaryOperator<TextFormatter.Change> numericFilter = change -> {
+            String newText = change.getControlNewText();
+            return Pattern.matches("[0-9]*", newText) ? change : null;
+        };
+
+        txtPersonas.setTextFormatter(new TextFormatter<>(numericFilter));
+
+        txtPersonas.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue.isEmpty()) {
+                cargarPaquetes();
+            } else {
+                cargarPaquetesPorPersonas(newValue);
+            }
+        });
+    }
+
+    private void cargarPaquetesPorPersonas(String personas) {
+        try {
+            int cantidadPersonas = Integer.parseInt(personas);
+
+            List<PaquetesTuristicos> paquetesFiltrados = agenciaViajes.getPaquetesDisponiblesPorPersonas(cantidadPersonas);
+            mostrarPaquetesEnScrollPane(paquetesFiltrados);
+        } catch (IOException | NumberFormatException ex) {
+            ex.printStackTrace();
+            // Manejo de excepciones según sea necesario
         }
     }
 }
