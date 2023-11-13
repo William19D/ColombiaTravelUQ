@@ -607,7 +607,7 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
 
         if (imagenesSeleccionadas != null) {
             for (File imagen : imagenesSeleccionadas) {
-                log.info("Imagen seleccionada: " + imagen.getAbsolutePath());
+                log.info("Imagen seleccionada : " + imagen.getAbsolutePath());
             }
         }
         return imagenesSeleccionadas;
