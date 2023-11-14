@@ -16,6 +16,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 public class VentanaRegistroDestinos {
@@ -75,45 +77,88 @@ public class VentanaRegistroDestinos {
 
     List<File> imagenesSeleccionadas;
 
+    @FXML
+    private ScrollPane scrollPaneImagenes;
+
+    @FXML
+    private AnchorPane anchorPaneImagenes;
+
+    private boolean primeraVezSeleccionImagenes = true;
+
+
 
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
 
 
 
+    @FXML
+    void initialize() throws RutaInvalidaException {
+        tablaDestinos();
+        actualizarTablaDestinos();
+        mostrarImagenesSeleccionadas();
+        configurarRestriccionesCamposTexto();
+        configurarSeleccionUnicaClimas();
+
+
+    }
+    private void configurarSeleccionUnicaClimas() {
+        // Configurar la selección única para el clima frío
+        ckFrio.setOnAction(event -> {
+            if (ckFrio.isSelected()) {
+                ckSoleado.setSelected(false);
+                ckTemplado.setSelected(false);
+            }
+        });
+
+        // Configurar la selección única para el clima soleado
+        ckSoleado.setOnAction(event -> {
+            if (ckSoleado.isSelected()) {
+                ckFrio.setSelected(false);
+                ckTemplado.setSelected(false);
+            }
+        });
+
+        // Configurar la selección única para el clima templado
+        ckTemplado.setOnAction(event -> {
+            if (ckTemplado.isSelected()) {
+                ckFrio.setSelected(false);
+                ckSoleado.setSelected(false);
+            }
+        });
+    }
+
     public VentanaRegistroDestinos() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
     }
 
     @FXML
-    void EliminarDestinoEvent(ActionEvent event) throws AtributoVacioException {
-        eliminarDestinoAction();
-
-
+    void borrarDestinoEvent(ActionEvent event) {
+        try {
+            borrarDestinoAction();
+        } catch (AtributoVacioException e) {
+            mostrarAlerta("Error", "No se ha seleccionado ningún destino para borrar.");
+        }
     }
 
-    private void eliminarDestinoAction() throws AtributoVacioException {
-
+    private void borrarDestinoAction() throws AtributoVacioException {
         Destino destinoSeleccionado = tabDestinosRegistrados.getSelectionModel().getSelectedItem();
 
         if (destinoSeleccionado != null) {
             try {
                 // Llamar al método de eliminación en la clase principal
-                AgenciaViajes.getInstance().eliminarDestino(destinoSeleccionado.getNombre());
+                agenciaViajes.eliminarDestino(destinoSeleccionado.getNombre(), destinoSeleccionado.getCiudad());
 
-                // Actualiza la tabla de guías
+                // Actualizar la tabla de destinos
                 actualizarTablaDestinos();
-            } catch (ElementoNoEncontradoException | InformacionRepetidaException | DestinoRepetidoException |
-                     RutaInvalidaException e) {
-                // Manejar la excepción si el guía no se encuentra
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText(e.getMessage());
-                alert.setHeaderText(null);
-                alert.show();
+            } catch (ElementoNoEncontradoException | RutaInvalidaException e) {
+                // Manejar la excepción si el destino no se encuentra
+                mostrarAlerta(null, e.getMessage());
             }
         } else {
-            // Si no se selecciona ningún guía, muestra un mensaje de error
-            throw new AtributoVacioException("Selecciona un guía para eliminar.");
+            // Si no se selecciona ningún destino, muestra un mensaje de error
+            throw new AtributoVacioException("Selecciona un destino para borrar.");
         }
     }
+
 
     @FXML
     void actualizarDestinosEvent(ActionEvent event) {
@@ -135,11 +180,8 @@ public class VentanaRegistroDestinos {
 
 
             if (!ckSoleado.isSelected() && !ckTemplado.isSelected() && !ckFrio.isSelected()) {
-
-                throw new ElementoNoEncontradoException("Debes seleccionar al menos un clima.");
+                throw new ElementoNoEncontradoException("Debes seleccionar un clima.");
             }
-
-            // Recopilar los idiomas seleccionados
             Clima climaSeleccionado = null;
 
             if (ckSoleado.isSelected()) {
@@ -151,20 +193,15 @@ public class VentanaRegistroDestinos {
             if (ckFrio.isSelected()) {
                 climaSeleccionado = (Clima.FRIO);
             }
-            if(imagenesDestino != null){
-                imagenesSeleccionadas.clear();
+            if(imagenesDestino == null){
+                mostrarAlerta("Error", "Solo se permiten letras en el campo de ciudad.");
+                throw new AtributoVacioException("No se selecciono ninguna imagen");
             }
-
 
             agenciaViajes.registrarDestino(nombre, ciudad, descripcion,imagenesDestino,climaSeleccionado);
             this.tabDestinosRegistrados.setItems(listaDestino);
+            mostrarAlertaInfo(null,"Se ha registrado correctamente el destino de nombre" +   txtNombre.getText());
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setContentText("Se ha registrado correctamente el destino de nombre  " + txtNombre.getText());
-            alert.show();
-
-            // Limpia los campos después del registro
             txtNombre.clear();
             txtCiudad.clear();
             txtDescripcion.clear();
@@ -173,20 +210,18 @@ public class VentanaRegistroDestinos {
             ckFrio.setSelected(false);
             imagenesSeleccionadas.clear();
 
+            anchorPaneImagenes.getChildren().clear();
+
             actualizarTablaDestinos();
 
-        } catch (AtributoVacioException e) {
-            throw new RuntimeException(e);
-        } catch (ElementoNoEncontradoException e) {
-            throw new RuntimeException(e);
-        } catch (DestinoRepetidoException e) {
-            throw new RuntimeException(e);
-        } catch (RutaInvalidaException e) {
+        } catch (AtributoVacioException | RutaInvalidaException | ElementoNoEncontradoException |
+                 DestinoRepetidoException e) {
             throw new RuntimeException(e);
         }
     }
 
     private void actualizarTablaDestinos() throws RutaInvalidaException {
+        scrollPaneImagenes.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
         listaDestino = FXCollections.observableArrayList(agenciaViajes.getDestinos());
         tabDestinosRegistrados.getItems().clear();
@@ -197,20 +232,92 @@ public class VentanaRegistroDestinos {
     }
 
     @FXML
-    void vovlerMenuAdmins(ActionEvent event) throws IOException {
+    void volverMenuAdmins(ActionEvent event) throws IOException {
         new ViewController(ventanaDestinos, "/ventanas/ventanaMenuAdmins.fxml");
     }
     @FXML
-    void seleccionarImagenEvent(ActionEvent event) throws IOException {
-        imagenesSeleccionadas = agenciaViajes.seleccionarImagenes();
+    void seleccionarImagenEvent(ActionEvent event) throws AtributoVacioException{
+        try {
+            List<File> nuevasImagenes = agenciaViajes.seleccionarImagenes();
 
+            if (primeraVezSeleccionImagenes) {
+                imagenesSeleccionadas = new ArrayList<>(nuevasImagenes);
+                primeraVezSeleccionImagenes = false;
+            } else {
+                List<File> imagenesModificable = new ArrayList<>(imagenesSeleccionadas);
+                imagenesModificable.addAll(nuevasImagenes);
+                imagenesSeleccionadas = imagenesModificable;
+            }
+
+            mostrarImagenesSeleccionadas();
+        } catch (AtributoVacioException e) {
+            // Manejar la excepción si no se selecciona ninguna imagen
+            mostrarAlerta("Error", "No se ha seleccionado ninguna imagen.");
+        }
     }
 
-    @FXML
-    void initialize() throws RutaInvalidaException {
-        tablaDestinos();
-        actualizarTablaDestinos();
 
+
+    private void mostrarImagenesSeleccionadas() {
+        anchorPaneImagenes.getChildren().clear();
+
+        if (imagenesSeleccionadas != null && !imagenesSeleccionadas.isEmpty()) {
+            double xOffset = 10;
+            double yOffset = 10;
+
+            for (int i = 0; i < imagenesSeleccionadas.size(); i++) {
+                File imagenFile = imagenesSeleccionadas.get(i);
+                Image image = new Image(imagenFile.toURI().toString());
+
+                ImageView imageView = new ImageView(image);
+                imageView.setFitWidth(288);
+                imageView.setFitHeight(269);
+
+                double x = xOffset;
+                double y = yOffset + i * (269 + 10);
+
+                AnchorPane.setLeftAnchor(imageView, x);
+                AnchorPane.setTopAnchor(imageView, y);
+
+                anchorPaneImagenes.getChildren().add(imageView);
+            }
+        }
+    }
+    private void configurarRestriccionesCamposTexto() {
+        // Configurar restricciones para el campo de ciudad
+        txtCiudad.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ ]*$")) {
+                // Si el nuevo valor no contiene solo letras, espacios y tildes, mostrar una alerta y revertir el cambio
+                mostrarAlerta("Error", "Solo se permiten letras, espacios y tildes en el campo de ciudad.");
+                txtCiudad.setText(oldValue);
+            }
+        });
+
+        // Configurar restricciones para el campo de nombre
+        txtNombre.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ ]*$")) {
+                // Si el nuevo valor no contiene solo letras, espacios y tildes, mostrar una alerta y revertir el cambio
+                mostrarAlerta("Error", "Solo se permiten letras, espacios y tildes en el campo de nombre.");
+                txtNombre.setText(oldValue);
+            }
+        });
+    }
+
+
+    private void mostrarAlerta(String titulo, String contenido) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setContentText(contenido);
+        alert.setHeaderText(null);
+        alert.showAndWait();
+
+    }
+    private void mostrarAlertaInfo(String titulo, String contenido) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titulo);
+        alert.setContentText(contenido);
+        alert.setHeaderText(null);
+        alert.showAndWait();
     }
 
     void tablaDestinos() throws  RutaInvalidaException{
@@ -223,7 +330,7 @@ public class VentanaRegistroDestinos {
 
         columNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
         columCiudad.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCiudad()));
-        // columClima.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
+        columClima.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
 
         tabDestinosRegistrados.refresh();
 

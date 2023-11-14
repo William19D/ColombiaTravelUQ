@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -16,14 +17,14 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ventanaDestinos" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.VentanaRegistroDestinos">
+<AnchorPane fx:id="ventanaDestinos" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.VentanaRegistroDestinos">
    <children>
-      <ImageView fx:id="btnVolver" fitHeight="77.0" fitWidth="164.0" layoutX="38.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnVolver" fitHeight="77.0" fitWidth="164.0" layoutX="18.0" layoutY="627.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../iconos/volver.png" />
          </image>
       </ImageView>
-      <GridPane layoutX="160.0" layoutY="158.0" prefHeight="293.0" prefWidth="406.0">
+      <GridPane layoutX="24.0" layoutY="184.0" prefHeight="271.0" prefWidth="406.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="228.0" minWidth="10.0" prefWidth="190.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="216.0" />
@@ -32,7 +33,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="75.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
             <Label styleClass="textoRegular" stylesheets="@styles.css" text="Nombre:">
@@ -45,7 +46,7 @@
                   <Font name="Nirmala UI" size="28.0" />
                </font>
             </Label>
-            <Label styleClass="textoRegular" stylesheets="@styles.css" text="Descripcion:" GridPane.rowIndex="2">
+            <Label styleClass="textoRegular" stylesheets="@styles.css" text="Descripción:" GridPane.rowIndex="2">
                <font>
                   <Font name="Nirmala UI" size="28.0" />
                </font>
@@ -55,65 +56,64 @@
                   <Font size="28.0" />
                </font>
             </Label>
-            <TextField fx:id="txtNombre" prefHeight="37.0" prefWidth="244.0" promptText="Ingrese el nombre" GridPane.columnIndex="1" />
-            <TextField fx:id="txtCiudad" prefHeight="37.0" prefWidth="244.0" promptText="Ingrese la ciudad" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="txtDescripcion" prefHeight="37.0" prefWidth="244.0" promptText="Ingrese la descripcion" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtImagen" prefHeight="37.0" prefWidth="244.0" promptText="ingrese imagen " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtNombre" prefHeight="37.0" prefWidth="244.0" promptText="Ingrese el nombre" style="-fx-border-radius: 100; -fx-background-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" />
+            <TextField fx:id="txtCiudad" prefHeight="37.0" prefWidth="244.0" promptText="Ingrese la ciudad" style="-fx-background-radius: 100; -fx-border-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtDescripcion" prefHeight="37.0" prefWidth="244.0" promptText="Ingrese la descripcion" style="-fx-background-radius: 100; -fx-border-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#seleccionarImagenEvent" prefHeight="43.0" prefWidth="216.0" style="-fx-font-size: 20;" stylesheets="@styles.css" text="Agregar Foto" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <styleClass>
+                  <String fx:value="textoRegular" />
+                  <String fx:value="botonBlanco28px" />
+               </styleClass>
+            </Button>
          </children>
       </GridPane>
-      <Label layoutX="174.0" layoutY="468.0" styleClass="textoRegular" stylesheets="@styles.css" text="Clima:">
-         <font>
-            <Font size="28.0" />
-         </font>
-      </Label>
-      <CheckBox fx:id="ckSoleado" layoutX="302.0" layoutY="477.0" mnemonicParsing="false" text="Soleado">
+      <CheckBox fx:id="ckSoleado" layoutX="211.0" layoutY="476.0" mnemonicParsing="false" style="-fx-font-size: 18;" styleClass="textoRegular" stylesheets="@styles.css" text="Soleado">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ckTemplado" layoutX="416.0" layoutY="477.0" mnemonicParsing="false" text="Templado">
+      <CheckBox fx:id="ckTemplado" layoutX="211.0" layoutY="521.0" mnemonicParsing="false" style="-fx-font-size: 18;" styleClass="textoRegular" stylesheets="@styles.css" text="Templado">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <CheckBox fx:id="ckFrio" layoutX="543.0" layoutY="477.0" mnemonicParsing="false" text="Frio">
+      <CheckBox fx:id="ckFrio" layoutX="211.0" layoutY="560.0" mnemonicParsing="false" style="-fx-font-size: 18;" styleClass="textoRegular" stylesheets="@styles.css" text="Frio">
          <font>
             <Font size="18.0" />
          </font>
       </CheckBox>
-      <Label layoutX="214.0" layoutY="61.0" text="Registro de Destinos">
+      <Label layoutX="24.0" layoutY="120.0" prefHeight="77.0" prefWidth="445.0" style="-fx-font-size: 35;" styleClass="textoNegrita" stylesheets="@styles.css" text="Registro de Destinos">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="btnregistrarDestino" layoutX="326.0" layoutY="600.0" mnemonicParsing="false" onAction="#registrarDestinoEvent" text="Registrar">
+      <Button fx:id="btnregistrarDestino" layoutX="220.0" layoutY="642.0" mnemonicParsing="false" onAction="#registrarDestinoEvent" style="-fx-font-size: 25;" stylesheets="@styles.css" text="Registrar">
          <font>
             <Font size="28.0" />
          </font>
+         <styleClass>
+            <String fx:value="botonBlanco28px" />
+            <String fx:value="textoRegular" />
+         </styleClass>
       </Button>
-      <TableView fx:id="tabDestinosRegistrados" layoutX="800.0" layoutY="213.0" prefHeight="200.0" prefWidth="351.0">
+      <TableView fx:id="tabDestinosRegistrados" layoutX="864.0" layoutY="189.0" prefHeight="200.0" prefWidth="373.0">
         <columns>
-          <TableColumn fx:id="columNombre" prefWidth="113.0" text="Nombre" />
-          <TableColumn fx:id="columCiudad" prefWidth="119.0" text="Ciudad" />
-            <TableColumn fx:id="columClima" prefWidth="118.0" text="Clima" />
+          <TableColumn fx:id="columNombre" prefWidth="131.0" text="Nombre" />
+          <TableColumn fx:id="columCiudad" prefWidth="120.0" text="Ciudad" />
+            <TableColumn fx:id="columClima" prefWidth="121.0" text="Clima" />
         </columns>
       </TableView>
-      <Label layoutX="878.0" layoutY="89.0" text="Destinos registrados">
+      <Label layoutX="864.0" layoutY="137.0" style="-fx-font-size: 35;" styleClass="textoNegrita" stylesheets="@styles.css" text="Destinos registrados">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btnActualizar" layoutX="790.0" layoutY="534.0" mnemonicParsing="false" onAction="#actualizarDestinosEvent" text="Actualizar">
+      <Button fx:id="btnEliminar" layoutX="1141.0" layoutY="416.0" mnemonicParsing="false" onAction="#borrarDestinoEvent" style="-fx-font-size: 20;" styleClass="botonBlanco28px" stylesheets="@styles.css" text="Eliminar">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnEliminar" layoutX="1050.0" layoutY="534.0" mnemonicParsing="false" onAction="#EliminarDestinoEvent" text="Eliminar">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button fx:id="btnVolverMenuAdmins" layoutX="35.0" layoutY="645.0" mnemonicParsing="false" onAction="#vovlerMenuAdmins" prefHeight="77.0" prefWidth="84.0" stylesheets="@styles.css">
+      <Button fx:id="btnVolverMenuAdmins" layoutX="14.0" layoutY="627.0" mnemonicParsing="false" onAction="#volverMenuAdmins" prefHeight="77.0" prefWidth="84.0" stylesheets="@styles.css">
          <font>
             <Font size="24.0" />
          </font>
@@ -125,5 +125,25 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <ImageView fitHeight="276.0" fitWidth="492.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/colombiaTravelHorizontal.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="551.0" layoutY="137.0" style="-fx-font-size: 35;" styleClass="textoNegrita" stylesheets="@styles.css" text="Imágenes">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <ScrollPane fx:id="scrollPaneImagenes" layoutX="495.0" layoutY="189.0" prefHeight="271.0" prefWidth="290.0">
+        <content>
+          <AnchorPane fx:id="anchorPaneImagenes" minHeight="0.0" minWidth="0.0" />
+        </content>
+      </ScrollPane>
+      <Label layoutX="24.0" layoutY="472.0" styleClass="textoRegular" stylesheets="@styles.css" text="Clima:">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -142,7 +142,7 @@ public class AgenciaViajes {
 
             // TODO: HACER LA FUNCION DE VERIFICAR SI YA EXISTE UN PAQUETE QUE RETORNE UN MENSAJE
             registrarPaquetes("Quindio: Corazon del Cafe", destinosQuindio, "Conoce Armenia y Filandia", "Desayuno", 3990000, 30, LocalDate.now().plusDays(1), LocalDate.now().plusWeeks(1), null);
-            registrarPaquetes("Salento Oferta", cocoraPaseo, "Conoce cocora y pasea a caballo ", "Desayuno, almuerzo y fotos", 1490000, 20, LocalDate.now().plusDays(1), LocalDate.now().plusWeeks(1), null);
+            registrarPaquetes("Salento Oferta", cocoraPaseo, "Conoce cocora y pasea a caballo ", "Desayuno, almuerzo y fotos", 1490000, 20, LocalDate.now().plusDays(5), LocalDate.now().plusWeeks(1), null);
             // FIN DE CODIGO PARA PROBAR PAQUETES.
         }
 
@@ -339,39 +339,28 @@ public class AgenciaViajes {
     }
 
 
-// Metodo que elimina un destino
-public void eliminarDestino(String nombre) throws ElementoNoEncontradoException {
-    Destino destinoAeliminar = obtenerDestino(nombre);
-    if (destinoAeliminar != null) {
-        guias.remove(destinoAeliminar);
-        log.info("Se ha eliminado el destino de nombre " + nombre);
 
-        // Eliminar la información del guía del archivo de texto
-        eliminarInfoGuiaArchivo(nombre);
-    } else {
-        throw new ElementoNoEncontradoException("No se encontró un guía con la identificación proporcionada.");
-    }
-}
+    public void eliminarDestino(String nombre, String ciudad) throws ElementoNoEncontradoException, RutaInvalidaException {
+        Destino destinoAeliminar = obtenerDestino(nombre, ciudad);
 
-    private void eliminarInfoDestinoArchivo(String nombre) {
-        try {
-            // Leer todas las líneas del archivo
-            List<String> lineas = ArchivoUtils.leerArchivoScanner(RUTADESTINOS);
+        if (destinoAeliminar != null) {
+            destinos.remove(destinoAeliminar);
+            log.info("Se ha eliminado el destino de nombre " + nombre + " y ciudad " + ciudad);
 
-            // Filtrar las líneas para excluir la información del guía a eliminar
-            lineas = lineas.stream()
-                    .filter(linea -> !linea.contains(nombre))
-                    .collect(Collectors.toList());
-
-            // Escribir las líneas actualizadas al archivo
-            ArchivoUtils.escribirArchivoBufferedWriter(RUTADESTINOS, lineas, false);
-        } catch (IOException e) {
-            log.severe("Error al intentar eliminar la información del destino del archivo: " + e.getMessage());
+            // Eliminar la información del destino del archivo de texto
+            escribirDestino();
+        } else {
+            throw new ElementoNoEncontradoException("No se encontró un destino con el nombre y ciudad proporcionados.");
         }
     }
 
-    public Destino obtenerDestino(String nombre){
-        return destinos.stream().filter(c -> c.getNombre().equals(nombre)).findFirst().orElse(null);
+    private Destino obtenerDestino(String nombre, String ciudad) {
+        for (Destino destino : destinos) {
+            if (destino.getNombre().equals(nombre) && destino.getCiudad().equals(ciudad)) {
+                return destino;
+            }
+        }
+        return null;
     }
     private void escribirDestino() throws RutaInvalidaException{
         try{
@@ -658,7 +647,7 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
             return new ArrayList<>(paquetes);
         }
     }
-    public List<File> seleccionarImagenes(){
+    public List<File> seleccionarImagenes() throws AtributoVacioException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Seleccionar Imagen");
         fileChooser.getExtensionFilters().addAll(
@@ -671,6 +660,8 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
             for (File imagen : imagenesSeleccionadas) {
                 log.info("Imagen seleccionada: " + imagen.getAbsolutePath());
             }
+        }else{
+            throw  new AtributoVacioException("No se selecciono ninguna imagen");
         }
         return imagenesSeleccionadas;
     }
@@ -718,6 +709,7 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
         return paquetesDisponibles;
     }
 
+
     public boolean verificarClienteAdministrador(String cedula, String contrasena) throws AtributoVacioException{
         if(cedula.isEmpty()){
             throw new AtributoVacioException("Cedula vacia");
@@ -742,7 +734,22 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
     }
 
 
+    public List<PaquetesTuristicos> getPaquetesPorFechas(LocalDate salida, LocalDate llegada) {
+        List<PaquetesTuristicos> paquetesEnFechas = new ArrayList<>();
 
+        for (PaquetesTuristicos paquete : paquetes) {
+            LocalDate fechaInicioPaquete = paquete.getFechaDisponibleInicio();
+            LocalDate fechaFinPaquete = paquete.getFechaDisponibleFin();
+
+            // Verificar si las fechas de salida y llegada están dentro del rango del paquete
+            if ((fechaInicioPaquete.isEqual(salida) || fechaInicioPaquete.isAfter(salida))
+                    && (fechaFinPaquete.isEqual(llegada) || fechaFinPaquete.isBefore(llegada))) {
+                paquetesEnFechas.add(paquete);
+            }
+        }
+
+        return paquetesEnFechas;
+    }
 
 
 }

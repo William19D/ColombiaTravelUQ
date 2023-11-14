@@ -12,7 +12,9 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
+
         FXMLLoader loader = new FXMLLoader(App.class.getResource("/ventanas/inicio.fxml"));
+
         Parent parent = loader.load();
 
         Scene scene = new Scene(parent);
@@ -22,8 +24,6 @@ public class App extends Application {
         stage.getIcons().add(icon);
         stage.setResizable(false);
         stage.show();
-
-
     }
 
     public static void main(String[] args) {

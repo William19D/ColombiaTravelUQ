@@ -44,7 +44,6 @@ public class ControllerInicioSesion {
 
     }
 
-
     @FXML
     void mostrarMenu(ActionEvent event) throws IOException, AtributoVacioException, ElementoNoEncontradoException, DestinoRepetidoException, RutaInvalidaException, InformacionRepetidaException {
         String cedula = labelUsuario.getText();
