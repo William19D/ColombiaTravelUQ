@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ventanaMenuAdmins" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ControllerMenuAdmin">
+<AnchorPane fx:id="ventanaMenuAdmins" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ControllerMenuAdmin">
     <children>
         <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f08b182e" height="172.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
         <ImageView fitHeight="276.0" fitWidth="492.0" pickOnBounds="true" preserveRatio="true">
@@ -87,10 +87,14 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="btnDestinos" mnemonicParsing="false" onAction="#destinosEvent" prefHeight="199.0" prefWidth="322.0" text="Destinos">
+            <Button fx:id="btnDestinos" mnemonicParsing="false" onAction="#destinosEvent" prefHeight="121.0" prefWidth="322.0" style="-fx-font-size: 50;" stylesheets="@styles.css" text="Destinos">
                <font>
                   <Font size="50.0" />
                </font>
+               <styleClass>
+                  <String fx:value="textoRegular" />
+                  <String fx:value="botonBlanco28px" />
+               </styleClass>
             </Button>
             <Button fx:id="btnGuias" layoutX="10.0" layoutY="102.0" mnemonicParsing="false" onAction="#guiasEvent" prefHeight="199.0" prefWidth="322.0" text="Guias" GridPane.columnIndex="2">
                <font>

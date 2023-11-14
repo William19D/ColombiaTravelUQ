@@ -84,7 +84,6 @@ public class VentanaRegistroGuias {
 
     ObservableList<GuiaTuristico> listaGuias = FXCollections.observableArrayList(AgenciaViajes.getInstance().getGuias());
 
-
     public VentanaRegistroGuias() throws RutaInvalidaException, AtributoVacioException, InformacionRepetidaException, DestinoRepetidoException {
     }
 
