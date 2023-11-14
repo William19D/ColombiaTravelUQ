@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -53,6 +55,23 @@
                   <Image url="@../imagenes/colombiaTravelHorizontal.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="77.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <image>
+                  <Image url="@../iconos/volver.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#vovlerEvent" prefHeight="77.0" prefWidth="84.0" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="textoLight" />
+                  <String fx:value="botonClick" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </GridPane>
    </children>
