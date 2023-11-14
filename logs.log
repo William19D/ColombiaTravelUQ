@@ -127,7 +127,7 @@ INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main
 Nov 13, 2023 9:06:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
 INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\iconos\nofoto.png
 Nov 13, 2023 9:06:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
-INFO: Imagen seleccionada: C:\Users\danie\OneDrive\Imágenes\Screenshots\Screenshot 2023-11-12 223013.png
+INFO: Imagen seleccionada: C:\Users\danie\OneDrive\Imï¿½genes\Screenshots\Screenshot 2023-11-12 223013.png
 Nov 13, 2023 9:06:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
 INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\imagenes\destinos\paseoCaballo.jpg
 Nov 13, 2023 9:07:14 PM co.edu.uniquindio.agencia.model.AgenciaViajes eliminarDestino
@@ -149,7 +149,7 @@ SEVERE: null
 Nov 13, 2023 9:10:58 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
 INFO: No se han cargado los datos ya que ya se tiene informacion 
 Nov 13, 2023 9:11:14 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
-INFO: Imagen seleccionada: C:\Users\danie\OneDrive\Imágenes\Screenshots\Screenshot 2023-11-12 223013.png
+INFO: Imagen seleccionada: C:\Users\danie\OneDrive\Imï¿½genes\Screenshots\Screenshot 2023-11-12 223013.png
 Nov 13, 2023 9:20:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
 INFO: Se crea una nueva instancia de Colombia Travel
 Nov 13, 2023 9:20:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
@@ -201,7 +201,7 @@ INFO: Imagen seleccionada: C:\Users\danie\Downloads\9jVSJZCW_400x400.jpeg
 Nov 13, 2023 9:39:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
 INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\imagenes\destinos\paseoCaballo.jpg
 Nov 13, 2023 9:39:41 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
-INFO: Imagen seleccionada: C:\Users\danie\OneDrive\Imágenes\Screenshots\Screenshot 2023-11-12 223013.png
+INFO: Imagen seleccionada: C:\Users\danie\OneDrive\Imï¿½genes\Screenshots\Screenshot 2023-11-12 223013.png
 Nov 13, 2023 9:39:51 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
 INFO: Imagen seleccionada: C:\Users\danie\Downloads\Post para Instagram Comida Colombiana Llamativo Amarillo (2).png
 Nov 13, 2023 9:41:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
@@ -319,7 +319,7 @@ SEVERE: null
 Nov 13, 2023 10:25:03 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
 INFO: No se han cargado los datos ya que ya se tiene informacion 
 Nov 13, 2023 10:25:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes eliminarDestino
-INFO: Se ha eliminado el destino de nombre Monserrate y ciudad Bogotá
+INFO: Se ha eliminado el destino de nombre Monserrate y ciudad Bogotï¿½
 Nov 13, 2023 10:25:19 PM co.edu.uniquindio.agencia.model.AgenciaViajes eliminarDestino
 INFO: Se ha eliminado el destino de nombre Jardin Botanico y ciudad Medellin
 Nov 13, 2023 10:26:20 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
@@ -328,23 +328,41 @@ Nov 13, 2023 10:26:23 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrar
 INFO: Se ha registrado un nuevo destino con el nombre: sfafsf
 Nov 13, 2023 10:26:26 PM co.edu.uniquindio.agencia.model.AgenciaViajes eliminarDestino
 INFO: Se ha eliminado el destino de nombre sfafsf y ciudad faa
-nov. 13, 2023 10:52:46 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
-nov. 13, 2023 10:52:46 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+Nov 13, 2023 10:28:30 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 10:28:30 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 10:28:30 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+nov. 13, 2023 10:52:46 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 13, 2023 10:52:46 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 GRAVE: null
-nov. 13, 2023 10:52:46 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
-INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
-nov. 13, 2023 10:53:41 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes actualizarCliente
-INFORMACIÓN: Se ha actualizado el cliente con la cédula: 12
-nov. 13, 2023 10:58:49 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
-nov. 13, 2023 10:58:49 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+nov. 13, 2023 10:52:46 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 13, 2023 10:53:41 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes actualizarCliente
+INFORMACIï¿½N: Se ha actualizado el cliente con la cï¿½dula: 12
+nov. 13, 2023 10:58:49 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 13, 2023 10:58:49 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 GRAVE: null
-nov. 13, 2023 10:58:49 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
-INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
-nov. 13, 2023 11:00:00 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
-nov. 13, 2023 11:00:00 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+nov. 13, 2023 10:58:49 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 13, 2023 11:00:00 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 13, 2023 11:00:00 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 GRAVE: null
-nov. 13, 2023 11:00:00 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
-INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
+nov. 13, 2023 11:00:00 P.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 11:24:01 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 11:24:01 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 11:24:01 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 11:38:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 11:38:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 11:38:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 

@@ -1,3 +1,4 @@
 10;bruna;jhwfvJKH;1234567899;JHWECK;10
 12;tstst;jghv ;1542546585;kgvkygv;12
 13;eeeeeee;ergerag;aergergrg;2525265321;13
+10656789;Daniel;daniel@correo.com;1234567890;Calle 12 ;123
