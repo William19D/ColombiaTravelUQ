@@ -1,4 +1,4 @@
-package co.edu.uniquindio.agencia.persistencia;
+package co.edu.uniquindio.agencia.model;
 
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
@@ -154,67 +154,6 @@ public class ArchivoUtils {
         decoder.close();
 
         return objeto;
-    }
-
-    public static Object cargarRecursoSerializado(String rutaArchivo)throws Exception
-    {
-        Object aux = null;
-//		MarketplaceVendedores marketplace = null;
-        ObjectInputStream ois = null;
-        try {
-            // Se crea un ObjectInputStream
-            ois = new ObjectInputStream(new FileInputStream(rutaArchivo));
-
-            aux = ois.readObject();
-
-        } catch (Exception e2) {
-            File file = new File("C:\\td\\persistencia/Model.dat");
-            file.createNewFile();
-        } finally {
-            if (ois != null)
-                ois.close();
-        }
-        return aux;
-    }
-    public static void salvarRecursoSerializado(String rutaArchivo, Object object)	throws Exception {
-        ObjectOutputStream oos = null;
-        try {
-            oos = new ObjectOutputStream(new FileOutputStream(rutaArchivo));
-            oos.writeObject(object);
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            if (oos != null)
-                oos.close();
-        }
-    }
-    public static Object cargarRecursoSerializadoXML(String rutaArchivo) throws IOException {
-
-        XMLDecoder decodificadorXML;
-        Object objetoXML;
-
-        decodificadorXML = new XMLDecoder(new FileInputStream(rutaArchivo));
-        objetoXML = decodificadorXML.readObject();
-        decodificadorXML.close();
-        return objetoXML;
-    }
-
-    public static void salvarRecursoSerializadoXML(String rutaArchivo, Object objeto) throws IOException {
-
-        XMLEncoder codificadorXML;
-
-        codificadorXML = new XMLEncoder(new FileOutputStream(rutaArchivo));
-        codificadorXML.writeObject(objeto);
-        codificadorXML.close();
-
-    }
-
-    public static void borrarContenidoArchivo(String rutaArchivo) throws IOException {
-        // Abre el archivo en modo de escritura
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo))) {
-            // Borra el contenido del archivo
-            writer.write("");
-        }
     }
 
 }

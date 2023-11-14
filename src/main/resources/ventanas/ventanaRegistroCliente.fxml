@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" styleClass="RegistroPane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.VentanaRegistroCliente">
+<AnchorPane fx:id="ventana" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" styleClass="RegistroPane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.VentanaRegistroCliente">
    <children>
-      <Button fx:id="btnRegistrarCliente" layoutX="457.0" layoutY="642.0" mnemonicParsing="false" onAction="#registrarClienteEvent" stylesheets="@styles.css" text="Registrar">
+      <Button fx:id="btnRegistrarCliente" layoutX="257.0" layoutY="549.0" mnemonicParsing="false" onAction="#registrarClienteEvent" stylesheets="@styles.css" text="Registrar">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
@@ -90,15 +90,6 @@
             <Image url="@../imagenes/colombiaTravelHorizontal.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="77.0" fitWidth="164.0" layoutX="14.0" layoutY="633.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../iconos/volver.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="20.0" layoutY="637.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="71.0" styleClass="botonSinFondo22px" stylesheets="@styles.css">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Button>
+      <Button fx:id="btnIrMenu" layoutX="530.0" layoutY="659.0" mnemonicParsing="false" onAction="#irMenuEvent" text="Ir a menu" />
    </children>
 </AnchorPane>

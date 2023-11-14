@@ -223,9 +223,47 @@ public class AgenciaViajes {
         }
     }
 
+    public void actualizarCliente(String cedula, String nombre, String correo, String direccion, String telefono, String contrasenia) throws AtributoVacioException, InformacionRepetidaException, ElementoNoEncontradoException {
+        if (cedula == null || cedula.isBlank()) {
+            throw new AtributoVacioException("La cédula es obligatoria");
+        }
+
+        Cliente clienteExistente = obtenerCliente(cedula);
+        if (clienteExistente == null) {
+            throw new InformacionRepetidaException("No existe un cliente con la cédula " + cedula);
+        }
+
+        // Actualiza los datos del cliente
+        clienteExistente.setNombre(nombre);
+        clienteExistente.setCorreo(correo);
+        clienteExistente.setDireccion(direccion);
+        clienteExistente.setTelefono(telefono);
+        clienteExistente.setContrasenia(contrasenia);
+
+        // Actualiza el archivo de persistencia clientes.txt
+        actualizarArchivoClientes();
+
+
+        log.info("Se ha actualizado el cliente con la cédula: " + cedula);
+    }
+
+    private void actualizarArchivoClientes() {
+        try {
+            // Borra el contenido del archivo
+            ArchivoUtils.borrarContenidoArchivo(RUTACLIENTES);
+
+            // Escribe nuevamente todos los clientes en el archivo
+            for (Cliente cliente : clientes) {
+                escribirCliente(cliente);
+            }
+        } catch (IOException e) {
+            log.severe(e.getMessage());
+        }
+    }
+
     private void escribirCliente(Cliente cliente){
         try {
-            String linea = cliente.getCedula()+";"+cliente.getNombre()+";"+cliente.getCedula()+";"+cliente.getCorreo()+";"+cliente.getTelefono()+";"+cliente.getDireccion()+";"+cliente.getContrasenia();
+            String linea = cliente.getCedula()+";"+cliente.getNombre()+";"+cliente.getCorreo()+";"+cliente.getTelefono()+";"+cliente.getDireccion()+";"+cliente.getContrasenia();
             ArchivoUtils.escribirArchivoBufferedWriter(RUTACLIENTES, List.of(linea), true);
         }catch (IOException e){
             log.severe(e.getMessage());
@@ -236,27 +274,27 @@ public class AgenciaViajes {
     }
     private void leerClientes() {
 
-        try{
+        try {
 
             ArrayList<String> lineas = ArchivoUtils.leerArchivoScanner(RUTACLIENTES);
 
-            for(String linea : lineas){
+            for (String linea : lineas) {
 
                 String[] valores = linea.split(";");
-                clientes.add( Cliente.builder()
-                        .cedula(valores[0])
-                        .nombre(valores[1])
-                        .correo(valores[2])
-                        .direccion(valores[3])
-                        .telefono(valores[4])
-                        .contrasenia(valores[5])
-                        .build());
+
+                    clientes.add(Cliente.builder()
+                            .cedula(valores[0])
+                            .nombre(valores[1])
+                            .correo(valores[2])
+                            .direccion(valores[3])
+                            .telefono(valores[4])
+                            .contrasenia(valores[5])
+                            .build());
+
             }
-
-        }catch (IOException e){
-            log.severe(e.getMessage());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-
     }
     //DESTINOS
     public Destino registrarDestino(String nombre, String ciudad, String descripcion, List<File> imagenes, Clima clima) throws AtributoVacioException, RutaInvalidaException, DestinoRepetidoException {
@@ -381,7 +419,31 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
     public static void registrarReserva(ArrayList<Reserva> listaReservas, Reserva reserva) {
         listaReservas.add(reserva);
     }
+//Metodo que actualiza los quias turisticos
 
+    public void actualizarGuias(String nombre, String identificacion, List<Idiomas> idiomas, String exp) throws AtributoVacioException, InformacionRepetidaException, RutaInvalidaException{
+        if(identificacion == null || identificacion.isBlank()){
+            throw new AtributoVacioException("La identificacion es obligatoria");
+        }
+
+        if(nombre == null || nombre.isBlank()){
+            throw new AtributoVacioException("El nombre es obligatorio");
+        }
+
+        if(exp == null || exp.isBlank()){
+            throw new AtributoVacioException("la experiencia es obligatoria");
+        }
+        GuiaTuristico guiaTuristico = obtenerGuia(identificacion);
+        if(guiaTuristico !=null){
+            guiaTuristico.setNombre(nombre);
+            guiaTuristico.setExp(exp);
+            guiaTuristico.setIdiomas(idiomas);
+            eliminarInfoGuiaArchivo(identificacion);
+            escribirGuias(guiaTuristico);
+        }else {
+            throw new AtributoVacioException("No existe el usuario");
+        }
+    }
 
 
 // Metodo que reguistra los guias turisticos
@@ -654,6 +716,29 @@ public void eliminarDestino(String nombre) throws ElementoNoEncontradoException 
         }
 
         return paquetesDisponibles;
+    }
+
+    public boolean verificarClienteAdministrador(String cedula, String contrasena) throws AtributoVacioException{
+        if(cedula.isEmpty()){
+            throw new AtributoVacioException("Cedula vacia");
+        }
+        if(contrasena.isEmpty()){
+            throw new AtributoVacioException("Contrasena vacia");
+        }
+
+        Cliente cliente = obtenerCliente(cedula);
+        Administrador administrador = obtenerAdministrador(cedula);
+
+        if (cliente != null && cliente.getContrasenia().equals(contrasena)) {
+            return true;
+        } else return administrador != null && administrador.getContrasenia().equals(contrasena); // Administrador autenticado
+    }
+
+    public Administrador obtenerAdministrador(String cedula) {
+        return administradores.stream()
+                .filter(admin -> admin.getUsuario().equals(cedula))
+                .findFirst()
+                .orElse(null);
     }
 
 

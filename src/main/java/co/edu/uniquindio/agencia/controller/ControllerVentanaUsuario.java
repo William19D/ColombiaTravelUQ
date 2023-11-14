@@ -23,8 +23,21 @@ public class ControllerVentanaUsuario {
     @FXML
     private Label lblDestinos11;
 
+
     @FXML
     private AnchorPane ventanaUsuario;
+
+    @FXML
+    void editarEvent(ActionEvent event) throws IOException {
+        new ViewController(ventanaUsuario, "/ventanas/ventanaActualizarCliente.fxml");
+
+    }
+
+    @FXML
+    void salirEvent(ActionEvent event) throws IOException {
+        new ViewController(ventanaUsuario, "/ventanas/inicio.fxml");
+
+    }
 
     @FXML
     void vovlerMenu() throws IOException {

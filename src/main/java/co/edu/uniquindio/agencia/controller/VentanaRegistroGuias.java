@@ -116,8 +116,7 @@ public class VentanaRegistroGuias {
             if (ckFrances.isSelected()) {
                 idiomasSeleccionados.add(Idiomas.FRANCES);
             }
-            //agenciaViajes.actualizarGuia(nombre,identificacion,idiomasSeleccionados,experiencia);
-            //Persistencia.guardarRecursoBinario(agenciaViajes);
+            agenciaViajes.actualizarGuias(nombre,identificacion,idiomasSeleccionados,experiencia);
 
             // Limpia los campos después del registro
             txtNombre.clear();
@@ -139,7 +138,6 @@ public class VentanaRegistroGuias {
             alert.setHeaderText(null);
             alert.show();
         }
-
     }
 
     @FXML
@@ -227,6 +225,12 @@ public class VentanaRegistroGuias {
                 AgenciaViajes.getInstance().eliminarGuia(guiaSeleccionado.getIdentificacion());
                 //Persistencia.guardarRecursoBinario(agenciaViajes);
                 // Actualiza la tabla de guías
+                txtNombre.clear();
+                txtIdentificacion.clear();
+                txtExperiencia.clear();
+                ckEspanol.setSelected(false);
+                ckIngles.setSelected(false);
+                ckFrances.setSelected(false);
                 actualizarTablaGuias();
             } catch (ElementoNoEncontradoException | InformacionRepetidaException | DestinoRepetidoException e) {
                 // Manejar la excepción si el guía no se encuentra
@@ -296,8 +300,10 @@ public class VentanaRegistroGuias {
     }
 
     private void mostrarInformacion() {
-        txtNombre.setText(guiaTuristicoSeleccionado.getNombre());
-        txtIdentificacion.setText(guiaTuristicoSeleccionado.getIdentificacion());
-        txtExperiencia.setText(guiaTuristicoSeleccionado.getExp());
+       if(guiaTuristicoSeleccionado!=null){
+           txtNombre.setText(guiaTuristicoSeleccionado.getNombre());
+           txtIdentificacion.setText(guiaTuristicoSeleccionado.getIdentificacion());
+           txtExperiencia.setText(guiaTuristicoSeleccionado.getExp());
+       }
     }
 }

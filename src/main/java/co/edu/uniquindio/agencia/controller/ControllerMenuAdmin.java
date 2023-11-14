@@ -51,7 +51,8 @@ public class ControllerMenuAdmin {
     }
 
     @FXML
-    void estadisticasEvent(ActionEvent event) {
+    void estadisticasEvent(ActionEvent event) throws IOException {
+        new ViewController(ventanaMenuAdmins, "/ventanas/ventanaEstadisticas.fxml");
 
     }
 

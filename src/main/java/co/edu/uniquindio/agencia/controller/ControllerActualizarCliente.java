@@ -4,13 +4,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import co.edu.uniquindio.agencia.app.App;
 import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
 import co.edu.uniquindio.agencia.exceptions.DestinoRepetidoException;
 import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
 import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
-import co.edu.uniquindio.agencia.persistencia.Persistencia;
+import co.edu.uniquindio.agencia.model.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -19,10 +18,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-public class VentanaRegistroCliente{
 
-    @FXML
-    private PasswordField txtContrasenia;
+
+public class ControllerActualizarCliente {
 
     @FXML
     private ResourceBundle resources;
@@ -31,13 +29,16 @@ public class VentanaRegistroCliente{
     private URL location;
 
     @FXML
-    private Button btnCancelar;
+    private Button btnActualizarCliente;
 
     @FXML
-    private Button btnRegistrarCliente;
+    private Button btnIrMenu;
 
     @FXML
     private TextField txtCedula;
+
+    @FXML
+    private PasswordField txtContrasenia;
 
     @FXML
     private TextField txtCorreo;
@@ -52,34 +53,73 @@ public class VentanaRegistroCliente{
     private TextField txtTelefono;
 
     @FXML
-    private Button btnIrMenu;
-
+    private AnchorPane ventana;
 
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
 
-    private App main;
-
-    @FXML
-    private AnchorPane ventana;
-
-
-
-    public VentanaRegistroCliente() throws AtributoVacioException, DestinoRepetidoException, RutaInvalidaException, InformacionRepetidaException {
+    public ControllerActualizarCliente() throws AtributoVacioException, DestinoRepetidoException, RutaInvalidaException, InformacionRepetidaException {
     }
-
-
     @FXML
-    void cancelarEvent(ActionEvent event) {
-
-    }
-
-    @FXML
-    void registrarClienteEvent(ActionEvent event) {
-        if (validarCampos()) {
-            registrarClienteAction();
+    void actualizarClienteEvent(ActionEvent event) {
+        if (validarCampos() && validarCedula()) {
+            actualizarClienteAction();
         }
     }
 
+    private boolean validarCedula() {
+        String cedulaIngresada = txtCedula.getText();
+        String cedulaUsuario = SessionManager.getInstance().getCedulaUsuario();
+
+        if (!cedulaIngresada.equals(cedulaUsuario)) {
+            mostrarAlerta("La cédula ingresada no coincide con la del usuario que inició sesión.");
+            return false;
+        }
+
+        return true;
+    }
+
+    private void mostrarAlerta(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.show();
+    }
+
+    private void actualizarClienteAction() {
+        String cedula =txtCedula.getText();
+        try {
+            agenciaViajes.actualizarCliente(
+                    txtCedula.getText(),
+                    txtNombre.getText(),
+                    txtCorreo.getText(),
+                    txtDireccion.getText(),
+                    txtTelefono.getText(),
+                    txtContrasenia.getText()
+            );
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setContentText("Se ha actualizado correctamente ");
+            alert.show();
+            limpiarTexto();
+
+
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
+        }
+    }
+    private void limpiarTexto() throws IOException {
+        txtNombre.setText("");
+        txtCedula.setText("");
+        txtCorreo.setText("");
+        txtDireccion.setText("");
+        txtContrasenia.setText("");
+        txtTelefono.setText("");
+
+    }
 
     private boolean validarCampos() {
         if (!validarNumero(txtCedula.getText())) {
@@ -106,6 +146,7 @@ public class VentanaRegistroCliente{
 
         return true;
     }
+
     private boolean validarNumero(String input) {
         return input.matches("\\d+");
     }
@@ -113,74 +154,16 @@ public class VentanaRegistroCliente{
         return input.matches(".*\\d+.*");
     }
 
-    private void mostrarAlerta(String mensaje) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setHeaderText(null);
-        alert.setContentText(mensaje);
-        alert.show();
-    }
-
-
-    private void registrarClienteAction() {
-
-
-        try {
-            agenciaViajes.registrarCliente(
-                    txtCedula.getText(),
-                    txtNombre.getText(),
-                    txtCorreo.getText(),
-                    txtDireccion.getText(),
-                    txtTelefono.getText(),
-                    txtContrasenia.getText()
-
-            );
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setContentText("Se ha registrado correctamente el cliente con la cedula  "+txtCedula.getText());
-            alert.show();
-            limpiarTexto();
-
-            btnIrMenu.setDisable(false);
-
-        } catch (Exception e) {
-
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(e.getMessage());
-            alert.setHeaderText(null);
-            alert.show();
-
-        }
-
-
-    }
-
-    private void limpiarTexto() throws IOException {
-        txtNombre.setText("");
-        txtCedula.setText("");
-        txtCorreo.setText("");
-        txtDireccion.setText("");
-        txtContrasenia.setText("");
-        txtTelefono.setText("");
-
-    }
 
     @FXML
     void irMenuEvent(ActionEvent event) throws IOException {
-        // Verificar si el botón btnIrMenu está habilitado
-        if (!btnIrMenu.isDisabled()) {
-            new ViewController(ventana, "/ventanas/ventanaMenu.fxml");
-        }
+        new ViewController(ventana, "/ventanas/ventanaMenu.fxml");
+
     }
 
     @FXML
     void initialize() {
-        btnIrMenu.setDisable(true);
 
-    }
-
-    public void setApplication(App main) {
-        this.main=main;
     }
 
 }
