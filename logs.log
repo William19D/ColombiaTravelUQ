@@ -80,3 +80,103 @@ Nov 13, 2023 6:48:02 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserv
 SEVERE: null
 Nov 13, 2023 6:48:02 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
 INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 6:56:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 6:56:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 6:56:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 9:02:48 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 9:02:49 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 9:02:49 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 9:03:20 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 9:03:20 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 9:03:20 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 9:03:48 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\iconos\nofoto.png
+Nov 13, 2023 9:04:28 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 9:04:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 9:04:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 9:04:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\iconos\accederPerfil.png
+Nov 13, 2023 9:04:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\iconos\avion.png
+Nov 13, 2023 9:04:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\iconos\correo.png
+Nov 13, 2023 9:04:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\iconos\maleta.png
+Nov 13, 2023 9:04:44 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\iconos\nofoto.png
+Nov 13, 2023 9:06:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 9:06:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 9:06:07 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 9:06:17 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\iconos\nofoto.png
+Nov 13, 2023 9:06:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\iconos\nofoto.png
+Nov 13, 2023 9:06:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\OneDrive\Imágenes\Screenshots\Screenshot 2023-11-12 223013.png
+Nov 13, 2023 9:06:34 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\imagenes\destinos\paseoCaballo.jpg
+Nov 13, 2023 9:07:14 PM co.edu.uniquindio.agencia.model.AgenciaViajes eliminarDestino
+INFO: Se ha eliminado el destino de nombre Pueblo
+Nov 13, 2023 9:07:17 PM co.edu.uniquindio.agencia.model.AgenciaViajes eliminarDestino
+INFO: Se ha eliminado el destino de nombre Plaza de Bolivar
+Nov 13, 2023 9:07:18 PM co.edu.uniquindio.agencia.model.AgenciaViajes eliminarDestino
+INFO: Se ha eliminado el destino de nombre Pueblo
+Nov 13, 2023 9:07:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 9:07:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 9:07:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 9:10:57 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 9:10:58 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 9:10:58 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 9:11:14 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\OneDrive\Imágenes\Screenshots\Screenshot 2023-11-12 223013.png
+Nov 13, 2023 9:20:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 9:20:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 9:20:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 9:20:19 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\imagenes\destinos\paseoCaballo.jpg
+Nov 13, 2023 9:20:19 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\iconos\nofoto.png
+Nov 13, 2023 9:20:19 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\imagenes\destinos\Calarca.jpeg
+Nov 13, 2023 9:32:35 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 9:32:35 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 9:32:35 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 9:32:57 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 9:32:57 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 9:32:57 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 9:33:10 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\imagenes\destinos\paseoCaballo.jpg
+Nov 13, 2023 9:33:10 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\imagenes\destinos\Calarca.jpeg
+Nov 13, 2023 9:33:10 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\Downloads\9jVSJZCW_400x400.jpeg

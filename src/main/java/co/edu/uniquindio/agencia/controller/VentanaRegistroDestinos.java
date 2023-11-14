@@ -16,6 +16,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 public class VentanaRegistroDestinos {
@@ -74,6 +76,15 @@ public class VentanaRegistroDestinos {
     private AnchorPane ventanaDestinos;
 
     List<File> imagenesSeleccionadas;
+
+    @FXML
+    private ScrollPane scrollPaneImagenes;
+
+    @FXML
+    private AnchorPane anchorPaneImagenes;
+
+    private boolean primeraVezSeleccionImagenes = true;
+
 
 
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
@@ -197,19 +208,53 @@ public class VentanaRegistroDestinos {
     }
 
     @FXML
-    void vovlerMenuAdmins(ActionEvent event) throws IOException {
+    void volverMenuAdmins(ActionEvent event) throws IOException {
         new ViewController(ventanaDestinos, "/ventanas/ventanaMenuAdmins.fxml");
     }
     @FXML
     void seleccionarImagenEvent(ActionEvent event) throws IOException {
         imagenesSeleccionadas = agenciaViajes.seleccionarImagenes();
-
+        mostrarImagenesSeleccionadas();  // Agrega esta línea
     }
+
+    private void mostrarImagenesSeleccionadas() {
+        anchorPaneImagenes.getChildren().clear(); // Limpiar las imágenes anteriores
+
+        if (imagenesSeleccionadas != null && !imagenesSeleccionadas.isEmpty()) {
+            double xOffset = 10; // Ajusta este valor según tus necesidades
+            double yOffset = 10; // Ajusta este valor según tus necesidades
+
+            for (int i = 0; i < imagenesSeleccionadas.size(); i++) {
+                File imagenFile = imagenesSeleccionadas.get(i);
+                Image image = new Image(imagenFile.toURI().toString());
+
+                // Crea un ImageView con la imagen y ajusta el tamaño al tamaño específico
+                ImageView imageView = new ImageView(image);
+                imageView.setFitWidth(288); // Ajusta el ancho al tamaño específico
+                imageView.setFitHeight(269); // Ajusta la altura al tamaño específico
+
+                // Calcula la posición de la imagen
+                double x = xOffset;
+                double y = yOffset + i * (269 + 10); // Ajusta el espacio vertical entre las imágenes
+
+                // Establece la posición de la imagen en el AnchorPane
+                AnchorPane.setLeftAnchor(imageView, x);
+                AnchorPane.setTopAnchor(imageView, y);
+
+                anchorPaneImagenes.getChildren().add(imageView);
+            }
+        }
+    }
+
+
+
+
 
     @FXML
     void initialize() throws RutaInvalidaException {
         tablaDestinos();
         actualizarTablaDestinos();
+        mostrarImagenesSeleccionadas();
 
     }
 
