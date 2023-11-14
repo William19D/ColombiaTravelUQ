@@ -94,6 +94,12 @@ public class ControllerVentanaInicio {
         ventanaPaquetes.getChildren().setAll(ventana);
 
     }
+
+    @FXML
+    void buscarDestinosEvent(ActionEvent event) throws IOException {
+        new ViewController(ventanaMenuInicio, "/ventanas/ventanaMenu.fxml");
+
+    }
     @FXML
     void mostrarVentanaUsuario() throws IOException {
         new ViewController(ventanaMenuInicio, "/ventanas/ventanaUsuario.fxml");

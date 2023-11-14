@@ -328,3 +328,23 @@ Nov 13, 2023 10:26:23 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrar
 INFO: Se ha registrado un nuevo destino con el nombre: sfafsf
 Nov 13, 2023 10:26:26 PM co.edu.uniquindio.agencia.model.AgenciaViajes eliminarDestino
 INFO: Se ha eliminado el destino de nombre sfafsf y ciudad faa
+nov. 13, 2023 10:52:46 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 13, 2023 10:52:46 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 13, 2023 10:52:46 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
+nov. 13, 2023 10:53:41 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes actualizarCliente
+INFORMACIÓN: Se ha actualizado el cliente con la cédula: 12
+nov. 13, 2023 10:58:49 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 13, 2023 10:58:49 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 13, 2023 10:58:49 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
+nov. 13, 2023 11:00:00 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 13, 2023 11:00:00 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 13, 2023 11:00:00 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
