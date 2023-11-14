@@ -29,6 +29,8 @@ public class ControllerInicioSesion {
 
     @FXML
     private AnchorPane ventana;
+    @FXML
+    private Button btnVolver;
 
 
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
@@ -71,6 +73,13 @@ public class ControllerInicioSesion {
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         }
+    }
+
+    @FXML
+    void vovlerEvent(ActionEvent event) throws IOException {
+        new ViewController(ventana, "/ventanas/inicio.fxml");
+
+
     }
 
 
