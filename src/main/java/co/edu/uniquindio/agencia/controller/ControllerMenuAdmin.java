@@ -81,7 +81,7 @@ public class ControllerMenuAdmin {
 
     @FXML
     void paquetesEvent(ActionEvent event) throws IOException {
-        new ViewController(ventanaMenuAdmins, "/ventanas/.fxml");
+        new ViewController(ventanaMenuAdmins, "/ventanas/ventanaRegistroPaquetes.fxml");
 
     }
 

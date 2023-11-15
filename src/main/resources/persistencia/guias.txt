@@ -1,2 +1,3 @@
 vujgvj;9569;[ESPANOL];kihb
-rufo;3;[ESPANOL, INGLES, FRANCES];3 dias
+rufos;3;[ESPANOL, INGLES];5 dias
+jusn;1234;[ESPANOL, INGLES];2 dias

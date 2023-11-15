@@ -169,8 +169,14 @@ public class VentanaRegistroCliente{
     void irMenuEvent(ActionEvent event) throws IOException {
         // Verificar si el botón btnIrMenu está habilitado
         if (!btnIrMenu.isDisabled()) {
-            new ViewController(ventana, "/ventanas/ventanaMenu.fxml");
+            new ViewController(ventana, "/ventanas/inicioSesion.fxml");
         }
+    }
+
+    @FXML
+    void vovlerEvent(ActionEvent event) throws IOException {
+        new ViewController(ventana, "/ventanas/inicio.fxml");
+
     }
 
     @FXML

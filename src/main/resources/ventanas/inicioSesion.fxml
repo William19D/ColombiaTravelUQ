@@ -55,12 +55,12 @@
                   <Image url="@../imagenes/colombiaTravelHorizontal.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="77.0" fitWidth="164.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <ImageView fitHeight="46.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <image>
                   <Image url="@../iconos/volver.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#vovlerEvent" prefHeight="77.0" prefWidth="84.0" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <Button fx:id="btnVolver" mnemonicParsing="false" onAction="#vovlerEvent" prefHeight="47.0" prefWidth="54.0" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <font>
                   <Font size="24.0" />
                </font>
