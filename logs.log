@@ -366,3 +366,35 @@ Nov 13, 2023 11:38:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReser
 SEVERE: null
 Nov 13, 2023 11:38:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
 INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 13, 2023 11:41:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 13, 2023 11:41:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 13, 2023 11:41:06 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 14, 2023 9:38:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 14, 2023 9:38:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 14, 2023 9:38:29 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 14, 2023 9:46:39 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 14, 2023 9:46:39 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 14, 2023 9:46:39 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 14, 2023 9:47:31 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\imagenes\destinos\jardin-botanico-medellin.jpg
+Nov 14, 2023 9:47:45 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+INFO: Se ha registrado un nuevo destino con el nombre: Jardin Botanico
+Nov 14, 2023 9:48:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 14, 2023 9:48:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 14, 2023 9:48:08 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 14, 2023 9:49:22 PM co.edu.uniquindio.agencia.model.AgenciaViajes seleccionarImagenes
+INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\iconos\nofoto.png
+Nov 14, 2023 9:49:31 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+INFO: Se ha registrado un nuevo destino con el nombre: Jardin Botanico

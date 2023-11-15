@@ -85,6 +85,9 @@ public class VentanaRegistroDestinos {
 
     private boolean primeraVezSeleccionImagenes = true;
 
+    @FXML
+    private Button btnEditar;
+
 
 
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
@@ -334,6 +337,37 @@ public class VentanaRegistroDestinos {
 
         tabDestinosRegistrados.refresh();
 
+    }
+
+    @FXML
+    void editarDestinoEvent(ActionEvent event) {
+        try {
+            editarDestinoAction();
+        } catch (AtributoVacioException e) {
+            mostrarAlerta("Error", "No se ha seleccionado ningún destino para editar.");
+        }
+    }
+
+    private void editarDestinoAction() throws AtributoVacioException {
+        Destino destinoSeleccionado = tabDestinosRegistrados.getSelectionModel().getSelectedItem();
+
+        if (destinoSeleccionado != null) {
+            // Deshabilitar otros controles si es necesario
+            txtNombre.setDisable(true);
+            // Deshabilitar otros campos que no deben ser editados durante la operación de edición
+
+            // Cargar los datos del destino en los campos correspondientes
+            txtNombre.setText(destinoSeleccionado.getNombre());
+            txtCiudad.setText(destinoSeleccionado.getCiudad());
+            // Otros campos...
+
+            // Cargar las imágenes
+            imagenesSeleccionadas = new ArrayList<>(destinoSeleccionado.getRutasImagenes());
+            mostrarImagenesSeleccionadas();
+        } else {
+            // Si no se selecciona ningún destino, muestra un mensaje de error
+            throw new AtributoVacioException("Selecciona un destino para editar.");
+        }
     }
 
 }
