@@ -397,20 +397,35 @@ public class AgenciaViajes {
             throw new AtributoVacioException("La descripcion es obligatorio");
         }
 
-        if(imagenes == null ){
-            throw new AtributoVacioException("selecciona una imagen");
-        }
 
-        Destino destino = obtenerDestino(nombre,ciudad);
+        Destino destino = obtenerDestinos(nombre);
         if(destino !=null){
             destino.setNombre(nombre);
             destino.setCiudad(ciudad);
             destino.setClima(clima);
             destino.setDescripcion(descripcion);
-            eliminarInfoGuiaArchivo(nombre);
+            eliminarInfoDestinoArchivo(nombre);
             escribirDestino();
         }else {
             throw new AtributoVacioException("No existe el destino");
+        }
+    }
+
+    public Destino obtenerDestinos(String nombre){
+        return destinos.stream().filter(c -> c.getNombre().equals(nombre)).findFirst().orElse(null);
+    }
+    private void eliminarInfoDestinoArchivo(String nombre) {
+        try {
+
+            List<String> lineas = ArchivoUtils.leerArchivoScanner(RUTADESTINOS);
+            lineas = lineas.stream()
+                    .filter(linea -> !linea.contains(nombre))
+                    .collect(Collectors.toList());
+
+
+            ArchivoUtils.escribirArchivoBufferedWriter(RUTADESTINOS, lineas, false);
+        } catch (IOException e) {
+            log.severe("Error al intentar eliminar la información del destino del archivo: " + e.getMessage());
         }
     }
 

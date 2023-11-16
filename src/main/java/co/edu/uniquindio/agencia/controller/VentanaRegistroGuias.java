@@ -266,14 +266,14 @@ public class VentanaRegistroGuias {
         columNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
         columnIdentificacion.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getIdentificacion()));
         columnExperiencia.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getExp()));
-       /* columNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        columnIdentificacion.setCellValueFactory(new PropertyValueFactory<>("identificacion"));
-        columnExperiencia.setCellValueFactory(new PropertyValueFactory<>("exp"));*/
+
         tabGuiasRegistrados.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection)->{
             guiaTuristicoSeleccionado= newSelection;
             mostrarInformacion();
         });
-        TableColumn<GuiaTuristico, String> columnIdiomas = new TableColumn<>("Idiomas");
+
+
+       /* TableColumn<GuiaTuristico, String> columnIdiomas = new TableColumn<>("Idiomas");
         columnIdiomas.setCellValueFactory(cellData -> {
             GuiaTuristico guia = cellData.getValue();
             List<String> idiomas = new ArrayList<>();
@@ -291,6 +291,8 @@ public class VentanaRegistroGuias {
 
             return new SimpleStringProperty(String.join(", ", idiomas));
         });
+
+        */
 
         // Actualizar la tabla
 

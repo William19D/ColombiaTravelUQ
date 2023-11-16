@@ -22,6 +22,8 @@ import javafx.scene.layout.AnchorPane;
 
 public class VentanaRegistroDestinos {
 
+    Destino destinoSeleccionado;
+
     @FXML
     private ResourceBundle resources;
 
@@ -45,6 +47,7 @@ public class VentanaRegistroDestinos {
 
     @FXML
     private CheckBox ckTemplado;
+
 
     ObservableList<Destino> listaDestino = FXCollections.observableArrayList(AgenciaViajes.getInstance().getDestinos());
 
@@ -164,7 +167,7 @@ public class VentanaRegistroDestinos {
 
 
     @FXML
-    void actualizarDestinosEvent(ActionEvent event) {
+    void actualizarEvent(ActionEvent event) {
         actualizarDestinosAction();
 
     }
@@ -191,14 +194,11 @@ public class VentanaRegistroDestinos {
             if (ckFrio.isSelected()) {
                 climaSeleccionado = (Clima.FRIO);
             }
-            if(imagenesDestino == null){
-                mostrarAlerta("Error", "Solo se permiten letras en el campo de ciudad.");
-                throw new AtributoVacioException("No se selecciono ninguna imagen");
-            }
 
-            agenciaViajes.registrarDestino(nombre, ciudad, descripcion,imagenesDestino,climaSeleccionado);
+
+            agenciaViajes.actualizarDestino(nombre, ciudad, descripcion,imagenesDestino,climaSeleccionado);
             this.tabDestinosRegistrados.setItems(listaDestino);
-            mostrarAlertaInfo(null,"Se ha registrado correctamente el destino de nombre" +   txtNombre.getText());
+            mostrarAlertaInfo(null,"Se ha actualizado correctamente el destino de nombre " + nombre);
 
             txtNombre.clear();
             txtCiudad.clear();
@@ -210,12 +210,16 @@ public class VentanaRegistroDestinos {
 
             anchorPaneImagenes.getChildren().clear();
 
+            this.tabDestinosRegistrados.setItems(listaDestino);
             actualizarTablaDestinos();
 
-        } catch (AtributoVacioException | RutaInvalidaException | ElementoNoEncontradoException |
-                 DestinoRepetidoException e) {
-            throw new RuntimeException(e);
+        }catch (Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
         }
+
     }
 
     @FXML
@@ -385,6 +389,10 @@ public class VentanaRegistroDestinos {
         columCiudad.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCiudad()));
         columClima.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
 
+        tabDestinosRegistrados.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection)->{
+            destinoSeleccionado= newSelection;
+            mostrarInformacion();
+        });
         tabDestinosRegistrados.refresh();
 
     }
@@ -395,6 +403,15 @@ public class VentanaRegistroDestinos {
             editarDestinoAction();
         } catch (AtributoVacioException e) {
             mostrarAlerta("Error", "No se ha seleccionado ningún destino para editar.");
+        }
+    }
+    private void mostrarInformacion() {
+        if(destinoSeleccionado!=null){
+            txtNombre.setText(destinoSeleccionado.getNombre());
+            txtCiudad.setText(destinoSeleccionado.getCiudad());
+            txtDescripcion.setText(destinoSeleccionado.getDescripcion());
+
+
         }
     }
 
