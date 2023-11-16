@@ -159,7 +159,7 @@ public class VentanaRegistroPaquetes {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Confirmar eliminación");
             alert.setHeaderText(null);
-            alert.setContentText("¿Está seguro de que desea eliminar este destino?");
+            alert.setContentText("¿Está seguro de que desea eliminar este destino? ");
 
             Optional<ButtonType> result = alert.showAndWait();
 
