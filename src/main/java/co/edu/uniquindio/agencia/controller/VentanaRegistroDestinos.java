@@ -410,6 +410,8 @@ public class VentanaRegistroDestinos {
             txtNombre.setText(destinoSeleccionado.getNombre());
             txtCiudad.setText(destinoSeleccionado.getCiudad());
             txtDescripcion.setText(destinoSeleccionado.getDescripcion());
+            imagenesSeleccionadas = new ArrayList<>(destinoSeleccionado.getRutasImagenes());
+            mostrarImagenesSeleccionadas();
 
 
         }
