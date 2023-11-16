@@ -1,5 +1,6 @@
 package co.edu.uniquindio.agencia.controller;
 
+import co.edu.uniquindio.agencia.model.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -15,17 +16,24 @@ public class ControllerVentanaUsuario {
     private ImageView btnVolver;
 
     @FXML
-    private Label lblDestinos;
+    private Label lblCelular;
 
     @FXML
-    private Label lblDestinos1;
+    private Label lblCorreo;
 
     @FXML
-    private Label lblDestinos11;
+    private Label lblUsuario;
 
 
     @FXML
     private AnchorPane ventanaUsuario;
+
+    @FXML
+    void initialize() {
+        lblCorreo.setText(SessionManager.getInstance().getCliente().getCorreo());
+        lblUsuario.setText(SessionManager.getInstance().getCliente().getNombre());
+        lblCelular.setText(SessionManager.getInstance().getCliente().getTelefono());
+    }
 
     @FXML
     void editarEvent(ActionEvent event) throws IOException {

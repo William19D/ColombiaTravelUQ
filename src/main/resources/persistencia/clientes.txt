@@ -1,6 +1,7 @@
-10;bruna;jhwfvJKH;JHWECK;1234567899;10
-12;lolito;kjncwj@gmail.com;7864854565;sukasa;12
-13;eeeeeee;ergerag;2525265321;aergergrg;13
-10656789;Daniel;daniel@correo.com;Calle 12 ;1234567890;123
-4567;luis;kbqkiahebf@gmail.com;sukasa;5245698745;123
-4563;soll;lijw@gmail.com;7894585456;sukasa;123
+10;bruna;jhwfvJKH;1234567899;JHWECK;10
+12;lolito;kjncwj@gmail.com;sukasa;7864854565;12
+13;eeeeeee;ergerag;aergergrg;2525265321;13
+10656789;Daniel;daniel@correo.com;1234567890;Calle 12 ;123
+4567;luis;kbqkiahebf@gmail.com;5245698745;sukasa;123
+4563;soll;lijw@gmail.com;sukasa;7894585456;123
+1;Daniel Esteban;daniel@uniquindio.edu.co;3215487692;Cra Falsa #A-3;1

@@ -96,6 +96,7 @@ public class ControllerActualizarCliente {
                     txtTelefono.getText(),
                     txtContrasenia.getText()
             );
+            SessionManager.getInstance().setCliente(agenciaViajes.obtenerCliente(cedula));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText(null);
