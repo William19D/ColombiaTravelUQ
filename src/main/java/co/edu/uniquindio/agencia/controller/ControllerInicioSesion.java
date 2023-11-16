@@ -57,7 +57,7 @@ public class ControllerInicioSesion {
                 Cliente cliente = agenciaViajes.obtenerCliente(cedula);
                 if (cliente!=null) {
 
-                    SessionManager.getInstance().setCedulaUsuario(cedula);
+                    SessionManager.getInstance().setCliente(cliente);
                     new ViewController(ventana, "/ventanas/ventanaMenu.fxml");
 
                 } else {

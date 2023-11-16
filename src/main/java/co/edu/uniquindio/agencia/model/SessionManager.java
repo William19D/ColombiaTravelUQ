@@ -1,13 +1,15 @@
 package co.edu.uniquindio.agencia.model;
 
+import lombok.*;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class SessionManager {
     private static SessionManager instance;
-    private String cedulaUsuario;
-
-    private SessionManager() {
-
-        this.cedulaUsuario = "";
-    }
+    private Cliente cliente;
 
     public static SessionManager getInstance() {
         if (instance == null) {
@@ -16,11 +18,4 @@ public class SessionManager {
         return instance;
     }
 
-    public String getCedulaUsuario() {
-        return cedulaUsuario;
-    }
-
-    public void setCedulaUsuario(String cedulaUsuario) {
-        this.cedulaUsuario = cedulaUsuario;
-    }
 }

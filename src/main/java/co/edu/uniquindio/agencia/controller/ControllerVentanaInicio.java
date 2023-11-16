@@ -6,6 +6,7 @@ import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
 import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
 import co.edu.uniquindio.agencia.model.Destino;
+import co.edu.uniquindio.agencia.model.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,6 +53,12 @@ public class ControllerVentanaInicio {
     @FXML
     private ImageView imagen4;
 
+    @FXML
+    private Button misViajes;
+
+    @FXML
+    private Button nombreUsuario;
+
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
 
 
@@ -61,6 +68,7 @@ public class ControllerVentanaInicio {
     }
 
     public void initialize() {
+        nombreUsuario.setText(SessionManager.getInstance().getCliente().getNombre());
         botonSeleccionado = btnBuscarDestinos;
         ArrayList<Destino> destinos = agenciaViajes.getDestinos();
 
@@ -116,5 +124,9 @@ public class ControllerVentanaInicio {
         }else{
             nuevoBoton.getStyleClass().add("botonSeleccionado");
         }
+    }
+    @FXML
+    void mostrarReservas(ActionEvent event) {
+
     }
 }

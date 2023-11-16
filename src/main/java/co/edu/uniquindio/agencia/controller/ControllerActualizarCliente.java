@@ -68,7 +68,7 @@ public class ControllerActualizarCliente {
 
     private boolean validarCedula() {
         String cedulaIngresada = txtCedula.getText();
-        String cedulaUsuario = SessionManager.getInstance().getCedulaUsuario();
+        String cedulaUsuario = SessionManager.getInstance().getCliente().getCedula();
 
         if (!cedulaIngresada.equals(cedulaUsuario)) {
             mostrarAlerta("La cédula ingresada no coincide con la del usuario que inició sesión.");

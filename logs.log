@@ -410,51 +410,79 @@ Nov 14, 2023 9:49:22 PM co.edu.uniquindio.agencia.model.AgenciaViajes selecciona
 INFO: Imagen seleccionada: C:\Users\danie\IdeaProjects\ColombiaTravelUQ\src\main\resources\iconos\nofoto.png
 Nov 14, 2023 9:49:31 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
 INFO: Se ha registrado un nuevo destino con el nombre: Jardin Botanico
-nov. 15, 2023 9:45:22 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
-nov. 15, 2023 9:45:22 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+Nov 14, 2023 9:50:59 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 14, 2023 9:50:59 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 14, 2023 9:50:59 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 14, 2023 9:51:33 PM co.edu.uniquindio.agencia.model.AgenciaViajes registrarDestino
+INFO: Se ha registrado un nuevo destino con el nombre: Jardin Botanico
+Nov 14, 2023 9:51:46 PM co.edu.uniquindio.agencia.model.AgenciaViajes eliminarDestino
+INFO: Se ha eliminado el destino de nombre Jardin Botanico y ciudad Armenia
+nov. 15, 2023 9:45:22 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 15, 2023 9:45:22 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 GRAVE: null
-nov. 15, 2023 9:45:22 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
-INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
-nov. 15, 2023 9:46:15 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
-INFORMACIÓN: Se ha registrado un nuevo guia con la identificacion: 123456
-nov. 15, 2023 9:48:11 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
-nov. 15, 2023 9:48:11 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+nov. 15, 2023 9:45:22 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 15, 2023 9:46:15 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFORMACIï¿½N: Se ha registrado un nuevo guia con la identificacion: 123456
+nov. 15, 2023 9:48:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 15, 2023 9:48:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 GRAVE: null
-nov. 15, 2023 9:48:11 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
-INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
-nov. 15, 2023 9:48:38 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
-INFORMACIÓN: Se ha registrado un nuevo guia con la identificacion: 1234
-nov. 15, 2023 9:53:43 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
-nov. 15, 2023 9:53:43 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+nov. 15, 2023 9:48:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 15, 2023 9:48:38 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarGuias
+INFORMACIï¿½N: Se ha registrado un nuevo guia con la identificacion: 1234
+nov. 15, 2023 9:53:43 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 15, 2023 9:53:43 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 GRAVE: null
-nov. 15, 2023 9:53:43 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
-INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
-nov. 15, 2023 9:54:17 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarCliente
-INFORMACIÓN: Se ha registrado un nuevo cliente con la cédula: 4567
-nov. 15, 2023 9:58:11 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
-nov. 15, 2023 9:58:11 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+nov. 15, 2023 9:53:43 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 15, 2023 9:54:17 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarCliente
+INFORMACIï¿½N: Se ha registrado un nuevo cliente con la cï¿½dula: 4567
+nov. 15, 2023 9:58:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 15, 2023 9:58:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 GRAVE: null
-nov. 15, 2023 9:58:11 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
-INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
-nov. 15, 2023 9:58:50 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarCliente
-INFORMACIÓN: Se ha registrado un nuevo cliente con la cédula: 4563
-nov. 15, 2023 10:00:09 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes actualizarCliente
-INFORMACIÓN: Se ha actualizado el cliente con la cédula: 4563
-nov. 15, 2023 10:01:01 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes actualizarCliente
-INFORMACIÓN: Se ha actualizado el cliente con la cédula: 12
-nov. 15, 2023 10:31:00 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
-nov. 15, 2023 10:31:00 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+nov. 15, 2023 9:58:11 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 15, 2023 9:58:50 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarCliente
+INFORMACIï¿½N: Se ha registrado un nuevo cliente con la cï¿½dula: 4563
+nov. 15, 2023 10:00:09 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes actualizarCliente
+INFORMACIï¿½N: Se ha actualizado el cliente con la cï¿½dula: 4563
+nov. 15, 2023 10:01:01 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes actualizarCliente
+INFORMACIï¿½N: Se ha actualizado el cliente con la cï¿½dula: 12
+nov. 15, 2023 10:31:00 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 15, 2023 10:31:00 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 GRAVE: null
-nov. 15, 2023 10:31:00 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
-INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
-nov. 15, 2023 10:31:29 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
-INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
-nov. 15, 2023 10:31:29 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+nov. 15, 2023 10:31:00 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+nov. 15, 2023 10:31:29 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIï¿½N: Se crea una nueva instancia de Colombia Travel
+nov. 15, 2023 10:31:29 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
 GRAVE: null
-nov. 15, 2023 10:31:29 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
-INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
+nov. 15, 2023 10:31:29 A.ï¿½M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIï¿½N: No se han cargado los datos ya que ya se tiene informacion 
+Nov 15, 2023 10:23:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 15, 2023 10:23:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 15, 2023 10:23:05 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 15, 2023 10:36:22 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 15, 2023 10:36:22 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 15, 2023 10:36:22 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 
+Nov 15, 2023 10:37:17 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFO: Se crea una nueva instancia de Colombia Travel
+Nov 15, 2023 10:37:18 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+SEVERE: null
+Nov 15, 2023 10:37:18 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFO: No se han cargado los datos ya que ya se tiene informacion 

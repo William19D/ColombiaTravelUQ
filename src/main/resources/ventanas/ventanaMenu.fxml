@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ventanaMenuInicio" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ControllerVentanaInicio">
+<AnchorPane fx:id="ventanaMenuInicio" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ControllerVentanaInicio">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#f08b182e" height="172.0" opacity="0.68" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
       <ImageView fitHeight="276.0" fitWidth="492.0" pickOnBounds="true" preserveRatio="true">
@@ -23,7 +23,7 @@
             <Image url="@../imagenes/UsuarioFoto.png" />
          </image>
       </ImageView>
-      <Button alignment="CENTER_RIGHT" layoutX="992.0" layoutY="31.0" mnemonicParsing="false" onAction="#mostrarVentanaUsuario" prefHeight="47.0" prefWidth="224.0" stylesheets="@styles.css" text="Nombre Usuario" textAlignment="RIGHT" textOverrun="CLIP">
+      <Button fx:id="nombreUsuario" alignment="CENTER_RIGHT" layoutX="992.0" layoutY="31.0" mnemonicParsing="false" onAction="#mostrarVentanaUsuario" prefHeight="47.0" prefWidth="224.0" stylesheets="@styles.css" text="Nombre Usuario" textAlignment="RIGHT" textOverrun="CLIP">
          <font>
             <Font size="23.0" />
          </font>
@@ -35,7 +35,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button alignment="CENTER_RIGHT" layoutX="1052.0" layoutY="68.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="157.0" stylesheets="@styles.css" text="Mis Viajes" textAlignment="RIGHT" textOverrun="CLIP" underline="true">
+      <Button fx:id="misViajes" alignment="CENTER_RIGHT" layoutX="1052.0" layoutY="68.0" mnemonicParsing="false" onAction="#mostrarReservas" prefHeight="44.0" prefWidth="157.0" stylesheets="@styles.css" text="Mis Viajes" textAlignment="RIGHT" textOverrun="CLIP" underline="true">
          <font>
             <Font size="23.0" />
          </font>
