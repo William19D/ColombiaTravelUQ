@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,9 +9,8 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="ventana" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ControllerInicio">
+<AnchorPane fx:id="ventana" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ControllerInicio">
    <GridPane alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" styleClass="inicioPane" stylesheets="@styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
      <columnConstraints>
        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -18,29 +18,35 @@
          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
      </columnConstraints>
      <rowConstraints>
-       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="240.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="174.0" minHeight="0.0" prefHeight="174.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="97.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="105.0" minHeight="1.0" prefHeight="69.0" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="186.0" minHeight="10.0" prefHeight="142.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="88.0" vgrow="SOMETIMES" />
      </rowConstraints>
       <children>
-         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear cuenta" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
-            <font>
-               <Font name="Nirmala UI" size="18.0" />
-            </font>
-         </Text>
-         <Button fx:id="btnIniciarSesion" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#iniciarSesionEvent" prefHeight="57.0" prefWidth="208.0" style="-fx-background-color: white;" text="Iniciar sesión" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+         <Button fx:id="btnIniciarSesion" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#iniciarSesionEvent" prefHeight="57.0" prefWidth="208.0" style="-fx-font-size: 24;" stylesheets="@styles.css" text="Iniciar Sesión" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
             <font>
                <Font name="Nirmala UI Bold" size="18.0" />
-            </font></Button>
-         <ImageView fitHeight="220.0" fitWidth="196.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            </font>
+            <styleClass>
+               <String fx:value="botonBlanco28px" />
+               <String fx:value="textoRegular" />
+            </styleClass></Button>
+         <ImageView fitHeight="448.0" fitWidth="383.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
             <image>
                <Image url="@../imagenes/colombiaTravel.png" />
             </image>
          </ImageView>
-         <Button fx:id="btnRegistrarse" mnemonicParsing="false" onAction="#registroEvent" opacity="0.0" prefHeight="25.0" prefWidth="153.0" text="Button" translateX="140.0" translateY="-70.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         <Button fx:id="btnRegistrarse" mnemonicParsing="false" onAction="#registroEvent" prefHeight="33.0" prefWidth="153.0" style="-fx-font-size: 18; -fx-background-color: transparent;" stylesheets="@styles.css" text="Crear cuenta" textFill="WHITE" translateX="140.0" translateY="-70.0" underline="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <font>
+               <Font size="17.0" />
+            </font>
+            <styleClass>
+               <String fx:value="buttonInicio" />
+               <String fx:value="textoLight" />
+            </styleClass></Button>
       </children>
    </GridPane>
 
