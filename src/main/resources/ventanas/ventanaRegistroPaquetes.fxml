@@ -24,10 +24,10 @@
                 <Image url="@../iconos/volver.png" />
             </image>
         </ImageView>
-        <GridPane layoutX="28.0" layoutY="196.0" prefHeight="341.0" prefWidth="411.0">
+        <GridPane layoutX="28.0" layoutY="196.0" prefHeight="341.0" prefWidth="476.0">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="339.0" minWidth="10.0" prefWidth="257.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="30.0" prefWidth="154.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="339.0" minWidth="10.0" prefWidth="263.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="30.0" prefWidth="213.0" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
@@ -83,8 +83,8 @@
                 </Label>
                 <TextField fx:id="txtPrecio" prefHeight="25.0" prefWidth="279.0" promptText="ingrese el precio" style="-fx-background-radius: 100; -fx-border-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                 <TextField fx:id="txtCupoMax" promptText="ingrese cupo maximo de personas" style="-fx-background-radius: 100; -fx-border-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                <DatePicker fx:id="dateInicio" style="-fx-background-radius: 100; -fx-border-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                <DatePicker fx:id="dateFinal" style="-fx-background-radius: 100; -fx-border-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <DatePicker fx:id="dateInicio" prefHeight="25.0" prefWidth="223.0" style="-fx-background-radius: 100; -fx-border-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <DatePicker fx:id="dateFinal" prefHeight="25.0" prefWidth="228.0" style="-fx-background-radius: 100; -fx-border-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             </children>
         </GridPane>
         <Button fx:id="btnRegistrarPaquete" layoutX="280.0" layoutY="592.0" mnemonicParsing="false" onAction="#registrarPaqueteEvent" style="-fx-font-size: 25;" stylesheets="@styles.css" text="Registrar">
@@ -136,25 +136,24 @@
                 <Image url="@../imagenes/colombiaTravelHorizontal.png" />
             </image>
         </ImageView>
-        <Label layoutX="552.0" layoutY="52.0" prefHeight="43.0" prefWidth="328.0" style="-fx-font-size: 30;" styleClass="textoNegrita" stylesheets="@styles.css" text="Destinos Agregados">
+        <Label layoutX="547.0" layoutY="355.0" prefHeight="43.0" prefWidth="328.0" style="-fx-font-size: 30;" styleClass="textoNegrita" stylesheets="@styles.css" text="Destinos Agregados">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label layoutX="541.0" layoutY="355.0" prefHeight="43.0" prefWidth="339.0" style="-fx-font-size: 30;" styleClass="textoNegrita" stylesheets="@styles.css" text="Destinos Disponibles">
+        <Label layoutX="547.0" layoutY="52.0" prefHeight="43.0" prefWidth="339.0" style="-fx-font-size: 30;" styleClass="textoNegrita" stylesheets="@styles.css" text="Destinos Disponibles">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <TableView fx:id="tabPaquetesRegistrados1" layoutX="541.0" layoutY="404.0" prefHeight="251.0" prefWidth="339.0">
+        <TableView fx:id="tableDestinosAgregados" layoutX="547.0" layoutY="398.0" prefHeight="251.0" prefWidth="339.0">
             <columns>
-                <TableColumn fx:id="columNombre1" prefWidth="92.0" text="Nombre" />
-                <TableColumn fx:id="columnIdentificacion1" prefWidth="140.0" text="Descripcion" />
-                <TableColumn fx:id="columnExperiencia1" prefWidth="90.0" text="Precio" />
-                <TableColumn fx:id="columnIdiomas1" prefWidth="106.0" text="Cupo" />
+                <TableColumn fx:id="columNombreAgregado" prefWidth="92.0" text="Nombre" />
+                <TableColumn fx:id="columnCiudadAgregado" prefWidth="140.0" text="Ciudad" />
+                <TableColumn fx:id="columnClimaAgregado" prefWidth="90.0" text="Clima" />
             </columns>
         </TableView>
-        <GridPane layoutX="892.0" layoutY="314.0" prefHeight="125.0" prefWidth="100.0">
+        <GridPane layoutX="892.0" layoutY="314.0" prefHeight="125.0" prefWidth="61.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
@@ -163,34 +162,33 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <ImageView fx:id="btnVolver111" fitHeight="54.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="54.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../iconos/up-arrow-7_icon-icons.com_69821.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="btnVolver11" fitHeight="51.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;" GridPane.rowIndex="1">
+                <ImageView fitHeight="51.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;" GridPane.rowIndex="1">
                     <image>
                         <Image url="@../iconos/up-arrow-7_icon-icons.com_69821.png" />
                     </image>
                 </ImageView>
-                <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="52.0" style="-fx-border-radius: 200; -fx-background-color: transparent; -fx-background-radius: 200;">
+                <Button fx:id="eliminarEleccion" mnemonicParsing="false" onAction="#eliminarEleccion" prefHeight="55.0" prefWidth="52.0" style="-fx-border-radius: 200; -fx-background-color: transparent; -fx-background-radius: 200;">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="52.0" style="-fx-border-radius: 200; -fx-background-color: transparent; -fx-background-radius: 200;" GridPane.rowIndex="1">
+                <Button fx:id="agregarEleccion" mnemonicParsing="false" onAction="#agregarEleccion" prefHeight="55.0" prefWidth="52.0" style="-fx-border-radius: 200; -fx-background-color: transparent; -fx-background-radius: 200;" GridPane.rowIndex="1">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
             </children>
         </GridPane>
-        <TableView fx:id="tabPaquetesRegistrados11" layoutX="953.0" layoutY="98.0" prefHeight="475.0" prefWidth="291.0">
+        <TableView fx:id="tablePaquetesRegistrados" layoutX="953.0" layoutY="98.0" prefHeight="475.0" prefWidth="291.0">
             <columns>
-                <TableColumn fx:id="columNombre11" prefWidth="117.0" text="Nombre" />
-                <TableColumn fx:id="columnIdentificacion11" minWidth="0.0" prefWidth="44.0" text="Cupo" />
-                <TableColumn fx:id="columnExperiencia11" prefWidth="86.0" text="Precio" />
-                <TableColumn fx:id="columnIdiomas11" prefWidth="181.0" text="Cupo" />
+                <TableColumn fx:id="columNombrePaquete" prefWidth="117.0" text="Nombre" />
+                <TableColumn fx:id="columnCupoPaquete" minWidth="0.0" prefWidth="44.0" text="Cupo" />
+                <TableColumn fx:id="columnPrecioPaquete" prefWidth="133.0" text="Precio" />
             </columns>
         </TableView>
         <Label layoutX="953.0" layoutY="52.0" prefHeight="43.0" prefWidth="328.0" style="-fx-font-size: 30;" styleClass="textoNegrita" stylesheets="@styles.css" text="Paquetes Actuales">
@@ -198,13 +196,12 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <TableView fx:id="tabPaquetesRegistrados12" layoutX="541.0" layoutY="104.0" prefHeight="251.0" prefWidth="339.0">
-            <columns>
-                <TableColumn fx:id="columNombre12" prefWidth="92.0" text="Nombre" />
-                <TableColumn fx:id="columnIdentificacion12" prefWidth="140.0" text="Descripcion" />
-                <TableColumn fx:id="columnExperiencia12" prefWidth="90.0" text="Precio" />
-                <TableColumn fx:id="columnIdiomas12" prefWidth="106.0" text="Cupo" />
-            </columns>
-        </TableView>
+      <TableView fx:id="tableDestinosDisponibles" layoutX="547.0" layoutY="98.0" prefHeight="251.0" prefWidth="339.0">
+         <columns>
+            <TableColumn fx:id="columNombreDisp" prefWidth="92.0" text="Nombre" />
+            <TableColumn fx:id="columnCiudadDisp" prefWidth="140.0" text="Ciudad" />
+            <TableColumn fx:id="columnClimaDisp" prefWidth="90.0" text="Clima" />
+         </columns>
+      </TableView>
     </children>
 </AnchorPane>
