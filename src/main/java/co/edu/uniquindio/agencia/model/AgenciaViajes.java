@@ -384,6 +384,36 @@ public class AgenciaViajes {
 
     }
 
+    public void actualizarDestino(String nombre, String ciudad, String descripcion, List<File> imagenes, Clima clima) throws AtributoVacioException, InformacionRepetidaException, RutaInvalidaException{
+        if(nombre == null || nombre.isBlank()){
+            throw new AtributoVacioException("La identificacion es obligatoria");
+        }
+
+        if(descripcion == null || descripcion.isBlank()){
+            throw new AtributoVacioException("La descripcion es obligatorio");
+        }
+
+        if(ciudad == null || ciudad.isBlank()){
+            throw new AtributoVacioException("La descripcion es obligatorio");
+        }
+
+        if(imagenes == null ){
+            throw new AtributoVacioException("selecciona una imagen");
+        }
+
+        Destino destino = obtenerDestino(nombre,ciudad);
+        if(destino !=null){
+            destino.setNombre(nombre);
+            destino.setCiudad(ciudad);
+            destino.setClima(clima);
+            destino.setDescripcion(descripcion);
+            eliminarInfoGuiaArchivo(nombre);
+            escribirDestino();
+        }else {
+            throw new AtributoVacioException("No existe el destino");
+        }
+    }
+
     private void escribirReserva() throws RutaInvalidaException{
         try{
             ArchivoUtils.serializarObjeto(RUTARESERVAS, reservas);

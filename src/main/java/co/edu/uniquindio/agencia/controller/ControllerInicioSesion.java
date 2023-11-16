@@ -51,29 +51,37 @@ public class ControllerInicioSesion {
         String cedula = labelUsuario.getText();
         String contrasena = labelContrasena.getText();
 
-
         try {
-            if(agenciaViajes.verificarClienteAdministrador(cedula, contrasena)){
+            if (agenciaViajes.verificarClienteAdministrador(cedula, contrasena)) {
                 Cliente cliente = agenciaViajes.obtenerCliente(cedula);
-                if (cliente!=null) {
-
+                if (cliente != null) {
                     SessionManager.getInstance().setCliente(cliente);
                     new ViewController(ventana, "/ventanas/ventanaMenu.fxml");
-
                 } else {
-
                     new ViewController(ventana, "/ventanas/ventanaMenuAdmins.fxml");
+                }
+            } else {
 
+                if (agenciaViajes.obtenerCliente(cedula) == null && agenciaViajes.obtenerAdministrador(cedula) == null) {
+                    mostrarAlerta("Error", "El usuario no existe");
+                }
+
+                else {
+                    mostrarAlerta("Error", "Contraseña incorrecta");
                 }
             }
-
-        }catch (Exception e){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Error");
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
+        } catch (Exception e) {
+            mostrarAlerta("Error", e.getMessage());
         }
     }
+
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(titulo);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+
 
     @FXML
     void vovlerEvent(ActionEvent event) throws IOException {

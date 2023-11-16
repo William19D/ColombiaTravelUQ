@@ -165,7 +165,57 @@ public class VentanaRegistroDestinos {
 
     @FXML
     void actualizarDestinosEvent(ActionEvent event) {
+        actualizarDestinosAction();
 
+    }
+
+    private void actualizarDestinosAction() {
+        try {
+            String nombre = txtNombre.getText();
+            String ciudad = txtCiudad.getText();
+            String descripcion = txtDescripcion.getText();
+            List<File> imagenesDestino = imagenesSeleccionadas;
+
+
+            if (!ckSoleado.isSelected() && !ckTemplado.isSelected() && !ckFrio.isSelected()) {
+                throw new ElementoNoEncontradoException("Debes seleccionar un clima.");
+            }
+            Clima climaSeleccionado = null;
+
+            if (ckSoleado.isSelected()) {
+                climaSeleccionado = (Clima.CALIDO);
+            }
+            if (ckTemplado.isSelected()) {
+                climaSeleccionado = (Clima.TEMPLADO);
+            }
+            if (ckFrio.isSelected()) {
+                climaSeleccionado = (Clima.FRIO);
+            }
+            if(imagenesDestino == null){
+                mostrarAlerta("Error", "Solo se permiten letras en el campo de ciudad.");
+                throw new AtributoVacioException("No se selecciono ninguna imagen");
+            }
+
+            agenciaViajes.registrarDestino(nombre, ciudad, descripcion,imagenesDestino,climaSeleccionado);
+            this.tabDestinosRegistrados.setItems(listaDestino);
+            mostrarAlertaInfo(null,"Se ha registrado correctamente el destino de nombre" +   txtNombre.getText());
+
+            txtNombre.clear();
+            txtCiudad.clear();
+            txtDescripcion.clear();
+            ckSoleado.setSelected(false);
+            ckTemplado.setSelected(false);
+            ckFrio.setSelected(false);
+            imagenesSeleccionadas.clear();
+
+            anchorPaneImagenes.getChildren().clear();
+
+            actualizarTablaDestinos();
+
+        } catch (AtributoVacioException | RutaInvalidaException | ElementoNoEncontradoException |
+                 DestinoRepetidoException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
