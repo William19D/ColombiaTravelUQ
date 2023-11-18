@@ -610,6 +610,45 @@ public class AgenciaViajes {
         }
 
     }
+    public void actualizarPaquetes(String nombre,ArrayList<Destino> destinos, String descripcion, String serviciosAdicionales, double precio, int cupoMax, LocalDate fechaDisponible,LocalDate fechaDisponibleFin,GuiaTuristico guia)  throws AtributoVacioException, InformacionRepetidaException, RutaInvalidaException{
+        if(nombre == null || nombre.isBlank()){
+            throw new AtributoVacioException("El nombre es obligatorip");
+        }
+
+        if(descripcion == null || descripcion.isBlank()){
+            throw new AtributoVacioException("La descripcion es obligatoria");
+        }
+
+        if(serviciosAdicionales == null || serviciosAdicionales.isBlank()){
+            throw new AtributoVacioException("Añade servicios adicionales");
+        }
+        if(precio == 0 ){
+            throw new AtributoVacioException("El precio es obligatorio");
+        }
+        if(cupoMax == 0){
+            throw new AtributoVacioException("El cupo Maximo es obligatorio");
+        }
+        if(fechaDisponible == null){
+            throw new AtributoVacioException("Ingrese la fecha donde el paquete esta disponible");
+        }
+
+        PaquetesTuristicos paquetesTuristicos = obtenerPaquete(nombre);
+        if(paquetesTuristicos !=null){
+            paquetesTuristicos.setNombre(nombre);
+            paquetesTuristicos.setDescripcion(descripcion);
+            paquetesTuristicos.setServiciosAdicionales(serviciosAdicionales);
+            paquetesTuristicos.setCupoMax(cupoMax);
+            paquetesTuristicos.setPrecio(precio);
+            paquetesTuristicos.setFechaDisponibleFin(fechaDisponibleFin);
+            paquetesTuristicos.setFechaDisponibleInicio(fechaDisponible);
+            paquetesTuristicos.setDestinos(destinos);
+
+            eliminarInfoGuiaArchivo(nombre);
+            escribirPaquete();
+        }else {
+            throw new AtributoVacioException("No existe el usuario");
+        }
+    }
 
     // Metodo que registra los Paquetes turisticos
 

@@ -1,12 +1,9 @@
 package co.edu.uniquindio.agencia.controller;
 
-import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
-import co.edu.uniquindio.agencia.exceptions.DestinoRepetidoException;
-import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
-import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
-import co.edu.uniquindio.agencia.model.AgenciaViajes;
-import co.edu.uniquindio.agencia.model.Destino;
-import co.edu.uniquindio.agencia.model.PaquetesTuristicos;
+import co.edu.uniquindio.agencia.exceptions.*;
+import co.edu.uniquindio.agencia.model.*;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,9 +16,14 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class VentanaRegistroPaquetes {
+
+    ObservableList<PaquetesTuristicos> listaPaquetes = FXCollections.observableArrayList(AgenciaViajes.getInstance().getPaquetes());
+
+    PaquetesTuristicos paqueteSeleccionado;
 
     @FXML
     private Button agregarEleccion;
@@ -112,6 +114,7 @@ public class VentanaRegistroPaquetes {
     @FXML
     void initialize() throws RutaInvalidaException {
         tablaDestinos();
+        actualizarTablaPaquetes();
 
     }
 
@@ -175,16 +178,11 @@ public class VentanaRegistroPaquetes {
 
     @FXML
     void actualizarEvent(ActionEvent event) {
+        actualizarAction();
 
     }
 
-    @FXML
-    void eliminarEvent(ActionEvent event) {
-
-    }
-
-    @FXML
-    void registrarPaqueteEvent(ActionEvent event) {
+    private void actualizarAction() {
         try {
             // Obtener los datos necesarios del formulario
             String nombre = txtNombre.getText();
@@ -195,8 +193,99 @@ public class VentanaRegistroPaquetes {
             LocalDate fechaDisponibleInicio = dateInicio.getValue();
             LocalDate fechaDisponibleFin = dateFinal.getValue();
 
+            if (fechaDisponibleInicio == null || fechaDisponibleFin == null || fechaDisponibleFin.isBefore(fechaDisponibleInicio)) {
+                mostrarError("La fecha de finalización debe ser posterior a la fecha de inicio.");
+                return;
+            }
+
             // Validar y obtener la lista de destinos seleccionados
             ObservableList<Destino> destinosSeleccionados = tableDestinosAgregados.getItems();
+            if (destinosSeleccionados.isEmpty()) {
+                mostrarError("Debe seleccionar al menos un destino para el paquete.");
+                return;
+            }
+
+            // Convertir ObservableList a ArrayList
+           // ArrayList<Destino> destinosSeleccionadosList = new ArrayList<>(destinosSeleccionados);
+
+            // Llamar al método de la instancia de AgenciaViajes para registrar el paquete
+            agenciaViajes.actualizarPaquetes(
+                    nombre, new ArrayList<>(destinosSeleccionados), descripcion, serviciosAdicionales, precio, cupoMax,
+                    fechaDisponibleInicio, fechaDisponibleFin, null);
+
+            limpiarCampos();
+            this.tablePaquetesRegistrados.setItems(listaPaquetes);
+            actualizarTablaPaquetes();
+
+            // Notificar al usuario
+            mostrarInformacion("Paquete actualizado exitosamente: " + nombre);
+        } catch (AtributoVacioException | InformacionRepetidaException | RutaInvalidaException e) {
+            mostrarError(e.getMessage());
+        } catch (NumberFormatException e) {
+            mostrarError("Por favor, ingrese un valor numérico válido para el precio y el cupo máximo.");
+        }
+    }
+
+
+    @FXML
+    void eliminarEvent(ActionEvent event) throws AtributoVacioException {
+        eliminarAction();
+
+    }
+
+    private void eliminarAction() throws AtributoVacioException {
+
+        PaquetesTuristicos paqueteSeleccionado = tablePaquetesRegistrados.getSelectionModel().getSelectedItem();
+
+        if (paqueteSeleccionado != null) {
+            try {
+                // Mostrar un cuadro de diálogo de confirmación
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Confirmar eliminación");
+                alert.setHeaderText(null);
+                alert.setContentText("¿Está seguro de que desea eliminar este paquete?");
+
+                Optional<ButtonType> result = alert.showAndWait();
+
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+
+                    AgenciaViajes.getInstance().eliminarPaquete(paqueteSeleccionado.getNombre());
+                    limpiarCampos();
+                    actualizarTablaPaquetes();
+                }
+            } catch (ElementoNoEncontradoException | InformacionRepetidaException | DestinoRepetidoException |
+                     RutaInvalidaException e) {
+
+                mostrarError(e.getMessage());
+            }
+        } else {
+
+            throw new AtributoVacioException("Selecciona un paquete para eliminar.");
+        }
+
+    }
+    @FXML
+    void registrarPaqueteEvent(ActionEvent event) {
+
+        try {
+            // Obtener los datos necesarios del formulario
+            String nombre = txtNombre.getText();
+            String descripcion = txtDescripcion.getText();
+            String serviciosAdicionales = txtServicios.getText();
+            double precio = Double.parseDouble(txtPrecio.getText());
+            int cupoMax = Integer.parseInt(txtCupoMax.getText());
+            LocalDate fechaDisponibleInicio = dateInicio.getValue();
+            LocalDate fechaDisponibleFin = dateFinal.getValue();
+
+
+            if (fechaDisponibleInicio == null || fechaDisponibleFin == null || fechaDisponibleFin.isBefore(fechaDisponibleInicio)) {
+                mostrarError("La fecha de finalización debe ser posterior a la fecha de inicio.");
+                return;
+            }
+
+            // Validar y obtener la lista de destinos seleccionados
+            ObservableList<Destino> destinosSeleccionados = tableDestinosAgregados.getItems();
+
             if (destinosSeleccionados.isEmpty()) {
                 mostrarError("Debe seleccionar al menos un destino para el paquete.");
                 return;
@@ -217,8 +306,11 @@ public class VentanaRegistroPaquetes {
                     null // Aquí debes pasar el guía correspondiente si lo tienes en tu interfaz de usuario
             );
 
+            this.tablePaquetesRegistrados.setItems(listaPaquetes);
+
             // Limpiar los campos después de registrar el paquete
             limpiarCampos();
+            actualizarTablaPaquetes();
 
             // Notificar al usuario
             mostrarInformacion("Paquete registrado exitosamente: " + paqueteRegistrado.getNombre());
@@ -228,6 +320,38 @@ public class VentanaRegistroPaquetes {
             mostrarError("Por favor, ingrese un valor numérico válido para el precio y el cupo máximo.");
         }
     }
+
+    private void actualizarTablaPaquetes() throws RutaInvalidaException {
+        listaPaquetes = FXCollections.observableArrayList(agenciaViajes.getPaquetes());
+        tablePaquetesRegistrados.getItems().clear();
+        tablePaquetesRegistrados.setItems(listaPaquetes);
+        tablaguias();
+        tablePaquetesRegistrados.refresh();
+    }
+
+    void tablaguias() throws  RutaInvalidaException {
+
+        tablePaquetesRegistrados.setItems(listaPaquetes);
+
+        columNombrePaquete.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
+        columnCupoPaquete.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getCupoMax()).asObject().asString());
+
+        // Utilizamos SimpleDoubleProperty para el precio
+        columnPrecioPaquete.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().getPrecio()).asObject().asString());
+
+        tablePaquetesRegistrados.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            paqueteSeleccionado = newSelection;
+            mostrarInformacion2();
+        });
+
+
+
+        // Actualizar la tabla
+
+        tablePaquetesRegistrados.refresh();
+
+    }
+
 
     // Método para limpiar los campos del formulario después de registrar un paquete
     private void limpiarCampos() {
@@ -241,6 +365,7 @@ public class VentanaRegistroPaquetes {
         destinosAgregados.clear();
         tableDestinosAgregados.setItems(destinosAgregados);
     }
+
 
 
     @FXML
@@ -264,6 +389,31 @@ public class VentanaRegistroPaquetes {
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
+    }
+
+    private void mostrarInformacion2() {
+        if (paqueteSeleccionado != null) {
+
+            destinosAgregados.clear();
+            destinosAgregados.addAll(paqueteSeleccionado.getDestinos());
+            tableDestinosAgregados.setItems(destinosAgregados);
+            columNombreAgregado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
+            columnCiudadAgregado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCiudad()));
+            columnClimaAgregado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
+            tableDestinosAgregados.refresh();
+
+            txtNombre.setText(paqueteSeleccionado.getNombre());
+            txtCupoMax.setText(String.valueOf(paqueteSeleccionado.getCupoMax()));
+            txtDescripcion.setText(paqueteSeleccionado.getDescripcion());
+            txtServicios.setText(paqueteSeleccionado.getServiciosAdicionales());
+            txtPrecio.setText(String.valueOf(paqueteSeleccionado.getPrecio()));
+
+            LocalDate fechaInicio = paqueteSeleccionado.getFechaDisponibleInicio();
+            LocalDate fechaFinal = paqueteSeleccionado.getFechaDisponibleFin();
+            dateInicio.setValue(fechaInicio);
+            dateFinal.setValue(fechaFinal);
+
+        }
     }
 
 }

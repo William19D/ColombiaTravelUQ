@@ -273,27 +273,6 @@ public class VentanaRegistroGuias {
         });
 
 
-       /* TableColumn<GuiaTuristico, String> columnIdiomas = new TableColumn<>("Idiomas");
-        columnIdiomas.setCellValueFactory(cellData -> {
-            GuiaTuristico guia = cellData.getValue();
-            List<String> idiomas = new ArrayList<>();
-
-            // Agregar idiomas seleccionados
-            if (ckEspanol.isSelected()) {
-                idiomas.add("Español");
-            }
-            if (ckIngles.isSelected()) {
-                idiomas.add("Inglés");
-            }
-            if (ckFrances.isSelected()) {
-                idiomas.add("Francés");
-            }
-
-            return new SimpleStringProperty(String.join(", ", idiomas));
-        });
-
-        */
-
         // Actualizar la tabla
 
         tabGuiasRegistrados.refresh();

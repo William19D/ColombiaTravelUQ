@@ -739,6 +739,50 @@ Nov 17, 2023 10:40:53 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReser
 SEVERE: null
 Nov 17, 2023 10:40:53 PM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
 INFO: No se han cargado los datos ya que ya se tiene informacion 
+nov. 17, 2023 11:11:05 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 17, 2023 11:11:05 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 17, 2023 11:11:05 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
+nov. 17, 2023 11:14:00 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarPaquetes
+INFORMACIÓN: Se ha registrado un nuevo paquete con el nombre: mikasa
+nov. 17, 2023 11:29:08 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 17, 2023 11:29:08 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 17, 2023 11:29:08 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
+nov. 17, 2023 11:31:21 P. M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarPaquetes
+INFORMACIÓN: Se ha registrado un nuevo paquete con el nombre: sukasa
+nov. 18, 2023 12:04:01 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 18, 2023 12:04:01 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 18, 2023 12:04:01 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
+nov. 18, 2023 12:06:32 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes registrarPaquetes
+INFORMACIÓN: Se ha registrado un nuevo paquete con el nombre: sihay 
+nov. 18, 2023 12:25:34 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 18, 2023 12:25:34 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 18, 2023 12:25:34 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
+nov. 18, 2023 1:09:46 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 18, 2023 1:09:46 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 18, 2023 1:09:46 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
+nov. 18, 2023 1:18:55 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 18, 2023 1:18:55 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
+GRAVE: null
+nov. 18, 2023 1:18:55 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
+nov. 18, 2023 1:19:03 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes eliminarPaquete
+INFORMACIÓN: se ha eliminado el paquete con el nombre  sukasa
 Nov 17, 2023 11:58:01 PM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
 INFO: Se crea una nueva instancia de Colombia Travel
 Nov 17, 2023 11:58:01 PM co.edu.uniquindio.agencia.model.AgenciaViajes leerReserva
@@ -773,3 +817,13 @@ Nov 18, 2023 12:36:21 AM co.edu.uniquindio.agencia.model.AgenciaViajes <init>
 INFO: Se crea una nueva instancia de Colombia Travel
 Nov 18, 2023 12:36:22 AM co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
 INFO: No se han cargado los datos ya que ya se tiene informacion 
+nov. 18, 2023 1:26:05 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 18, 2023 1:26:05 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
+nov. 18, 2023 1:26:19 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes eliminarPaquete
+INFORMACIÓN: se ha eliminado el paquete con el nombre  sukasa
+nov. 18, 2023 1:26:38 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes <init>
+INFORMACIÓN: Se crea una nueva instancia de Colombia Travel
+nov. 18, 2023 1:26:38 A. M. co.edu.uniquindio.agencia.model.AgenciaViajes inicializarDestinosTest
+INFORMACIÓN: No se han cargado los datos ya que ya se tiene informacion 
