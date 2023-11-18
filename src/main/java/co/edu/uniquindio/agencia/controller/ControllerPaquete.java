@@ -5,6 +5,7 @@ import co.edu.uniquindio.agencia.exceptions.DestinoRepetidoException;
 import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
 import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
+import co.edu.uniquindio.agencia.model.Destino;
 import co.edu.uniquindio.agencia.model.PaquetesTuristicos;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -46,17 +47,20 @@ public class ControllerPaquete {
 
     @FXML
     void initialize() {
-        // Configurar elementos gráficos con la información del paquete
+
         if (paquete != null) {
             lblNombrePaquete.setText(paquete.getNombre());
             lblDescripcionPaquete.setText(paquete.getDescripcion());
             lblPrecioPaquete.setText(String.valueOf(paquete.getPrecio()));
             lblCupo.setText(String.valueOf(agenciaViajes.calcularCuposRestantes(paquete.getCupoMax(),paquete.getCupoActual())));
-            File primeraImagen = paquete.getDestinos().get(0).getRutasImagenes().get(0);
+            Destino primerDestino = paquete.getDestinos().get(0);
 
-            // Configurar la imagen en el ImageView
-            Image image = new Image(primeraImagen.toURI().toString());
-            imagenPaquete.setImage(image);
+            if (primerDestino != null && !primerDestino.getRutasImagenes().isEmpty()) {
+                File primeraImagen = primerDestino.getRutasImagenes().get(0);
+
+                Image image = new Image(primeraImagen.toURI().toString());
+                imagenPaquete.setImage(image);
+            }
         }
     }
 

@@ -85,7 +85,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="253.0" layoutY="100.0" text="Registro de Guias ">
+      <Label layoutX="239.0" layoutY="152.0" prefHeight="25.0" prefWidth="157.0" text="Registro de Guias ">
          <font>
             <Font size="18.0" />
          </font>
@@ -126,5 +126,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <ImageView fitHeight="276.0" fitWidth="492.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/colombiaTravelHorizontal.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

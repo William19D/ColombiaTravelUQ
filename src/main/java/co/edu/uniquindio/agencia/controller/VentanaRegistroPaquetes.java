@@ -107,6 +107,9 @@ public class VentanaRegistroPaquetes {
     @FXML
     private AnchorPane ventanaPaquetes;
 
+    @FXML
+    private CheckBox ckGuia;
+
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
     ObservableList<Destino> listaDisponibles = FXCollections.observableArrayList(AgenciaViajes.getInstance().getDestinos());
     private ObservableList<Destino> destinosAgregados = FXCollections.observableArrayList();

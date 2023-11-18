@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ventanaPaquetes" maxHeight="720.0" maxWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.VentanaRegistroPaquetes">
+<AnchorPane fx:id="ventanaPaquetes" maxHeight="720.0" maxWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: F1F3E5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.VentanaRegistroPaquetes">
     <children>
         <ImageView fx:id="btnVolver" fitHeight="77.0" fitWidth="164.0" layoutX="28.0" layoutY="635.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -76,15 +76,15 @@
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <Label style="-fx-font-size: 23;" styleClass="textoRegular" stylesheets="@styles.css" text="Fecha final:" GridPane.rowIndex="6">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Label>
                 <TextField fx:id="txtPrecio" prefHeight="25.0" prefWidth="279.0" promptText="ingrese el precio" style="-fx-background-radius: 100; -fx-border-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                 <TextField fx:id="txtCupoMax" promptText="ingrese cupo maximo de personas" style="-fx-background-radius: 100; -fx-border-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                 <DatePicker fx:id="dateInicio" prefHeight="25.0" prefWidth="223.0" style="-fx-background-radius: 100; -fx-border-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                 <DatePicker fx:id="dateFinal" prefHeight="25.0" prefWidth="228.0" style="-fx-background-radius: 100; -fx-border-radius: 100;" styleClass="textoLight" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label style="-fx-font-size: 23;" styleClass="textoRegular" stylesheets="@styles.css" text="Fecha final:" GridPane.rowIndex="6">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             </children>
         </GridPane>
         <Button fx:id="btnRegistrarPaquete" layoutX="280.0" layoutY="592.0" mnemonicParsing="false" onAction="#registrarPaqueteEvent" style="-fx-font-size: 25;" stylesheets="@styles.css" text="Registrar">

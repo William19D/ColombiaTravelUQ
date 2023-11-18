@@ -107,6 +107,8 @@ public class VentanaRegistroDestinos {
 
 
     }
+
+
     private void configurarSeleccionUnicaClimas() {
         // Configurar la selección única para el clima frío
         ckFrio.setOnAction(event -> {
@@ -150,17 +152,17 @@ public class VentanaRegistroDestinos {
 
         if (destinoSeleccionado != null) {
             try {
-                // Llamar al método de eliminación en la clase principal
+
                 agenciaViajes.eliminarDestino(destinoSeleccionado.getNombre(), destinoSeleccionado.getCiudad());
 
-                // Actualizar la tabla de destinos
+
                 actualizarTablaDestinos();
             } catch (ElementoNoEncontradoException | RutaInvalidaException e) {
-                // Manejar la excepción si el destino no se encuentra
+
                 mostrarAlerta(null, e.getMessage());
             }
         } else {
-            // Si no se selecciona ningún destino, muestra un mensaje de error
+
             throw new AtributoVacioException("Selecciona un destino para borrar.");
         }
     }
