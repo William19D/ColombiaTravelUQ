@@ -58,6 +58,9 @@ public class ControllerBuscadorPaquetes {
     @FXML
     private AnchorPane ventanaBuscadorPaquetes;
 
+    @FXML
+    private AnchorPane paqueteSeleccionado;
+
     private Clima climaSeleccionado;
 
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
@@ -193,12 +196,28 @@ public class ControllerBuscadorPaquetes {
             Parent root = loader.load();
             ControllerPaquete controller = loader.getController();
             controller.setPaquete(paquete);
+
+            // Agregar evento de clic para cargar el paquete seleccionado
+            root.setOnMouseClicked(event -> cargarPaqueteSeleccionado(paquete));
+
             vbox.getChildren().add(root);
         }
 
         scrollAnchorPane.getChildren().clear();
         scrollAnchorPane.getChildren().add(vbox);
     }
+
+    private void cargarPaqueteSeleccionado(PaquetesTuristicos paquete) {
+        try {
+            AnchorPane ventana = FXMLLoader.load(getClass().getResource("/ventanas/ventanaSeleccionPaquete.fxml"));
+            paqueteSeleccionado.getChildren().setAll(ventana);
+            paqueteSeleccionado.setVisible(true);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @FXML
     private void seleccionarClima(ActionEvent event) {

@@ -16,7 +16,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Font;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,7 +32,7 @@ public class ControllerVentanaInicio {
     private Button btnBuscarPaquetes;
 
     @FXML
-    private AnchorPane ventanaPaquetes;
+    private AnchorPane ventanaMenu;
 
     @FXML
     private Label lblDestinos;
@@ -99,9 +98,9 @@ public class ControllerVentanaInicio {
     @FXML
     void mostrarBuscarPaquetes(ActionEvent event) throws IOException {
         AnchorPane ventana = FXMLLoader.load(getClass().getResource("/ventanas/ventanaPaquetes.fxml"));
-        ventanaPaquetes.getChildren().setAll(ventana);
-
+        ventanaMenu.getChildren().setAll(ventana);
     }
+
 
     @FXML
     void buscarDestinosEvent(ActionEvent event) throws IOException {
@@ -126,7 +125,10 @@ public class ControllerVentanaInicio {
         }
     }
     @FXML
-    void mostrarReservas(ActionEvent event) {
+    void mostrarReservas(ActionEvent event) throws IOException {
+        AnchorPane ventana = FXMLLoader.load(getClass().getResource("/ventanas/ventanaViajes.fxml"));
+        ventanaMenu.getChildren().removeAll();
+        ventanaMenu.getChildren().setAll(ventana);
 
     }
 }

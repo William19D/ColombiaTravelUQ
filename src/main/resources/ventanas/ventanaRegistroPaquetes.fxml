@@ -164,12 +164,12 @@
             <children>
                 <ImageView fitHeight="54.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../iconos/up-arrow-7_icon-icons.com_69821.png" />
+                        <Image url="@../iconos/flecha.png" />
                     </image>
                 </ImageView>
                 <ImageView fitHeight="51.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;" GridPane.rowIndex="1">
                     <image>
-                        <Image url="@../iconos/up-arrow-7_icon-icons.com_69821.png" />
+                        <Image url="@../iconos/flecha.png" />
                     </image>
                 </ImageView>
                 <Button fx:id="eliminarEleccion" mnemonicParsing="false" onAction="#eliminarEleccion" prefHeight="55.0" prefWidth="52.0" style="-fx-border-radius: 200; -fx-background-color: transparent; -fx-background-radius: 200;">
