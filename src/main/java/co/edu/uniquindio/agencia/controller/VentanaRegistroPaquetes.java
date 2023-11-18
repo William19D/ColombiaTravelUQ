@@ -22,6 +22,7 @@ import java.util.Optional;
 public class VentanaRegistroPaquetes {
 
     ObservableList<PaquetesTuristicos> listaPaquetes = FXCollections.observableArrayList(AgenciaViajes.getInstance().getPaquetes());
+    private ObservableList<Destino> destinosDisponiblesRestantes = FXCollections.observableArrayList(AgenciaViajes.getInstance().getDestinos());
 
     PaquetesTuristicos paqueteSeleccionado;
 
@@ -133,7 +134,6 @@ public class VentanaRegistroPaquetes {
 
     @FXML
     void agregarEleccion(ActionEvent event) {
-        // Obtener el destino seleccionado en la tabla de destinos disponibles
         Destino destinoSeleccionado = tableDestinosDisponibles.getSelectionModel().getSelectedItem();
 
         if (destinoSeleccionado != null) {
@@ -141,7 +141,7 @@ public class VentanaRegistroPaquetes {
             destinosAgregados.add(destinoSeleccionado);
 
             // Eliminar el destino de la tabla de destinos disponibles
-            tableDestinosDisponibles.getItems().remove(destinoSeleccionado);
+            destinosDisponiblesRestantes.remove(destinoSeleccionado);
 
             // Actualizar la tabla de destinos agregados
             tableDestinosAgregados.setItems(destinosAgregados);
@@ -149,12 +149,16 @@ public class VentanaRegistroPaquetes {
             columnCiudadAgregado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCiudad()));
             columnClimaAgregado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
 
+            // Actualizar la tabla de destinos disponibles
+            tableDestinosDisponibles.setItems(destinosDisponiblesRestantes);
+            columNombreDisp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
+            columnCiudadDisp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCiudad()));
+            columnClimaDisp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
         }
     }
 
     @FXML
     void eliminarEleccion(ActionEvent event) {
-        // Obtén el destino seleccionado en la tabla de destinos agregados
         Destino destinoSeleccionado = tableDestinosAgregados.getSelectionModel().getSelectedItem();
 
         if (destinoSeleccionado != null) {
@@ -168,13 +172,26 @@ public class VentanaRegistroPaquetes {
 
             if (result.isPresent() && result.get() == ButtonType.OK) {
                 // Remueve el destino de la tabla de destinos agregados
-                tableDestinosAgregados.getItems().remove(destinoSeleccionado);
+                destinosAgregados.remove(destinoSeleccionado);
 
                 // Agrega el destino de nuevo a la lista de destinos disponibles
-                listaDisponibles.add(destinoSeleccionado);
+                destinosDisponiblesRestantes.add(destinoSeleccionado);
+
+                // Actualizar la tabla de destinos agregados
+                tableDestinosAgregados.setItems(destinosAgregados);
+                columNombreAgregado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
+                columnCiudadAgregado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCiudad()));
+                columnClimaAgregado.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
+
+                // Actualizar la tabla de destinos disponibles
+                tableDestinosDisponibles.setItems(destinosDisponiblesRestantes);
+                columNombreDisp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
+                columnCiudadDisp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCiudad()));
+                columnClimaDisp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
             }
         }
     }
+
 
     @FXML
     void actualizarEvent(ActionEvent event) {
@@ -205,13 +222,16 @@ public class VentanaRegistroPaquetes {
                 return;
             }
 
-            // Convertir ObservableList a ArrayList
-           // ArrayList<Destino> destinosSeleccionadosList = new ArrayList<>(destinosSeleccionados);
-
-            // Llamar al método de la instancia de AgenciaViajes para registrar el paquete
             agenciaViajes.actualizarPaquetes(
                     nombre, new ArrayList<>(destinosSeleccionados), descripcion, serviciosAdicionales, precio, cupoMax,
                     fechaDisponibleInicio, fechaDisponibleFin, null);
+            destinosDisponiblesRestantes = FXCollections.observableArrayList(AgenciaViajes.getInstance().getDestinos());
+
+            // Actualiza la tabla de destinos disponibles
+            tableDestinosDisponibles.setItems(destinosDisponiblesRestantes);
+            columNombreDisp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
+            columnCiudadDisp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCiudad()));
+            columnClimaDisp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
 
             limpiarCampos();
             this.tablePaquetesRegistrados.setItems(listaPaquetes);
@@ -223,6 +243,8 @@ public class VentanaRegistroPaquetes {
             mostrarError(e.getMessage());
         } catch (NumberFormatException e) {
             mostrarError("Por favor, ingrese un valor numérico válido para el precio y el cupo máximo.");
+        } catch (DestinoRepetidoException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -305,6 +327,13 @@ public class VentanaRegistroPaquetes {
                     fechaDisponibleFin,
                     null // Aquí debes pasar el guía correspondiente si lo tienes en tu interfaz de usuario
             );
+            destinosDisponiblesRestantes = FXCollections.observableArrayList(AgenciaViajes.getInstance().getDestinos());
+
+            // Actualiza la tabla de destinos disponibles
+            tableDestinosDisponibles.setItems(destinosDisponiblesRestantes);
+            columNombreDisp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
+            columnCiudadDisp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getCiudad()));
+            columnClimaDisp.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getClima().toString()));
 
             this.tablePaquetesRegistrados.setItems(listaPaquetes);
 
@@ -318,6 +347,8 @@ public class VentanaRegistroPaquetes {
             mostrarError(e.getMessage());
         } catch (NumberFormatException e) {
             mostrarError("Por favor, ingrese un valor numérico válido para el precio y el cupo máximo.");
+        } catch (DestinoRepetidoException e) {
+            throw new RuntimeException(e);
         }
     }
 

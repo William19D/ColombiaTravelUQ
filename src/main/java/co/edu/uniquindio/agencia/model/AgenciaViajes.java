@@ -703,13 +703,22 @@ public class AgenciaViajes {
     }
 
     public void eliminarPaquete(String nombre) throws ElementoNoEncontradoException {
-        PaquetesTuristicos paqueteAEliminar = null;
-        paqueteAEliminar = obtenerPaquete(nombre);
+        PaquetesTuristicos paqueteAEliminar = obtenerPaquete(nombre);
         if (paqueteAEliminar != null) {
             paquetes.remove(paqueteAEliminar);
-            log.info("se ha eliminado el paquete con el nombre  "+ nombre);
+            guardarPaquetesEnArchivo();  // Guarda la lista actualizada después de la eliminación
+            log.info("Se ha eliminado el paquete con el nombre " + nombre);
         } else {
-            throw new ElementoNoEncontradoException("No se encontró un paquete con el nombre proporcionada.");
+            throw new ElementoNoEncontradoException("No se encontró un paquete con el nombre proporcionado.");
+        }
+    }
+
+    public void guardarPaquetesEnArchivo() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(RUTAPAQUETES))) {
+            oos.writeObject(paquetes);
+            log.info("Lista de paquetes guardada exitosamente.");
+        } catch (IOException e) {
+            log.severe("Error al guardar la lista de paquetes: " + e.getMessage());
         }
     }
 
