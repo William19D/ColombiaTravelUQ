@@ -31,6 +31,18 @@ public class PaquetesTuristicos implements Serializable {
     private LocalDate fechaDisponibleFin;
     private GuiaTuristico guia;
 
+    public String obtenerDestinosSeparadosPorComa() {
+        StringBuilder destinosString = new StringBuilder();
 
+        for (int i = 0; i < destinos.size(); i++) {
+            destinosString.append(destinos.get(i).getNombre());
+
+            if (i < destinos.size() - 1) {
+                destinosString.append(", ");
+            }
+        }
+
+        return destinosString.toString();
+    }
 
 }

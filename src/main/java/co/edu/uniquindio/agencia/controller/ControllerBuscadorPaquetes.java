@@ -16,6 +16,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import lombok.Getter;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -41,6 +43,7 @@ public class ControllerBuscadorPaquetes {
     private AnchorPane scrollAnchorPaquetes;
 
     @FXML
+    @Getter
     private ScrollPane scrollPaquetes;
 
     @FXML
@@ -197,7 +200,6 @@ public class ControllerBuscadorPaquetes {
             ControllerPaquete controller = loader.getController();
             controller.setPaquete(paquete);
 
-            // Agregar evento de clic para cargar el paquete seleccionado
             root.setOnMouseClicked(event -> cargarPaqueteSeleccionado(paquete));
 
             vbox.getChildren().add(root);
@@ -207,17 +209,22 @@ public class ControllerBuscadorPaquetes {
         scrollAnchorPane.getChildren().add(vbox);
     }
 
+
     private void cargarPaqueteSeleccionado(PaquetesTuristicos paquete) {
         try {
-            AnchorPane ventana = FXMLLoader.load(getClass().getResource("/ventanas/ventanaSeleccionPaquete.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ventanas/ventanaSeleccionPaquete.fxml"));
+            AnchorPane ventana = loader.load();
+            ControllerSeleccionarPaquete controllerSeleccionarPaquete = loader.getController();
+            controllerSeleccionarPaquete.setPaquete(paquete);
             paqueteSeleccionado.getChildren().setAll(ventana);
             paqueteSeleccionado.setVisible(true);
+            paqueteSeleccionado.setDisable(false);
+
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 
     @FXML
     private void seleccionarClima(ActionEvent event) {
