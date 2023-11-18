@@ -450,8 +450,31 @@ public class AgenciaViajes {
         }
 
     }
-    public static void registrarReserva(ArrayList<Reserva> listaReservas, Reserva reserva) {
-        listaReservas.add(reserva);
+    public Reserva registrarReserva(PaquetesTuristicos paquete, int cantidadPersonas, Cliente cliente)
+            throws AtributoVacioException, RutaInvalidaException, InformacionRepetidaException, DestinoRepetidoException, AtributoNegativoException {
+
+        Reserva reserva = null;
+
+        if (paquete == null) {
+            throw new AtributoVacioException("El paquete no puede ser nulo");
+        }
+
+        if (cantidadPersonas <= 0) {
+            throw new AtributoNegativoException("La cantidad de personas debe ser mayor a 0");
+        }
+
+        if(calcularCuposRestantes(paquete.getCupoMax(),paquete.getCupoActual()) >= cantidadPersonas){
+            paquete.setCupoActual(paquete.getCupoActual() + cantidadPersonas);
+            reserva = Reserva.builder()
+                    .cantidadPersonas(cantidadPersonas)
+                    .cliente(cliente)
+                    .paquete(paquete)
+                    .build();
+            reservas.add(reserva);
+            escribirReserva();
+        }
+
+        return reserva;
     }
 //Metodo que actualiza los quias turisticos
 

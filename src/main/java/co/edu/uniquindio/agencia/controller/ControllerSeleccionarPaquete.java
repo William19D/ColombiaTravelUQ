@@ -1,16 +1,17 @@
 package co.edu.uniquindio.agencia.controller;
 
-import co.edu.uniquindio.agencia.exceptions.AtributoVacioException;
-import co.edu.uniquindio.agencia.exceptions.DestinoRepetidoException;
-import co.edu.uniquindio.agencia.exceptions.InformacionRepetidaException;
-import co.edu.uniquindio.agencia.exceptions.RutaInvalidaException;
+import co.edu.uniquindio.agencia.exceptions.*;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
 import co.edu.uniquindio.agencia.model.PaquetesTuristicos;
+import co.edu.uniquindio.agencia.model.Reserva;
+import co.edu.uniquindio.agencia.model.SessionManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import lombok.Getter;
@@ -57,7 +58,8 @@ public class ControllerSeleccionarPaquete {
     @FXML
     private AnchorPane anchorPaquete;
 
-
+    @FXML
+    private TextField texPersonas;
 
     public ControllerSeleccionarPaquete() throws AtributoVacioException, DestinoRepetidoException, RutaInvalidaException, InformacionRepetidaException {
     }
@@ -82,8 +84,34 @@ public class ControllerSeleccionarPaquete {
     }
     @FXML
     void comprarPaqueteAction() {
+        try {
+            int cantidadPersonas = Integer.parseInt(texPersonas.getText());
 
+            // Realizar validaciones adicionales según tus requerimientos
+            if (cantidadPersonas <= 0) {
+                mostrarAlertaError("Error", "Las personas no pueden ser negativas o 0");
+            }
+
+            System.out.println(paquete.toString());
+            System.out.println(cantidadPersonas);
+            System.out.println(SessionManager.getInstance().getCliente());
+            Reserva reserva = agenciaViajes.registrarReserva(paquete, cantidadPersonas, SessionManager.getInstance().getCliente());
+            if (reserva != null) {
+                mostrarAlertaInfo("Registro exitoso", "Se ha reservado correcctamente la reserva del paquete: " + paquete.getNombre() + " \n para el cliente: " + SessionManager.getInstance().getCliente().getNombre());
+            }
+
+            // Ocultar la ventana de detalles del paquete
+            anchorPaquete.setVisible(false);
+            anchorPaquete.setDisable(true);
+
+        } catch (NumberFormatException | AtributoVacioException | RutaInvalidaException | InformacionRepetidaException |
+                 DestinoRepetidoException e) {
+            e.printStackTrace();
+        } catch (AtributoNegativoException e) {
+            throw new RuntimeException(e);
+        }
     }
+
 
     @FXML
     void salirAction() {
@@ -96,6 +124,22 @@ public class ControllerSeleccionarPaquete {
     public void setPaquete(PaquetesTuristicos paquete) throws IOException {
         this.paquete = paquete;
         initialize();
+    }
+
+    private void mostrarAlertaError(String titulo, String contenido) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setContentText(contenido);
+        alert.setHeaderText(null);
+        alert.showAndWait();
+
+    }
+    private void mostrarAlertaInfo(String titulo, String contenido) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titulo);
+        alert.setContentText(contenido);
+        alert.setHeaderText(null);
+        alert.showAndWait();
     }
 
 }
