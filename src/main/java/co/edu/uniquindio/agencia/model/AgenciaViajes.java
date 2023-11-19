@@ -867,5 +867,50 @@ public class AgenciaViajes {
         return paquetesEnFechas;
     }
 
+    public List<PaquetesTuristicos> obtenerPaquetesPorCliente(Cliente cliente) {
+        List<PaquetesTuristicos> paquetesCliente = new ArrayList<>();
+
+        for (Reserva reserva : reservas) {
+            if (reserva.getCliente().equals(cliente)) {
+                paquetesCliente.add(reserva.getPaquete());
+            }
+        }
+
+        return paquetesCliente;
+    }
+
+    public List<PaquetesTuristicos> obtenerPaquetesAnteriores(Cliente cliente) {
+        List<PaquetesTuristicos> paquetesCliente = new ArrayList<>();
+
+        LocalDate hoy = LocalDate.now();
+
+        for (Reserva reserva : reservas) {
+            PaquetesTuristicos paquete = reserva.getPaquete();
+            LocalDate fechaLlegada = paquete.getFechaDisponibleFin();
+
+            if (reserva.getCliente().equals(cliente) && fechaLlegada != null && !fechaLlegada.isAfter(hoy)) {
+                paquetesCliente.add(paquete);
+            }
+        }
+
+        return paquetesCliente;
+    }
+    public List<PaquetesTuristicos> obtenerPaquetesFuturos(Cliente cliente) {
+        List<PaquetesTuristicos> paquetesFuturos = new ArrayList<>();
+
+        LocalDate manana = LocalDate.now().plusDays(1);
+
+        for (Reserva reserva : reservas) {
+            PaquetesTuristicos paquete = reserva.getPaquete();
+            LocalDate fechaLlegada = paquete.getFechaDisponibleFin();
+
+            if (reserva.getCliente().equals(cliente) && fechaLlegada != null && fechaLlegada.isAfter(manana)) {
+                paquetesFuturos.add(paquete);
+            }
+        }
+
+        return paquetesFuturos;
+    }
+
 
 }
