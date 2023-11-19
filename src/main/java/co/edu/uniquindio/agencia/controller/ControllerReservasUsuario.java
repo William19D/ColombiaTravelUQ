@@ -62,12 +62,25 @@ public class ControllerReservasUsuario {
             Parent root = loader.load();
             ControllerPaquete controller = loader.getController();
             controller.setPaquete(paquete);
+
+            // Establece el userData del nodo con el controlador
+            root.setUserData(controller);
+
+            // Asigna el evento de clic al paquete
+            controller.deseleccionarPaquete();
+            controller.getPaqueteScroll().setOnMouseClicked(event -> {
+                // Deselecciona los demás paquetes antes de seleccionar el actual
+                vbox.getChildren().forEach(node -> ((ControllerPaquete) node.getUserData()).deseleccionarPaquete());
+                controller.seleccionarPaquete();
+            });
+
             vbox.getChildren().add(root);
         }
 
         scrollAnchorPaneAnterior.getChildren().clear();
         scrollAnchorPaneAnterior.getChildren().add(vbox);
     }
+
     private void mostrarPaquetesEnScrollPaneFuturos(List<PaquetesTuristicos> paquetes) throws IOException {
         VBox vbox = new VBox();
 
@@ -76,8 +89,21 @@ public class ControllerReservasUsuario {
             Parent root = loader.load();
             ControllerPaquete controller = loader.getController();
             controller.setPaquete(paquete);
+
+            // Establece el userData del nodo con el controlador
+            root.setUserData(controller);
+
+            // Asigna el evento de clic al paquete
+            controller.deseleccionarPaquete();
+            controller.getPaqueteScroll().setOnMouseClicked(event -> {
+                // Deselecciona los demás paquetes antes de seleccionar el actual
+                vbox.getChildren().forEach(node -> ((ControllerPaquete) node.getUserData()).deseleccionarPaquete());
+                controller.seleccionarPaquete();
+            });
+
             vbox.getChildren().add(root);
         }
+
 
         scrollAnchorPaneProximo.getChildren().clear();
         scrollAnchorPaneProximo.getChildren().add(vbox);

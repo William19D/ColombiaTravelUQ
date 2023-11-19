@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import lombok.Getter;
 
 import java.io.File;
 import java.net.URL;
@@ -36,10 +37,13 @@ public class ControllerPaquete {
     private Label lblPrecioPaquete;
 
     @FXML
+    @Getter
     private AnchorPane paqueteScroll;
     private PaquetesTuristicos paquete;
 
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
+
+    private boolean seleccionado = false;
 
     public ControllerPaquete() throws AtributoVacioException, DestinoRepetidoException, RutaInvalidaException, InformacionRepetidaException {
     }
@@ -71,6 +75,24 @@ public class ControllerPaquete {
     @FXML
     void mostrarVentaPaquete(MouseEvent event) {
 
+    }
+    @FXML
+    void onPaqueteClicked() {
+        if (seleccionado) {
+            deseleccionarPaquete();
+        } else {
+            seleccionarPaquete();
+        }
+    }
+
+    void seleccionarPaquete() {
+        paqueteScroll.setStyle("-fx-background-color: #cecece;");  // Cambia el color de fondo al seleccionar
+        seleccionado = true;
+    }
+
+    void deseleccionarPaquete() {
+        paqueteScroll.setStyle("-fx-background-color: rgba(255,255,255,0);");  // Restaura el color de fondo al deseleccionar
+        seleccionado = false;
     }
 
 }
