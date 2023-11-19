@@ -11,7 +11,9 @@ import co.edu.uniquindio.agencia.model.SessionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -51,7 +53,29 @@ public class ControllerReservasUsuario {
 
     @FXML
     void cancelarViaje(ActionEvent event) {
+        ControllerPaquete paqueteSeleccionado = obtenerPaqueteSeleccionado(scrollAnchorPaneProximo);
+        if (paqueteSeleccionado != null) {
+            agenciaViajes.eliminarViaje(paqueteSeleccionado.getPaquete(), cliente);
+            cargarPaquetesAFuturos();
+            mostrarAlertaInfo("Viaje cancelado","El paquete: " + paqueteSeleccionado.getPaquete() + " ha salido eliminado de tus reservas");
+        }
+    }
 
+    private ControllerPaquete obtenerPaqueteSeleccionado(AnchorPane scrollAnchorPane) {
+        for (Node node : scrollAnchorPane.getChildren()) {
+            if (node instanceof VBox) {
+                for (Node childNode : ((VBox) node).getChildren()) {
+                    if (childNode instanceof Parent && childNode.getUserData() instanceof ControllerPaquete) {
+                        ControllerPaquete controller = (ControllerPaquete) childNode.getUserData();
+                        if (controller.isSeleccionado()) {
+                            return controller;
+                        }
+                    }
+                }
+            }
+        }
+
+        return null;
     }
 
     private void mostrarPaquetesEnScrollPaneAnteriores(List<PaquetesTuristicos> paquetes) throws IOException {
@@ -131,6 +155,13 @@ public class ControllerReservasUsuario {
         cargarPaquetesAnteriores();
         cargarPaquetesAFuturos();
 
+    }
+    private void mostrarAlertaInfo(String titulo, String contenido) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titulo);
+        alert.setContentText(contenido);
+        alert.setHeaderText(null);
+        alert.showAndWait();
     }
 
 }

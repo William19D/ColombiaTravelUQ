@@ -39,10 +39,12 @@ public class ControllerPaquete {
     @FXML
     @Getter
     private AnchorPane paqueteScroll;
+    @Getter
     private PaquetesTuristicos paquete;
 
     private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
 
+    @Getter
     private boolean seleccionado = false;
 
     public ControllerPaquete() throws AtributoVacioException, DestinoRepetidoException, RutaInvalidaException, InformacionRepetidaException {

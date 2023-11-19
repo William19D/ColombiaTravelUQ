@@ -450,6 +450,11 @@ public class AgenciaViajes {
         }
 
     }
+
+    public void eliminarViaje(PaquetesTuristicos paquete, Cliente cliente) {
+        reservas.removeIf(reserva -> reserva.getPaquete().equals(paquete) && reserva.getCliente().equals(cliente));
+    }
+
     public Reserva registrarReserva(PaquetesTuristicos paquete, int cantidadPersonas, Cliente cliente)
             throws AtributoVacioException, RutaInvalidaException, InformacionRepetidaException, DestinoRepetidoException, AtributoNegativoException {
 
@@ -911,6 +916,8 @@ public class AgenciaViajes {
 
         return paquetesFuturos;
     }
+
+
 
 
 }
